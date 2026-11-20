@@ -330,12 +330,22 @@ def analyse_account(bd, cfg, now):
 
 # ---------------------------------------------------------------- Telegram
 def telegram(text, token, chat_id):
-    data = urllib.parse.urlencode({"chat_id": chat_id, "text": text, "parse_mode": "HTML",
-                                   "disable_web_page_preview": "true"}).encode()
-    try:
-        urllib.request.urlopen(f"https://api.telegram.org/bot{token}/sendMessage", data=data, timeout=20)
-    except Exception as e:
-        print(f"  Telegram send failed: {e}")
+    # Telegram caps messages at 4096 chars: split on blank lines.
+    chunks, cur = [], ""
+    for block in text.split("\n\n"):
+        if cur and len(cur) + len(block) + 2 > 3900:
+            chunks.append(cur)
+            cur = block
+        else:
+            cur = f"{cur}\n\n{block}" if cur else block
+    chunks.append(cur)
+    for chunk in chunks:
+        data = urllib.parse.urlencode({"chat_id": chat_id, "text": chunk[:4096], "parse_mode": "HTML",
+                                       "disable_web_page_preview": "true"}).encode()
+        try:
+            urllib.request.urlopen(f"https://api.telegram.org/bot{token}/sendMessage", data=data, timeout=20)
+        except Exception as e:
+            print(f"  Telegram send failed: {e}")
 
 
 def fmt_num(n):
@@ -344,10 +354,12 @@ def fmt_num(n):
     return f"{n/1_000_000:.1f}M" if n >= 1_000_000 else f"{n/1000:.1f}K" if n >= 10_000 else str(n)
 
 
-def post_block(p):
-    icon = "🔥" if p["tier"] == "viral" else "📈"
-    lines = [f"{icon} <b>{p['tier'].upper()}</b> · @{escape(p['username'] or '')} · {p['age_hours']}h old",
-             f"Score {p['score']}× normal · ❤️ {fmt_num(p['likes'])} · 💬 {fmt_num(p['comments'])}"
+def post_block(p, rank_no=None):
+    icon = {"viral": "🔥", "rising": "📈"}.get(p["tier"], "▫️")
+    prefix = f"<b>#{rank_no}</b> " if rank_no else ""
+    lines = [f"{prefix}{icon} <b>{p['tier'].upper()}</b> · @{escape(p['username'] or '')} · {p['age_hours']}h old",
+             f"Score {p['score']}× normal · ❤️ {'hidden' if p.get('likes_hidden') else fmt_num(p['likes'])}"
+             f" · 💬 {fmt_num(p['comments'])}"
              + (f" · ▶️ {fmt_num(p['views'])}" if p.get("views") else "")]
     if p.get("search_query"):
         lines.append(f"Text ({p['search_source']}): <i>{escape(p['search_query'])}</i>")
@@ -375,6 +387,8 @@ HELP_TEXT = (
     "/digest 1 — digest every 1 hour · /digest off\n"
     "/alerts rising — alert on rising+viral · /alerts viral · /alerts off\n"
     "/minlikes 100 — ignore posts below 100 likes+2×comments\n"
+    "/top 10 — current top posts, ranked\n"
+    "/leaders — account leaderboard (7 days) · /leaders day\n"
     "/scan — scan at the next check\n"
     "/settings — show everything\n\n"
     "Commands are picked up every 15 minutes, so replies can take up to 15 min.")
@@ -405,8 +419,43 @@ def tg_get_updates(token, offset):
         return []
 
 
-def apply_command(text, cfg, accounts):
+def top_text(data, n):
+    posts = (data or {}).get("posts") or []
+    if not posts:
+        return "No scan results yet. Try again after the next scan."
+    when = data.get("generated_at", "")[:16].replace("T", " ")
+    return (f"🏆 <b>Top {min(n, len(posts))} posts</b> (last {data.get('window_hours', 24)}h, scanned {when} UTC)\n\n"
+            + "\n\n".join(post_block(p, i) for i, p in enumerate(posts[:n], 1)))
+
+
+def leaders_text(board, days, now=None):
+    now = now or now_utc()
+    cut = now - timedelta(days=days)
+    stats = {}
+    for v in (board or {}).values():
+        if parse_ts(v["ts"]) < cut:
+            continue
+        s = stats.setdefault(v["u"], {"posts": 0, "viral": 0, "rising": 0, "sum": 0.0, "best": 0.0})
+        s["posts"] += 1
+        s["sum"] += v["best"]
+        s["best"] = max(s["best"], v["best"])
+        if v["tier"] in ("viral", "rising"):
+            s[v["tier"]] += 1
+    if not stats:
+        return f"No posts tracked in the last {days} day(s) yet — the leaderboard fills up as scans run."
+    order = sorted(stats.items(), key=lambda kv: (kv[1]["viral"], kv[1]["rising"], kv[1]["sum"] / kv[1]["posts"]),
+                   reverse=True)
+    medals = {1: "🥇", 2: "🥈", 3: "🥉"}
+    lines = [f"🏅 <b>Account leaderboard</b> — last {days} day(s)\n"]
+    for i, (u, s) in enumerate(order[:20], 1):
+        lines.append(f"{medals.get(i, f'#{i}')} @{escape(u)} — 🔥 {s['viral']} viral · 📈 {s['rising']} rising · "
+                     f"avg {s['sum'] / s['posts']:.1f}× · best {s['best']:.1f}× · {s['posts']} post{'s' if s['posts'] != 1 else ''}")
+    return "\n".join(lines)
+
+
+def apply_command(text, cfg, accounts, ctx=None):
     """Returns (reply, config_changed, accounts_changed, scan_now)."""
+    ctx = ctx or {}
     parts = text.strip().split()
     cmd = parts[0].split("@")[0].lower().lstrip("/")
     args = [a.lstrip("@").strip(",").lower() for a in parts[1:]]
@@ -481,6 +530,12 @@ def apply_command(text, cfg, accounts):
             return "Usage: /minlikes 100", False, False, False
         cfg["min_engagement"] = int(v)
         return f"✅ Ignoring posts under {int(v)} engagements.", True, False, False
+    if cmd == "top":
+        n = int(min(num(1, 10_000) or 5, 20))
+        return top_text(ctx.get("data"), n), False, False, False
+    if cmd in ("leaders", "leaderboard"):
+        days = 1 if args and args[0] in ("day", "today", "1") else 7
+        return leaders_text(ctx.get("board"), days), False, False, False
     if cmd == "scan":
         return "🔎 Scanning now…", False, False, True
     return "Unknown command. Send /help.", False, False, False
@@ -500,7 +555,8 @@ def process_commands(cfg, state, tg_token, tg_chat):
         if not text.startswith("/"):
             telegram("Send /help to see commands.", tg_token, tg_chat)
             continue
-        reply, c, a, s = apply_command(text, cfg, accounts)
+        ctx = {"data": load_json(DATA_FILE, {}), "board": state.get("board", {})}
+        reply, c, a, s = apply_command(text, cfg, accounts, ctx)
         cfg_changed |= c
         acc_changed |= a
         scan_now |= s
@@ -620,6 +676,16 @@ def main():
                 st["alerted_tier"] = p["tier"]
         p.pop("_image", None)
 
+    # Leaderboard memory: each post's best score/tier, kept 8 days
+    board = state.setdefault("board", {})
+    for p in all_posts:
+        b = board.setdefault(p["id"], {"u": p["username"], "ts": p["timestamp"], "best": 0, "tier": "normal"})
+        b["best"] = max(b["best"], p["score"] if p["engagement"] >= cfg["min_engagement"] else 0)
+        if rank[p["tier"]] > rank[b["tier"]]:
+            b["tier"] = p["tier"]
+    week_cut = now - timedelta(days=8)
+    state["board"] = {k: v for k, v in board.items() if parse_ts(v["ts"]) > week_cut}
+
     # forget posts older than 3 days
     cutoff = now - timedelta(hours=72)
     state["posts"] = {k: v for k, v in state["posts"].items()
@@ -639,7 +705,8 @@ def main():
         if cfg.get("digest_enabled", True) and due and flagged:
             top = flagged[:cfg["digest_top_n"]]
             text = (f"🗞 <b>Digest</b> — {len(flagged)} hot post(s) in the last {cfg['window_hours']}h "
-                    f"across {len(accounts)} accounts\n\n" + "\n\n".join(post_block(p) for p in top))
+                    f"across {len(accounts)} accounts\n\n"
+                    + "\n\n".join(post_block(p, i) for i, p in enumerate(top, 1)))
             telegram(text, tg_token, tg_chat)
             state["last_digest"] = now.isoformat()
 
