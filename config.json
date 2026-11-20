@@ -1,0 +1,23 @@
+{
+  "scan_every_minutes": 60,
+  "graph_api_version": "v26.0",
+  "posts_per_account": 25,
+  "window_hours": 24,
+  "comment_weight": 2,
+  "mature_after_hours": 48,
+  "min_baseline_posts": 3,
+  "min_engagement": 100,
+  "rising_threshold": 2.5,
+  "viral_threshold": 5,
+  "alerts_enabled": true,
+  "alert_on": "rising",
+  "digest_enabled": true,
+  "digest_every_hours": 1,
+  "digest_top_n": 5,
+  "ocr_enabled": true,
+  "ocr_top_fraction": 0.35,
+  "search_query_max_words": 12,
+  "max_calls_per_run": 150,
+  "seconds_between_calls": 1.0,
+  "stop_when_usage_percent_above": 75
+}
