@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>IG Viral Radar</title>
+<style>
+  :root { --bg:#0f1115; --card:#181b22; --line:#262a33; --text:#e8eaed; --muted:#8b919c;
+          --viral:#ff5a36; --rising:#f5b83d; --normal:#4b5262; --link:#7aa7ff; }
+  @media (prefers-color-scheme: light) {
+    :root { --bg:#f6f7f9; --card:#fff; --line:#e3e6eb; --text:#16181d; --muted:#666d79; --normal:#c3c8d1; --link:#2557d6; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); }
+  header { padding:20px 20px 8px; max-width:980px; margin:auto; }
+  h1 { margin:0; font-size:22px; letter-spacing:-.01em; }
+  .sub { color:var(--muted); font-size:13px; margin-top:4px; }
+  .warn { background:#ff5a3622; border:1px solid var(--viral); padding:8px 12px; border-radius:8px; margin-top:10px; font-size:13px; }
+  nav { max-width:980px; margin:8px auto 0; padding:0 20px; display:flex; gap:6px; flex-wrap:wrap; }
+  nav button { background:var(--card); color:var(--text); border:1px solid var(--line); border-radius:999px; padding:6px 14px; cursor:pointer; font:inherit; font-size:13px; }
+  nav button.on { border-color:var(--text); font-weight:600; }
+  main { max-width:980px; margin:auto; padding:14px 20px 40px; display:grid; gap:10px; }
+  .card { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--normal); border-radius:10px; padding:12px 14px; }
+  .card.viral { border-left-color:var(--viral); } .card.rising { border-left-color:var(--rising); }
+  .top { display:flex; justify-content:space-between; gap:10px; align-items:baseline; flex-wrap:wrap; }
+  .who { font-weight:600; } .age { color:var(--muted); font-size:13px; }
+  .badge { font-size:11px; font-weight:700; letter-spacing:.05em; padding:2px 8px; border-radius:999px; background:var(--normal); color:#fff; }
+  .viral .badge { background:var(--viral); } .rising .badge { background:var(--rising); color:#000; }
+  .stats { display:flex; gap:14px; flex-wrap:wrap; margin:6px 0; font-variant-numeric:tabular-nums; font-size:14px; }
+  .stats b { font-size:16px; }
+  .cap { color:var(--muted); font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .q { font-size:13px; margin-top:6px; } .q i { color:var(--text); }
+  .links { margin-top:8px; display:flex; gap:14px; font-size:14px; flex-wrap:wrap; }
+  a { color:var(--link); text-decoration:none; } a:hover { text-decoration:underline; }
+  table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden; font-size:14px; }
+  th, td { text-align:left; padding:8px 12px; border-bottom:1px solid var(--line); }
+  th { color:var(--muted); font-weight:500; font-size:12px; text-transform:uppercase; letter-spacing:.04em; }
+  td.err { color:var(--viral); font-size:13px; }
+  .empty { color:var(--muted); text-align:center; padding:40px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>IG Viral Radar</h1>
+  <div class="sub" id="meta">Loading…</div>
+  <div id="warn"></div>
+</header>
+<nav>
+  <button data-tab="flagged" class="on">🔥 Flagged</button>
+  <button data-tab="all">All posts (24h)</button>
+  <button data-tab="accounts">Accounts</button>
+</nav>
+<main id="out"></main>
+<script>
+let DATA = null, TAB = "flagged";
+const n = v => v == null ? "–" : v >= 1e6 ? (v/1e6).toFixed(1)+"M" : v >= 1e4 ? (v/1e3).toFixed(1)+"K" : v.toLocaleString();
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+function card(p) {
+  const links = [];
+  if (p.permalink) links.push(`<a href="${esc(p.permalink)}" target="_blank" rel="noopener">Open post ↗</a>`);
+  if (p.x_search_url) {
+    links.push(`<a href="${esc(p.x_search_url)}" target="_blank" rel="noopener">Search on X ↗</a>`);
+    links.push(`<a href="${esc(p.x_search_latest_url)}" target="_blank" rel="noopener">X latest ↗</a>`);
+  }
+  return `<div class="card ${p.tier}">
+    <div class="top"><span><span class="who">@${esc(p.username)}</span> <span class="age">· ${esc(p.type||"")} · ${p.age_hours}h old</span></span>
+      <span class="badge">${p.tier.toUpperCase()} · ${p.score}×</span></div>
+    <div class="stats"><span>❤️ <b>${n(p.likes)}</b></span><span>💬 <b>${n(p.comments)}</b></span>
+      ${p.views != null ? `<span>▶️ <b>${n(p.views)}</b></span>` : ""}
+      ${p.gain_per_hour != null ? `<span>⏱ +${n(p.gain_per_hour)}/h</span>` : ""}
+      <span class="age">usual: ${n(p.baseline)}</span></div>
+    ${p.caption ? `<div class="cap">${esc(p.caption)}</div>` : ""}
+    ${p.search_query ? `<div class="q">Search text (${esc(p.search_source)}): <i>${esc(p.search_query)}</i></div>` : ""}
+    <div class="links">${links.join("")}</div></div>`;
+}
+
+function render() {
+  document.querySelectorAll("nav button").forEach(b => b.classList.toggle("on", b.dataset.tab === TAB));
+  const out = document.getElementById("out");
+  if (TAB === "accounts") {
+    out.innerHTML = `<table><tr><th>Account</th><th>Followers</th><th>Usual engagement</th><th>Posts 24h</th><th>Status</th></tr>` +
+      DATA.accounts.map(a => `<tr><td>@${esc(a.username)}</td><td>${n(a.followers)}</td>
+        <td title="${esc(a.baseline_note||"")}">${n(a.baseline)}</td><td>${a.posts_24h ?? "–"}</td>
+        <td class="${a.error ? "err" : ""}">${a.error ? esc(a.error) : "OK"}</td></tr>`).join("") + `</table>`;
+    return;
+  }
+  const posts = TAB === "flagged" ? DATA.posts.filter(p => p.tier !== "normal") : DATA.posts;
+  out.innerHTML = posts.length ? posts.map(card).join("")
+    : `<div class="empty">${TAB === "flagged" ? "Nothing taking off right now." : "No posts in the last " + DATA.window_hours + "h."}</div>`;
+}
+
+document.querySelectorAll("nav button").forEach(b => b.onclick = () => { TAB = b.dataset.tab; render(); });
+
+fetch("data.json?t=" + Date.now()).then(r => r.json()).then(d => {
+  if (!d.generated_at) throw new Error("no scan yet");
+  DATA = d;
+  const t = new Date(d.generated_at);
+  const mins = Math.round((Date.now() - t) / 60000);
+  const flagged = d.posts.filter(p => p.tier !== "normal").length;
+  document.getElementById("meta").textContent =
+    `Updated ${t.toLocaleString()} (${mins} min ago) · ${d.accounts.length} accounts · ${flagged} flagged · ` +
+    `rising ≥ ${d.thresholds.rising}×, viral ≥ ${d.thresholds.viral}× usual`;
+  if (d.stop_reason) document.getElementById("warn").innerHTML = `<div class="warn">Last scan stopped early: ${esc(d.stop_reason)}</div>`;
+  render();
+}).catch(() => { document.getElementById("meta").textContent = "No data yet — the first scan hasn't run."; });
+</script>
+</body>
+</html>
