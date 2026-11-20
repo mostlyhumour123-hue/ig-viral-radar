@@ -269,20 +269,28 @@ def analyse_account(bd, cfg, now):
         elif age_h >= cfg["mature_after_hours"]:
             mature.append(m)
 
-    eng_vals = [engagement(m, cfg) for m in mature]
+    # Many accounts hide like counts: then only comments are reliable.
+    eng_vals = [engagement(m, cfg) for m in mature if m.get("like_count") is not None]
+    com_vals = [m.get("comments_count") or 0 for m in mature]
     view_vals = [m["view_count"] for m in mature if m.get("view_count")]
     if len(eng_vals) >= cfg["min_baseline_posts"]:
         base_eng, baseline_note = statistics.median(eng_vals), f"median of {len(eng_vals)} older posts"
     else:
         base_eng, baseline_note = max(1, followers * 0.01), "estimated (1% of followers) — too few older posts"
     base_eng = max(base_eng, 1)
+    base_com = max(statistics.median(com_vals), 1) if len(com_vals) >= cfg["min_baseline_posts"] else None
     base_views = statistics.median(view_vals) if len(view_vals) >= cfg["min_baseline_posts"] else None
 
     posts = []
     for m in recent:
         curve = age_curve(m["_age_h"])
         eng = engagement(m, cfg)
-        score = eng / (base_eng * curve)
+        likes_hidden = m.get("like_count") is None
+        if likes_hidden and base_com:
+            score = (m.get("comments_count") or 0) / (base_com * curve)
+            eng = round((m.get("comments_count") or 0) * base_eng / base_com)  # comparable size for min filter
+        else:
+            score = eng / (base_eng * curve)
         view_score = None
         if base_views and m.get("view_count"):
             view_score = m["view_count"] / (base_views * curve)
@@ -311,6 +319,7 @@ def analyse_account(bd, cfg, now):
             "score": round(score, 2),
             "view_score": round(view_score, 2) if view_score else None,
             "tier": tier,
+            "likes_hidden": likes_hidden,
             "_image": m.get("thumbnail_url") or m.get("media_url"),
         })
     summary = {"username": bd.get("username"), "name": bd.get("name"), "followers": followers,
