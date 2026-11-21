@@ -36,10 +36,11 @@ ROOT = Path(__file__).resolve().parent
 STATE_FILE = ROOT / "state" / "state.json"
 DATA_FILE = ROOT / "docs" / "data.json"
 ARCHIVE_FILE = ROOT / "docs" / "archive.json"
+THUMB_DIR = ROOT / "docs" / "thumbs"
 
 DEFAULTS = {"scan_every_minutes": 60, "track_hours": 72, "speed_threshold": 4,
             "min_gain_per_hour": 50, "archive_days": 90, "adaptive_bars": True, "list_max": 10,
-            "min_vscore_viral": 55, "min_vscore_rising": 40}
+            "min_vscore_viral": 55, "min_vscore_rising": 40, "thumbs_top_live": 40}
 
 FULL_MEDIA_FIELDS = ("id,caption,media_type,media_product_type,permalink,timestamp,"
                      "like_count,comments_count,view_count,media_url,thumbnail_url")
@@ -60,6 +61,28 @@ def load_json(path, default):
         return json.loads(Path(path).read_text(encoding="utf-8"))
     except (FileNotFoundError, json.JSONDecodeError):
         return default
+
+
+def save_thumb(url, pid):
+    """Save a small JPEG of the post so the dashboard can show it (Instagram's own image
+    links expire after a while). Returns the dashboard-relative path, or None."""
+    path = THUMB_DIR / f"{pid}.jpg"
+    if path.exists():
+        return f"thumbs/{pid}.jpg"
+    if not url:
+        return None
+    try:
+        from io import BytesIO
+        from PIL import Image
+        with urllib.request.urlopen(url, timeout=20) as r:
+            img = Image.open(BytesIO(r.read())).convert("RGB")
+        img.thumbnail((360, 450))
+        THUMB_DIR.mkdir(parents=True, exist_ok=True)
+        img.save(path, "JPEG", quality=72, optimize=True)
+        return f"thumbs/{pid}.jpg"
+    except Exception as e:
+        print(f"  thumbnail failed for {pid}: {e}")
+        return None
 
 
 def save_json(path, obj):
@@ -1054,13 +1077,26 @@ def main():
                 if not p.get("_quiet"):
                     new_alerts.append(p)
                 st["alerted_tier"] = p["tier"]
-        p.pop("_image", None)
         p.pop("_quiet", None)
 
     # Archive: every flagged post, followed to 72h, with 24h / 48h results
     reports = update_archive(archive, tracked, state, cfg, now)
 
     live = [p for p in tracked if p["in_window"]]
+
+    # Thumbnails: flagged/archived posts + the top live posts by Viral Score
+    top_live = {p["id"] for p in sorted(live, key=lambda p: p.get("vscore", 0), reverse=True)[:cfg["thumbs_top_live"]]}
+    for p in tracked:
+        if p["id"] in archive["posts"] or p["id"] in top_live or (p["in_window"] and p["tier"] != "normal"):
+            p["thumb"] = save_thumb(p.get("_image"), p["id"])
+            if p["thumb"] and p["id"] in archive["posts"]:
+                archive["posts"][p["id"]]["thumb"] = p["thumb"]
+        p.pop("_image", None)
+    keep = set(archive["posts"]) | {p["id"] for p in live if p.get("thumb")}
+    if THUMB_DIR.exists():
+        for f in THUMB_DIR.glob("*.jpg"):
+            if f.stem not in keep:
+                f.unlink()
 
     # Leaderboard memory: each post's best score/tier, kept 8 days
     board = state.setdefault("board", {})
