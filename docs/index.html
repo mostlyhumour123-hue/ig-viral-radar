@@ -6,37 +6,50 @@
 <title>IG Viral Radar</title>
 <style>
   :root { --bg:#0f1115; --card:#181b22; --line:#262a33; --text:#e8eaed; --muted:#8b919c;
-          --viral:#ff5a36; --rising:#f5b83d; --normal:#4b5262; --link:#7aa7ff; }
+          --viral:#ff5a36; --rising:#f5b83d; --fizz:#7d8594; --normal:#4b5262; --link:#7aa7ff; --plot:#7aa7ff; }
   @media (prefers-color-scheme: light) {
-    :root { --bg:#f6f7f9; --card:#fff; --line:#e3e6eb; --text:#16181d; --muted:#666d79; --normal:#c3c8d1; --link:#2557d6; }
+    :root { --bg:#f6f7f9; --card:#fff; --line:#e3e6eb; --text:#16181d; --muted:#666d79; --normal:#c3c8d1;
+            --fizz:#9aa1ad; --link:#2557d6; --plot:#2557d6; }
   }
   * { box-sizing:border-box; }
   body { margin:0; font:15px/1.45 system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); }
-  header { padding:20px 20px 8px; max-width:980px; margin:auto; }
+  header, nav, .controls, main { max-width:980px; margin-left:auto; margin-right:auto; padding-left:20px; padding-right:20px; }
+  header { padding-top:20px; padding-bottom:8px; }
   h1 { margin:0; font-size:22px; letter-spacing:-.01em; }
   .sub { color:var(--muted); font-size:13px; margin-top:4px; }
   .warn { background:#ff5a3622; border:1px solid var(--viral); padding:8px 12px; border-radius:8px; margin-top:10px; font-size:13px; }
-  nav { max-width:980px; margin:8px auto 0; padding:0 20px; display:flex; gap:6px; flex-wrap:wrap; }
-  nav button { background:var(--card); color:var(--text); border:1px solid var(--line); border-radius:999px; padding:6px 14px; cursor:pointer; font:inherit; font-size:13px; }
-  nav button.on { border-color:var(--text); font-weight:600; }
-  main { max-width:980px; margin:auto; padding:14px 20px 40px; display:grid; gap:10px; }
+  nav { display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+  nav button, .chip { background:var(--card); color:var(--text); border:1px solid var(--line); border-radius:999px;
+    padding:6px 14px; cursor:pointer; font:inherit; font-size:13px; }
+  nav button.on, .chip.on { border-color:var(--text); font-weight:600; }
+  .controls { display:flex; gap:6px; flex-wrap:wrap; align-items:center; margin-top:12px; }
+  .controls select { margin-left:auto; background:var(--card); color:var(--text); border:1px solid var(--line);
+    border-radius:8px; padding:6px 10px; font:inherit; font-size:13px; }
+  .count { color:var(--muted); font-size:13px; margin-left:4px; }
+  main { padding-top:14px; padding-bottom:40px; display:grid; gap:10px; }
   .card { background:var(--card); border:1px solid var(--line); border-left:4px solid var(--normal); border-radius:10px; padding:12px 14px; }
-  .card.viral { border-left-color:var(--viral); } .card.rising { border-left-color:var(--rising); }
+  .card.viral { border-left-color:var(--viral); } .card.rising { border-left-color:var(--rising); } .card.fizzled { border-left-color:var(--fizz); }
   .top { display:flex; justify-content:space-between; gap:10px; align-items:baseline; flex-wrap:wrap; }
   .who { font-weight:600; } .age { color:var(--muted); font-size:13px; }
-  .badge { font-size:11px; font-weight:700; letter-spacing:.05em; padding:2px 8px; border-radius:999px; background:var(--normal); color:#fff; }
-  .viral .badge { background:var(--viral); } .rising .badge { background:var(--rising); color:#000; }
+  .badge { font-size:11px; font-weight:700; letter-spacing:.04em; padding:2px 8px; border-radius:999px; background:var(--normal); color:#fff; white-space:nowrap; }
+  .viral .badge { background:var(--viral); } .rising .badge { background:var(--rising); color:#000; } .fizzled .badge { background:var(--fizz); }
+  .live .badge { outline:2px solid var(--line); }
   .stats { display:flex; gap:14px; flex-wrap:wrap; margin:6px 0; font-variant-numeric:tabular-nums; font-size:14px; }
   .stats b { font-size:16px; }
   .cap { color:var(--muted); font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
   .q { font-size:13px; margin-top:6px; } .q i { color:var(--text); }
   .links { margin-top:8px; display:flex; gap:14px; font-size:14px; flex-wrap:wrap; }
+  .row { display:grid; grid-template-columns: 1fr minmax(220px, 340px); gap:14px; align-items:center; }
+  @media (max-width: 640px) { .row { grid-template-columns: 1fr; } }
+  svg.chart { width:100%; height:auto; display:block; }
+  svg.chart text { font-size:9px; fill:var(--muted); }
   a { color:var(--link); text-decoration:none; } a:hover { text-decoration:underline; }
   table { width:100%; border-collapse:collapse; background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden; font-size:14px; }
-  th, td { text-align:left; padding:8px 12px; border-bottom:1px solid var(--line); }
+  th, td { text-align:left; padding:8px 12px; border-bottom:1px solid var(--line); font-variant-numeric:tabular-nums; }
   th { color:var(--muted); font-weight:500; font-size:12px; text-transform:uppercase; letter-spacing:.04em; }
   td.err { color:var(--viral); font-size:13px; }
   .empty { color:var(--muted); text-align:center; padding:40px; }
+  .hidden { display:none; }
 </style>
 </head>
 <body>
@@ -47,63 +60,161 @@
 </header>
 <nav>
   <button data-tab="flagged" class="on">🔥 Flagged</button>
-  <button data-tab="all">All posts (24h)</button>
+  <button data-tab="live">Live (24h)</button>
+  <button data-tab="leaders">🏅 Leaderboard</button>
   <button data-tab="accounts">Accounts</button>
 </nav>
+<div class="controls" id="controls"></div>
 <main id="out"></main>
 <script>
-let DATA = null, TAB = "flagged";
-const n = v => v == null ? "–" : v >= 1e6 ? (v/1e6).toFixed(1)+"M" : v >= 1e4 ? (v/1e3).toFixed(1)+"K" : v.toLocaleString();
+let DATA = null, ARCH = null, TAB = "flagged", FILTER = "live", SORT = "recent", PERIOD = "week";
+const n = v => v == null ? "–" : v >= 1e6 ? (v/1e6).toFixed(1)+"M" : v >= 1e4 ? (v/1e3).toFixed(1)+"K" : Math.round(v).toLocaleString();
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const ageH = ts => (Date.now() - Date.parse(String(ts).replace(/\+0000$/, "Z"))) / 36e5;
+const TH = () => (ARCH && ARCH.thresholds) || (DATA && DATA.thresholds) || {rising: 2.5, viral: 5};
 
-function card(p) {
-  const links = [];
-  if (p.permalink) links.push(`<a href="${esc(p.permalink)}" target="_blank" rel="noopener">Open post ↗</a>`);
+function chart(points, firstAge) {
+  const pts = (points || []).filter(p => p[1] != null);
+  if (pts.length < 2) return `<div class="age">Graph appears after a couple of scans.</div>`;
+  const th = TH(), W = 320, H = 110, L = 24, B = 16, T = 6, R = 6;
+  const maxX = Math.max(26, ...pts.map(p => p[0]) ) , maxY = Math.max(th.viral * 1.3, ...pts.map(p => p[1])) * 1.08;
+  const x = v => L + (v / maxX) * (W - L - R), y = v => T + (1 - v / maxY) * (H - T - B);
+  const line = pts.map(p => `${x(p[0]).toFixed(1)},${y(p[1]).toFixed(1)}`).join(" ");
+  const fp = firstAge != null ? pts.reduce((a, b) => Math.abs(b[0] - firstAge) < Math.abs(a[0] - firstAge) ? b : a) : null;
+  const ticks = [0, 24, 48, 72].filter(t => t <= maxX);
+  return `<svg class="chart" viewBox="0 0 ${W} ${H}" role="img" aria-label="score over time">
+    <rect x="${L}" y="${T}" width="${W-L-R}" height="${Math.max(0, y(th.viral) - T)}" fill="var(--viral)" opacity=".08"/>
+    <line x1="${L}" x2="${W-R}" y1="${y(th.viral)}" y2="${y(th.viral)}" stroke="var(--viral)" stroke-dasharray="4 3" stroke-width="1"/>
+    <line x1="${L}" x2="${W-R}" y1="${y(th.rising)}" y2="${y(th.rising)}" stroke="var(--rising)" stroke-dasharray="4 3" stroke-width="1"/>
+    <text x="${W-R}" y="${y(th.viral)-3}" text-anchor="end">viral ${th.viral}×</text>
+    <text x="${L+4}" y="${y(th.rising) - 3 > y(th.viral) + 8 ? y(th.rising) - 3 : y(th.rising) + 9}">rising ${th.rising}×</text>
+    <line x1="${L}" x2="${L}" y1="${T}" y2="${H-B}" stroke="var(--line)"/>
+    <line x1="${L}" x2="${W-R}" y1="${H-B}" y2="${H-B}" stroke="var(--line)"/>
+    ${ticks.map(t => `<text x="${x(t)}" y="${H-4}" text-anchor="middle">${t}h</text>`).join("")}
+    <text x="${L-4}" y="${y(0)}" text-anchor="end">0</text>
+    <text x="${L-4}" y="${y(maxY/1.08)+3}" text-anchor="end">${Math.round(maxY/1.08)}×</text>
+    <polyline points="${line}" fill="none" stroke="var(--plot)" stroke-width="2" stroke-linejoin="round"/>
+    ${fp ? `<circle cx="${x(fp[0])}" cy="${y(fp[1])}" r="4" fill="none" stroke="var(--viral)" stroke-width="1.5"/>` : ""}
+  </svg>`;
+}
+
+function links(p) {
+  const l = [];
+  if (p.permalink) l.push(`<a href="${esc(p.permalink)}" target="_blank" rel="noopener">Open post ↗</a>`);
   if (p.x_search_url) {
-    links.push(`<a href="${esc(p.x_search_url)}" target="_blank" rel="noopener">Search on X ↗</a>`);
-    links.push(`<a href="${esc(p.x_search_latest_url)}" target="_blank" rel="noopener">X latest ↗</a>`);
+    l.push(`<a href="${esc(p.x_search_url)}" target="_blank" rel="noopener">Search on X ↗</a>`);
+    l.push(`<a href="${esc(p.x_search_latest_url)}" target="_blank" rel="noopener">X latest ↗</a>`);
   }
+  return `<div class="links">${l.join("")}</div>`;
+}
+const likesTxt = (o, hidden) => hidden ? "hidden" : n(o.likes);
+
+function flaggedCard(e, i) {
+  const r = e.result_48 || e.result_24, last = e.last || {}, age = ageH(e.timestamp), live = !e.result_24;
+  const cls = live ? `${e.peak_tier} live` : r.verdict;
+  const badge = live ? `LIVE · ${(last.score ?? 0)}×` : esc(r.label.replace(/^\S+\s/, "").toUpperCase());
+  return `<div class="card ${cls}"><div class="row"><div>
+    <div class="top"><span><b>#${i}</b> <span class="who">@${esc(e.username)}</span>
+      <span class="age">· ${esc(e.type || "")} · ${age.toFixed(0)}h ago</span></span>
+      <span class="badge">${badge}</span></div>
+    <div class="stats"><span>Peak <b>${e.peak_score}×</b> <span class="age">at ${e.peak_age}h</span></span>
+      <span>Now <b>${last.score ?? "–"}×</b></span>
+      <span>❤️ <b>${likesTxt(last, e.likes_hidden)}</b></span><span>💬 <b>${n(last.comments)}</b></span>
+      ${last.views != null ? `<span>▶️ <b>${n(last.views)}</b></span>` : ""}</div>
+    <div class="age">Flagged ${esc(e.first_tier)} at ${e.first_flag_age}h${e.flag_reason === "speed" ? " (speed)" : ""}
+      ${e.result_24 ? ` · 24h: ${esc(e.result_24.label)} (${e.result_24.score}×)` : ""}
+      ${e.result_48 ? ` · 48h: ${esc(e.result_48.label)} (${e.result_48.score}×)` : ""}</div>
+    ${e.caption ? `<div class="cap">${esc(e.caption)}</div>` : ""}
+    ${e.search_query ? `<div class="q">Search text (${esc(e.search_source)}): <i>${esc(e.search_query)}</i></div>` : ""}
+    ${links(e)}</div>
+    <div>${chart(e.points, e.first_flag_age)}</div></div></div>`;
+}
+
+function liveCard(p, i) {
   return `<div class="card ${p.tier}">
-    <div class="top"><span><span class="who">@${esc(p.username)}</span> <span class="age">· ${esc(p.type||"")} · ${p.age_hours}h old</span></span>
+    <div class="top"><span><b>#${i}</b> <span class="who">@${esc(p.username)}</span> <span class="age">· ${esc(p.type||"")} · ${p.age_hours}h old</span></span>
       <span class="badge">${p.tier.toUpperCase()} · ${p.score}×</span></div>
-    <div class="stats"><span>❤️ <b>${n(p.likes)}</b></span><span>💬 <b>${n(p.comments)}</b></span>
+    <div class="stats"><span>❤️ <b>${likesTxt(p, p.likes_hidden)}</b></span><span>💬 <b>${n(p.comments)}</b></span>
       ${p.views != null ? `<span>▶️ <b>${n(p.views)}</b></span>` : ""}
-      ${p.gain_per_hour != null ? `<span>⏱ +${n(p.gain_per_hour)}/h</span>` : ""}
+      ${p.gain_per_hour != null ? `<span>⏱ +${n(p.gain_per_hour)}/h${p.speed != null ? ` (${p.speed}× pace)` : ""}</span>` : ""}
       <span class="age">usual: ${n(p.baseline)}</span></div>
     ${p.caption ? `<div class="cap">${esc(p.caption)}</div>` : ""}
     ${p.search_query ? `<div class="q">Search text (${esc(p.search_source)}): <i>${esc(p.search_query)}</i></div>` : ""}
-    <div class="links">${links.join("")}</div></div>`;
+    ${links(p)}</div>`;
+}
+
+const FILTERS = {
+  live:   ["⏳ Live (<24h)", e => ageH(e.timestamp) < 24],
+  d2448:  ["24–48h", e => { const a = ageH(e.timestamp); return a >= 24 && a < 48; }],
+  still:  ["🔥 Still viral 48h+", e => e.result_48 && e.result_48.verdict === "viral"],
+  viral:  ["Went viral", e => e.result_24 && e.result_24.verdict === "viral"],
+  rising: ["Held up", e => e.result_24 && e.result_24.verdict === "rising"],
+  fizzled:["💤 Fizzled", e => e.result_24 && e.result_24.verdict === "fizzled"],
+  all:    ["All", e => true],
+};
+const SORTS = {
+  recent: ["Most recent", (a, b) => Date.parse(b.first_flagged_at) - Date.parse(a.first_flagged_at)],
+  peak:   ["Highest peak", (a, b) => b.peak_score - a.peak_score],
+  final:  ["Best 24h result", (a, b) => ((b.result_24||b.last||{}).score||0) - ((a.result_24||a.last||{}).score||0)],
+  now:    ["Hottest right now", (a, b) => ((b.last||{}).score||0) - ((a.last||{}).score||0)],
+};
+
+function controls() {
+  const c = document.getElementById("controls");
+  if (TAB === "flagged") {
+    const items = Object.values((ARCH && ARCH.posts) || {});
+    c.innerHTML = Object.entries(FILTERS).map(([k, [label, fn]]) =>
+      `<button class="chip ${FILTER===k?"on":""}" data-f="${k}">${label} <span class="count">${items.filter(fn).length}</span></button>`).join("")
+      + `<select id="sort">${Object.entries(SORTS).map(([k,[l]]) => `<option value="${k}" ${SORT===k?"selected":""}>${l}</option>`).join("")}</select>`;
+    c.querySelectorAll("[data-f]").forEach(b => b.onclick = () => { FILTER = b.dataset.f; render(); });
+    c.querySelector("#sort").onchange = ev => { SORT = ev.target.value; render(); };
+  } else if (TAB === "leaders") {
+    c.innerHTML = ["day","week"].map(k => `<button class="chip ${PERIOD===k?"on":""}" data-p="${k}">${k === "day" ? "Today" : "Last 7 days"}</button>`).join("");
+    c.querySelectorAll("[data-p]").forEach(b => b.onclick = () => { PERIOD = b.dataset.p; render(); });
+  } else c.innerHTML = "";
 }
 
 function render() {
   document.querySelectorAll("nav button").forEach(b => b.classList.toggle("on", b.dataset.tab === TAB));
+  controls();
   const out = document.getElementById("out");
-  if (TAB === "accounts") {
+  if (TAB === "flagged") {
+    const items = Object.values((ARCH && ARCH.posts) || {}).filter(FILTERS[FILTER][1]).sort(SORTS[SORT][1]);
+    out.innerHTML = items.length ? items.slice(0, 200).map((e, i) => flaggedCard(e, i + 1)).join("")
+      : `<div class="empty">No flagged posts here yet. They're kept as soon as a post turns rising or viral.</div>`;
+  } else if (TAB === "live") {
+    const posts = (DATA && DATA.posts) || [];
+    out.innerHTML = posts.length ? posts.map((p, i) => liveCard(p, i + 1)).join("") : `<div class="empty">No posts in the last 24h.</div>`;
+  } else if (TAB === "leaders") {
+    const rows = ((DATA && DATA.leaderboard) || {})[PERIOD] || [];
+    const medal = i => ["🥇","🥈","🥉"][i] || `#${i+1}`;
+    out.innerHTML = rows.length ? `<table><tr><th></th><th>Account</th><th>🔥 Viral</th><th>📈 Rising</th><th>Avg</th><th>Best</th><th>Posts</th></tr>` +
+      rows.map((r, i) => `<tr><td>${medal(i)}</td><td>@${esc(r.username)}</td><td>${r.viral}</td><td>${r.rising}</td>
+        <td>${r.avg.toFixed(1)}×</td><td>${r.best.toFixed(1)}×</td><td>${r.posts}</td></tr>`).join("") + `</table>`
+      : `<div class="empty">The leaderboard fills up as scans run.</div>`;
+  } else {
+    const acc = (DATA && DATA.accounts) || [];
     out.innerHTML = `<table><tr><th>Account</th><th>Followers</th><th>Usual engagement</th><th>Posts 24h</th><th>Status</th></tr>` +
-      DATA.accounts.map(a => `<tr><td>@${esc(a.username)}</td><td>${n(a.followers)}</td>
+      acc.map(a => `<tr><td>@${esc(a.username)}</td><td>${n(a.followers)}</td>
         <td title="${esc(a.baseline_note||"")}">${n(a.baseline)}</td><td>${a.posts_24h ?? "–"}</td>
         <td class="${a.error ? "err" : ""}">${a.error ? esc(a.error) : "OK"}</td></tr>`).join("") + `</table>`;
-    return;
   }
-  const posts = TAB === "flagged" ? DATA.posts.filter(p => p.tier !== "normal") : DATA.posts;
-  out.innerHTML = posts.length ? posts.map(card).join("")
-    : `<div class="empty">${TAB === "flagged" ? "Nothing taking off right now." : "No posts in the last " + DATA.window_hours + "h."}</div>`;
 }
 
 document.querySelectorAll("nav button").forEach(b => b.onclick = () => { TAB = b.dataset.tab; render(); });
 
-fetch("data.json?t=" + Date.now()).then(r => r.json()).then(d => {
-  if (!d.generated_at) throw new Error("no scan yet");
-  DATA = d;
-  const t = new Date(d.generated_at);
-  const mins = Math.round((Date.now() - t) / 60000);
-  const flagged = d.posts.filter(p => p.tier !== "normal").length;
+const get = f => fetch(f + "?t=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null);
+Promise.all([get("data.json"), get("archive.json")]).then(([d, a]) => {
+  DATA = d; ARCH = a || {posts: {}};
+  if (!d || !d.generated_at) { document.getElementById("meta").textContent = "No data yet — the first scan hasn't run."; render(); return; }
+  const t = new Date(d.generated_at), mins = Math.round((Date.now() - t) / 60000);
+  const liveFlagged = (d.posts || []).filter(p => p.tier !== "normal").length;
   document.getElementById("meta").textContent =
-    `Updated ${t.toLocaleString()} (${mins} min ago) · ${d.accounts.length} accounts · ${flagged} flagged · ` +
-    `rising ≥ ${d.thresholds.rising}×, viral ≥ ${d.thresholds.viral}× usual`;
+    `Updated ${t.toLocaleString()} (${mins} min ago) · ${d.accounts.length} accounts · ${liveFlagged} hot now · ` +
+    `${Object.keys(ARCH.posts || {}).length} in archive · rising ≥ ${d.thresholds.rising}×, viral ≥ ${d.thresholds.viral}×`;
   if (d.stop_reason) document.getElementById("warn").innerHTML = `<div class="warn">Last scan stopped early: ${esc(d.stop_reason)}</div>`;
   render();
-}).catch(() => { document.getElementById("meta").textContent = "No data yet — the first scan hasn't run."; });
+});
 </script>
 </body>
 </html>
