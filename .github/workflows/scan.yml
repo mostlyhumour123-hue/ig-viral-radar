@@ -91,7 +91,7 @@ jobs:
         run: |
           git config user.name "ig-scan-bot"
           git config user.email "ig-scan-bot@users.noreply.github.com"
-          git add docs/data.json docs/archive.json state/state.json config.json accounts.txt
+          git add -A docs state/state.json config.json accounts.txt
           git diff --cached --quiet && exit 0
           git commit -q -m "scan $(date -u +%Y-%m-%dT%H:%MZ)"
           for i in 1 2 3; do git pull -q --rebase -X theirs origin main && git push -q && exit 0; sleep 5; done
