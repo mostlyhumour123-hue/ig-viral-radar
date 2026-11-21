@@ -266,11 +266,21 @@ def expected_rate(base, age_h):
 
 
 def viral_score(p):
-    """0-100. Breakout (x usual) matters most; real size and momentum are sanity checks.
+    """0-100. Breakout (vs this account's own bars) matters most; real size and momentum are sanity checks.
     Weights are starting guesses, tuned on real data."""
     import math
     cl = lambda x: max(0.0, min(1.0, x))
-    breakout = cl(math.log2(max(p["score"], 1)) / 5)                       # 32x usual = full marks
+    # Breakout is measured against this account's own bars, so accounts that often have huge
+    # hits need a bigger hit to score high: rising bar -> 0.45, viral bar -> 0.75, 6x viral bar -> 1.
+    rb, vb = (p.get("bars") or [2.5, 5])
+    rb, vb = max(rb, 1.01), max(vb, rb * 1.01)
+    x = max(p["score"], 1)
+    if x <= rb:
+        breakout = 0.45 * math.log(x) / math.log(rb)
+    elif x <= vb:
+        breakout = 0.45 + 0.30 * math.log(x / rb) / math.log(vb / rb)
+    else:
+        breakout = 0.75 + 0.25 * min(1.0, math.log(x / vb) / math.log(6))
     if p.get("likes_hidden"):
         real = (p.get("comments") or 0) * 15                               # rough likes-equivalent
     else:
