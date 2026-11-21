@@ -67,7 +67,7 @@
 <div class="controls" id="controls"></div>
 <main id="out"></main>
 <script>
-let DATA = null, ARCH = null, TAB = "flagged", FILTER = "live", SORT = "recent", PERIOD = "week";
+let DATA = null, ARCH = null, TAB = "flagged", FILTER = "live", SORT = "vscore", PERIOD = "week";
 const n = v => v == null ? "–" : v >= 1e6 ? (v/1e6).toFixed(1)+"M" : v >= 1e4 ? (v/1e3).toFixed(1)+"K" : Math.round(v).toLocaleString();
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const ageH = ts => (Date.now() - Date.parse(String(ts).replace(/\+0000$/, "Z"))) / 36e5;
@@ -117,7 +117,7 @@ function flaggedCard(e, i) {
     <div class="top"><span><b>#${i}</b> <span class="who">@${esc(e.username)}</span>
       <span class="age">· ${esc(e.type || "")} · ${age.toFixed(0)}h ago</span></span>
       <span class="badge">${badge}</span></div>
-    <div class="stats"><span>Peak <b>${e.peak_score}×</b> <span class="age">at ${e.peak_age}h</span></span>
+    <div class="stats">${e.peak_vscore != null ? `<span>⭐ <b>${e.peak_vscore}</b></span>` : ""}<span>Peak <b>${e.peak_score}×</b> <span class="age">at ${e.peak_age}h</span></span>
       <span>Now <b>${last.score ?? "–"}×</b></span>
       <span>❤️ <b>${likesTxt(last, e.likes_hidden)}</b></span><span>💬 <b>${n(last.comments)}</b></span>
       ${last.views != null ? `<span>▶️ <b>${n(last.views)}</b></span>` : ""}</div>
@@ -133,8 +133,8 @@ function flaggedCard(e, i) {
 function liveCard(p, i) {
   return `<div class="card ${p.tier}">
     <div class="top"><span><b>#${i}</b> <span class="who">@${esc(p.username)}</span> <span class="age">· ${esc(p.type||"")} · ${p.age_hours}h old</span></span>
-      <span class="badge">${p.tier.toUpperCase()} · ${p.score}×</span></div>
-    <div class="stats"><span>❤️ <b>${likesTxt(p, p.likes_hidden)}</b></span><span>💬 <b>${n(p.comments)}</b></span>
+      <span class="badge">${p.tier.toUpperCase()} · ⭐ ${p.vscore ?? "–"}</span></div>
+    <div class="stats"><span><b>${p.score}×</b> <span class="age">usual</span></span><span>❤️ <b>${likesTxt(p, p.likes_hidden)}</b></span><span>💬 <b>${n(p.comments)}</b></span>
       ${p.views != null ? `<span>▶️ <b>${n(p.views)}</b></span>` : ""}
       ${p.gain_per_hour != null ? `<span>⏱ +${n(p.gain_per_hour)}/h${p.speed != null ? ` (${p.speed}× pace)` : ""}</span>` : ""}
       <span class="age">usual: ${n(p.baseline)}</span></div>
@@ -153,8 +153,9 @@ const FILTERS = {
   all:    ["All", e => true],
 };
 const SORTS = {
+  vscore: ["Highest ⭐ Viral Score", (a, b) => (b.peak_vscore || 0) - (a.peak_vscore || 0)],
   recent: ["Most recent", (a, b) => Date.parse(b.first_flagged_at) - Date.parse(a.first_flagged_at)],
-  peak:   ["Highest peak", (a, b) => b.peak_score - a.peak_score],
+  peak:   ["Highest × usual", (a, b) => b.peak_score - a.peak_score],
   final:  ["Best 24h result", (a, b) => ((b.result_24||b.last||{}).score||0) - ((a.result_24||a.last||{}).score||0)],
   now:    ["Hottest right now", (a, b) => ((b.last||{}).score||0) - ((a.last||{}).score||0)],
 };
