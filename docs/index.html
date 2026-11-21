@@ -76,6 +76,34 @@
   #modal iframe { width:100%; height:min(720px, 80vh); border:0; display:block; background:#fff; border-radius:0 0 12px 12px; }
   #modal .bar { display:flex; justify-content:space-between; align-items:center; padding:8px 12px; font-size:14px; }
   #modal button { background:none; border:0; color:var(--text); font-size:22px; cursor:pointer; line-height:1; }
+  .seg { display:inline-flex; background:var(--line); border-radius:12px; padding:3px; gap:3px; }
+  .seg button { border:0; background:transparent; color:var(--text); font:inherit; font-weight:700; padding:10px 22px; border-radius:9px; cursor:pointer; min-height:44px; }
+  .seg button.on { background:var(--text); color:var(--bg); }
+  .lbl { font-size:11px; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); margin:14px 0 6px; }
+  .pages { display:flex; gap:8px; flex-wrap:wrap; }
+  .pg { background:var(--card); color:var(--text); border:1.5px solid var(--line); border-radius:12px; padding:8px 14px; cursor:pointer; font:inherit; text-align:left; min-height:48px; }
+  .pg.on { border-color:var(--viral); background:var(--viral); color:#fff; }
+  .pg small { display:block; font-size:12px; opacity:.8; }
+  .bar2 { display:flex; gap:8px; flex-wrap:wrap; align-items:center; background:var(--card); border:1px solid var(--line); border-radius:10px; padding:8px 10px; font-size:13px; margin-top:10px; }
+  .mpg { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:12px; }
+  .mc { background:var(--card); border:1px solid var(--line); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; min-width:0; }
+  .mc .im { position:relative; aspect-ratio:4/5; background:var(--line); cursor:pointer; }
+  .mc .im img { width:100%; height:100%; object-fit:cover; display:block; }
+  .mc .im .none { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:13px; }
+  .mc .tag { position:absolute; font-size:11px; font-weight:700; padding:3px 7px; border-radius:6px; color:#fff; background:rgba(0,0,0,.72); }
+  .mc .b { padding:8px 10px 10px; display:flex; flex-direction:column; gap:5px; font-size:13px; min-width:0; }
+  .mc .cp { color:var(--muted); font-size:12px; overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+  .use { border:1px solid var(--line); background:transparent; color:var(--text); border-radius:8px; padding:7px; cursor:pointer; font:inherit; font-size:13px; font-weight:600; }
+  .use.on { background:var(--text); color:var(--bg); }
+  .tray { position:sticky; bottom:10px; background:var(--text); color:var(--bg); border-radius:12px; padding:10px 12px; display:flex; gap:8px; flex-wrap:wrap; align-items:center; justify-content:space-between; z-index:3; }
+  .tray button { border:0; border-radius:8px; padding:8px 12px; font:inherit; font-weight:700; cursor:pointer; }
+  .mgr { background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:8px; }
+  .mgr .row { border:1px solid var(--line); border-radius:8px; padding:8px; font-size:13px; }
+  .mgr label { margin-right:8px; white-space:nowrap; }
+  .cmds { white-space:pre-wrap; font-family:ui-monospace,monospace; font-size:12px; background:var(--bg); border:1px solid var(--line); border-radius:8px; padding:8px; }
+  @media (max-width:640px) { .mpg { grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+    .seg.fix { position:fixed; left:12px; right:12px; bottom:12px; z-index:5; display:flex; box-shadow:0 6px 24px rgba(0,0,0,.35); } .seg.fix button { flex:1; }
+    main { padding-bottom:90px; } }
 </style>
 </head>
 <body>
@@ -85,7 +113,8 @@
   <div id="warn"></div>
 </header>
 <nav>
-  <button data-tab="flagged" class="on">🔥 Flagged</button>
+  <button data-tab="mypages" class="on">📱 My pages</button>
+  <button data-tab="flagged">🔥 Flagged</button>
   <button data-tab="live">Live (24h)</button>
   <button data-tab="leaders">🏅 Leaderboard</button>
   <button data-tab="accounts">Accounts</button>
@@ -94,7 +123,7 @@
 <main id="out"></main>
 <div id="modal" role="dialog" aria-modal="true"><div class="box"><div class="bar"><span id="mtitle"></span><button aria-label="Close" onclick="closeModal()">×</button></div><div id="mbody"></div></div></div>
 <script>
-let DATA = null, ARCH = null, TAB = "flagged", FILTER = "live", SORT = "vscore", PERIOD = "week", VIEW = "list";
+let DATA = null, ARCH = null, TAB = "mypages", FILTER = "live", SORT = "vscore", PERIOD = "week", VIEW = "list";
 function embedUrl(link) { const m = String(link || "").match(/instagram\.com\/(p|reel|tv)\/([^/?#]+)/); return m ? `https://www.instagram.com/${m[1]}/${m[2]}/embed/` : null; }
 function openPost(i) { const p = window.__items[i]; if (!p) return; const u = embedUrl(p.permalink);
   document.getElementById("mtitle").innerHTML = `@${esc(p.username)} · ⭐ ${p.vscore ?? p.peak_vscore ?? "–"} · <a href="${esc(p.permalink)}" target="_blank" rel="noopener">Open in Instagram ↗</a>`;
@@ -237,6 +266,7 @@ function render() {
   const out = document.getElementById("out");
   window.__items = [];
   out.classList.toggle("grid", VIEW === "grid" && (TAB === "flagged" || TAB === "live"));
+  if (TAB === "mypages") { out.classList.remove("grid"); out.innerHTML = myPages(); bindMy(); return; }
   if (TAB === "flagged") {
     const items = Object.values((ARCH && ARCH.posts) || {}).filter(FILTERS[FILTER][1]).sort(SORTS[SORT][1]);
     if (VIEW === "grid" && items.length) { out.innerHTML = items.slice(0, 200).map((e, i) => { const r = e.result_48 || e.result_24;
@@ -264,6 +294,79 @@ function render() {
 }
 
 document.querySelectorAll("nav button").forEach(b => b.onclick = () => { TAB = b.dataset.tab; render(); });
+
+// ---------------- My pages
+let MP = { type: "REELS", page: null, only: null, sort: "vscore", hide: true, manage: false, edits: {} };
+const LS = { get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } },
+             set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
+const kindOf = p => p.kind || (p.type === "REELS" ? "REELS" : "FEED");
+const pagesCfg = () => (DATA && DATA.my_pages) || {};
+const inPage = (pg, u) => ((pagesCfg()[pg] || {}).accounts || []).map(a => a.toLowerCase()).includes((u || "").toLowerCase());
+function myPages() {
+  const P = pagesCfg(), names = Object.keys(P);
+  if (!names.length) return `<div class="empty">No pages yet. In Telegram send <b>/mypage Penne @penne_instagram</b>, then <b>/assign fboy Penne</b>.</div>`;
+  if (!MP.page || !P[MP.page]) MP.page = names[0];
+  const posts = (DATA.posts || []).filter(p => kindOf(p) === MP.type);
+  const short = LS.get("igr_short", {}), mine = short[MP.page] || [];
+  const hot = pg => posts.filter(p => inPage(pg, p.username) && p.tier !== "normal").length;
+  const accs = (P[MP.page].accounts || []);
+  let list = posts.filter(p => inPage(MP.page, p.username) && (!MP.only || p.username === MP.only)
+    && !(MP.hide && (p.posted_on || []).includes(MP.page)));
+  const tr = p => (p.also_on || []).length;
+  list.sort(MP.sort === "new" ? (a, b) => a.age_hours - b.age_hours : MP.sort === "com" ? (a, b) => (b.comments||0) - (a.comments||0)
+    : MP.sort === "tr" ? (a, b) => tr(b) - tr(a) || b.vscore - a.vscore : (a, b) => (tr(b) > 0) - (tr(a) > 0) || b.vscore - a.vscore);
+  const e = P[MP.page];
+  let h = `<div><div class="lbl">1 · Format</div><div class="seg fix">${[["REELS","🎬 Reels"],["FEED","🖼 Feed posts"]].map(([k,l]) =>
+      `<button data-mt="${k}" class="${MP.type===k?"on":""}">${l} <span class="count">${(DATA.posts||[]).filter(p=>kindOf(p)===k).length}</span></button>`).join("")}</div></div>
+    <div><div class="lbl">2 · My page</div><div class="pages">${names.map(n => `<button class="pg ${MP.page===n?"on":""}" data-mp="${esc(n)}"><b>${esc(n)}</b><small>${(P[n].accounts||[]).length} tracked · ${hot(n)} hot</small></button>`).join("")}
+      <button class="pg" data-mgr="1"><b>${MP.manage ? "Close" : "⚙ Manage"}</b><small>pages &amp; accounts</small></button></div></div>`;
+  if (MP.manage) h += manager(P, names);
+  h += `<div><div class="lbl">3 · Posts</div><div class="controls" style="padding:0;margin:0">
+      <button class="chip ${!MP.only?"on":""}" data-only="">All ${accs.length}</button>${accs.map(a => `<button class="chip ${MP.only===a?"on":""}" data-only="${esc(a)}">@${esc(a)}</button>`).join("")}
+      <select id="mpsort">${[["vscore","⭐ Viral Score"],["tr","🔁 On many pages"],["new","Newest"],["com","Most comments"]].map(([k,l]) => `<option value="${k}" ${MP.sort===k?"selected":""}>${l}</option>`).join("")}</select></div>
+    <div class="bar2"><b>Telegram alerts:</b> ${e.alerts === false ? "off" : `on, ⭐${e.min ?? 55}+`} <span class="count">(change: /pagealert ${esc(MP.page)} 60 · off)</span>
+      <label style="margin-left:auto"><input type="checkbox" id="mphide" ${MP.hide?"checked":""}> Hide already posted on ${esc(MP.page)}</label>
+      ${e.ig ? "" : `<span class="count">· needs /mypage ${esc(MP.page)} @username</span>`}
+      <span class="count">· ${MP.type === "REELS" ? "Reels ranked vs each account’s own reels" : "Feed ranked vs each account’s own feed posts"}</span></div></div>`;
+  window.__items = [];
+  h += list.length ? `<div class="mpg">${list.slice(0, 120).map((p, i) => { const idx = reg(p), on = mine.includes(p.id);
+      const col = p.vscore >= 70 ? "var(--viral)" : p.vscore >= 40 ? "#b45309" : "#555";
+      return `<div class="mc"><div class="im" onclick="openPost(${idx})">${p.thumb ? `<img src="${esc(p.thumb)}" alt="post by @${esc(p.username)}" loading="lazy">` : `<div class="none">▶ View post</div>`}
+        <span class="tag" style="top:8px;left:8px;background:${col}">⭐ ${p.vscore}${p.tier !== "normal" ? " · " + p.tier : ""}</span><span class="tag" style="top:8px;right:8px">#${i+1}</span>
+        ${tr(p) ? `<span class="tag" style="bottom:8px;left:8px;background:#1d4ed8">🔁 also on ${tr(p)} page${tr(p)>1?"s":""}</span>` : ""}</div>
+        <div class="b"><div style="display:flex;justify-content:space-between;gap:6px"><b style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">@${esc(p.username)}</b><span class="count">${Math.round(p.age_hours)}h</span></div>
+        <div class="cp">${esc(p.search_query || p.caption || "")}</div>
+        <div class="count">${p.likes_hidden ? "" : "❤️ " + n(p.likes) + " · "}💬 ${n(p.comments)}${p.views != null ? " · ▶️ " + n(p.views) : ""}</div>
+        <button class="use ${on?"on":""}" data-use="${esc(p.id)}">${on ? "✓ Shortlisted" : "Use this"}</button></div></div>`; }).join("")}</div>`
+    : `<div class="empty">${accs.length ? `No ${MP.type === "REELS" ? "reels" : "feed posts"} from ${esc(MP.page)}'s accounts in the last 24h.` : `${esc(MP.page)} has no tracked accounts yet — open ⚙ Manage.`}</div>`;
+  if (mine.length) h += `<div class="tray"><b>${mine.length} shortlisted for ${esc(MP.page)}</b><span><button data-clear="1">Clear</button> <button data-copy="1">Copy links for Metricool</button></span></div>`;
+  return h;
+}
+function manager(P, names) {
+  const all = ((DATA.accounts || []).map(a => a.username)).sort();
+  const has = (pg, a) => MP.edits[pg + "|" + a] ?? inPage(pg, a);
+  const cmds = Object.entries(MP.edits).filter(([k, v]) => v !== inPage(...k.split("|"))).map(([k, v]) => { const [pg, a] = k.split("|"); return `/${v ? "assign" : "unassign"} ${a} ${pg}`; });
+  return `<div class="mgr">${all.map(a => `<div class="row"><b>@${esc(a)}</b><br>${names.map(pg =>
+      `<label><input type="checkbox" data-as="${esc(pg)}|${esc(a)}" ${has(pg, a) ? "checked" : ""}> ${esc(pg)}</label>`).join("")}</div>`).join("")}</div>
+    ${cmds.length ? `<div class="bar2" style="flex-direction:column;align-items:stretch"><b>Send these to the bot in Telegram to save:</b><div class="cmds" id="cmds">${esc(cmds.join("\n"))}</div>
+      <button class="use" data-copycmd="1">Copy commands</button></div>` : `<div class="count" style="margin-top:6px">Tick boxes to change groupings — you'll get the Telegram commands to save them. Add a page: /mypage Name @instagram</div>`}`;
+}
+function bindMy() {
+  const o = document.getElementById("out"), q = (sel, f) => o.querySelectorAll(sel).forEach(b => b.onclick = () => f(b));
+  q("[data-mt]", b => { MP.type = b.dataset.mt; render(); });
+  q("[data-mp]", b => { MP.page = b.dataset.mp; MP.only = null; render(); });
+  q("[data-mgr]", () => { MP.manage = !MP.manage; render(); });
+  q("[data-only]", b => { MP.only = b.dataset.only || null; render(); });
+  q("[data-as]", b => { MP.edits[b.dataset.as] = b.checked; render(); });
+  q("[data-use]", b => { const s = LS.get("igr_short", {}), l = s[MP.page] || []; const id = b.dataset.use;
+    s[MP.page] = l.includes(id) ? l.filter(x => x !== id) : l.concat([id]); LS.set("igr_short", s); render(); });
+  q("[data-clear]", () => { const s = LS.get("igr_short", {}); s[MP.page] = []; LS.set("igr_short", s); render(); });
+  q("[data-copy]", () => { const ids = (LS.get("igr_short", {})[MP.page] || []); const ps = (DATA.posts || []).filter(p => ids.includes(p.id));
+    navigator.clipboard && navigator.clipboard.writeText(ps.map(p => p.permalink + (p.search_query ? "  —  " + p.search_query : "")).join("\n")); });
+  q("[data-copycmd]", () => { navigator.clipboard && navigator.clipboard.writeText(document.getElementById("cmds").textContent); });
+  const s = document.getElementById("mpsort"); if (s) s.onchange = ev => { MP.sort = ev.target.value; render(); };
+  const hcb = document.getElementById("mphide"); if (hcb) hcb.onchange = ev => { MP.hide = ev.target.checked; render(); };
+}
 
 const get = f => fetch(f + "?t=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null);
 Promise.all([get("data.json"), get("archive.json")]).then(([d, a]) => {
