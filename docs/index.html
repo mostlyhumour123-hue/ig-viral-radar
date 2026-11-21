@@ -337,6 +337,7 @@ function myPages() {
         <div class="b"><div style="display:flex;justify-content:space-between;gap:6px"><b style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">@${esc(p.username)}</b><span class="count">${Math.round(p.age_hours)}h</span></div>
         <div class="cp">${esc(p.search_query || p.caption || "")}</div>
         <div class="count">${p.likes_hidden ? "" : "❤️ " + n(p.likes) + " · "}💬 ${n(p.comments)}${p.views != null ? " · ▶️ " + n(p.views) : ""}</div>
+        ${p.x_search_url ? `<a class="use" style="text-align:center;text-decoration:none" href="${esc(p.x_search_url)}" target="_blank" rel="noopener">𝕏 Search on X</a>` : ""}
         <button class="use ${on?"on":""}" data-use="${esc(p.id)}">${on ? "✓ Shortlisted" : "Use this"}</button></div></div>`; }).join("")}</div>`
     : `<div class="empty">${accs.length ? `No ${MP.type === "REELS" ? "reels" : "feed posts"} from ${esc(MP.page)}'s accounts in the last 24h.` : `${esc(MP.page)} has no tracked accounts yet — open ⚙ Manage.`}</div>`;
   if (mine.length) h += `<div class="tray"><b>${mine.length} shortlisted for ${esc(MP.page)}</b><span><button data-clear="1">Clear</button> <button data-copy="1">Copy links for Metricool</button></span></div>`;
