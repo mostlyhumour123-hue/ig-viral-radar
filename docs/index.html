@@ -50,6 +50,25 @@
   td.err { color:var(--viral); font-size:13px; }
   .empty { color:var(--muted); text-align:center; padding:40px; }
   .hidden { display:none; }
+  .withimg { display:grid; grid-template-columns: 110px 1fr; gap:14px; align-items:start; }
+  @media (max-width: 640px) { .withimg { grid-template-columns: 84px 1fr; gap:10px; } }
+  .thumb { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:8px; background:var(--line); cursor:pointer; display:block; }
+  .thumb.none { display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:11px; text-align:center; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); gap:10px; }
+  .tile { position:relative; border-radius:10px; overflow:hidden; background:var(--card); border:1px solid var(--line); cursor:pointer; }
+  .tile img, .tile .thumb { aspect-ratio:4/5; width:100%; object-fit:cover; display:block; border-radius:0; }
+  .tile .thumb.none { display:flex; align-items:center; justify-content:center; font-size:13px; }
+  .tile .ov { position:absolute; left:0; right:0; bottom:0; padding:8px; background:linear-gradient(transparent, rgba(0,0,0,.8)); color:#fff; font-size:12px; }
+  .tile .ov b { font-size:14px; }
+  .tile .st { position:absolute; top:6px; left:6px; background:rgba(0,0,0,.7); color:#fff; font-size:12px; font-weight:700; padding:2px 7px; border-radius:999px; }
+  .tile.viral { border-color:var(--viral); } .tile.rising { border-color:var(--rising); }
+  .view { margin-left:8px; }
+  #modal { position:fixed; inset:0; background:rgba(0,0,0,.75); display:none; align-items:center; justify-content:center; z-index:10; padding:16px; }
+  #modal.open { display:flex; }
+  #modal .box { background:var(--card); border-radius:12px; width:min(480px, 100%); max-height:92vh; overflow:auto; position:relative; }
+  #modal iframe { width:100%; height:min(720px, 80vh); border:0; display:block; background:#fff; border-radius:0 0 12px 12px; }
+  #modal .bar { display:flex; justify-content:space-between; align-items:center; padding:8px 12px; font-size:14px; }
+  #modal button { background:none; border:0; color:var(--text); font-size:22px; cursor:pointer; line-height:1; }
 </style>
 </head>
 <body>
@@ -66,8 +85,24 @@
 </nav>
 <div class="controls" id="controls"></div>
 <main id="out"></main>
+<div id="modal" role="dialog" aria-modal="true"><div class="box"><div class="bar"><span id="mtitle"></span><button aria-label="Close" onclick="closeModal()">×</button></div><div id="mbody"></div></div></div>
 <script>
-let DATA = null, ARCH = null, TAB = "flagged", FILTER = "live", SORT = "vscore", PERIOD = "week";
+let DATA = null, ARCH = null, TAB = "flagged", FILTER = "live", SORT = "vscore", PERIOD = "week", VIEW = "list";
+function embedUrl(link) { const m = String(link || "").match(/instagram\.com\/(p|reel|tv)\/([^/?#]+)/); return m ? `https://www.instagram.com/${m[1]}/${m[2]}/embed/` : null; }
+function openPost(i) { const p = window.__items[i]; if (!p) return; const u = embedUrl(p.permalink);
+  document.getElementById("mtitle").innerHTML = `@${esc(p.username)} · ⭐ ${p.vscore ?? p.peak_vscore ?? "–"} · <a href="${esc(p.permalink)}" target="_blank" rel="noopener">Open in Instagram ↗</a>`;
+  document.getElementById("mbody").innerHTML = u ? `<iframe src="${u}" loading="lazy" allowtransparency="true" allow="encrypted-media"></iframe>` : `<div class="empty">Preview not available.</div>`;
+  document.getElementById("modal").classList.add("open"); }
+function closeModal() { document.getElementById("modal").classList.remove("open"); document.getElementById("mbody").innerHTML = ""; }
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
+document.getElementById("modal").addEventListener("click", e => { if (e.target.id === "modal") closeModal(); });
+const reg = p => { (window.__items = window.__items || []).push(p); return window.__items.length - 1; };
+const img = (p, idx) => p.thumb ? `<img class="thumb" src="${esc(p.thumb)}" alt="post by @${esc(p.username)}" loading="lazy" onclick="openPost(${idx})">`
+  : `<div class="thumb none" onclick="openPost(${idx})">▶ View post</div>`;
+function tile(p, i, idx, sc, tier) {
+  return `<div class="tile ${tier}" onclick="openPost(${idx})">${p.thumb ? `<img src="${esc(p.thumb)}" alt="" loading="lazy">` : `<div class="thumb none">▶ View post</div>`}
+    <span class="st">#${i} ⭐ ${sc ?? "–"}</span><div class="ov"><b>@${esc(p.username)}</b><br>${p.score ?? p.peak_score}× usual</div></div>`;
+}
 const n = v => v == null ? "–" : v >= 1e6 ? (v/1e6).toFixed(1)+"M" : v >= 1e4 ? (v/1e3).toFixed(1)+"K" : Math.round(v).toLocaleString();
 const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const ageH = ts => (Date.now() - Date.parse(String(ts).replace(/\+0000$/, "Z"))) / 36e5;
@@ -113,7 +148,8 @@ function flaggedCard(e, i) {
   const r = e.result_48 || e.result_24, last = e.last || {}, age = ageH(e.timestamp), live = !e.result_24;
   const cls = live ? `${e.peak_tier} live` : r.verdict;
   const badge = live ? `LIVE · ${(last.score ?? 0)}×` : esc(r.label.replace(/^\S+\s/, "").toUpperCase());
-  return `<div class="card ${cls}"><div class="row"><div>
+  const idx = reg(e);
+  return `<div class="card ${cls}"><div class="row"><div class="withimg">${img(e, idx)}<div>
     <div class="top"><span><b>#${i}</b> <span class="who">@${esc(e.username)}</span>
       <span class="age">· ${esc(e.type || "")} · ${age.toFixed(0)}h ago</span></span>
       <span class="badge">${badge}</span></div>
@@ -126,12 +162,13 @@ function flaggedCard(e, i) {
       ${e.result_48 ? ` · 48h: ${esc(e.result_48.label)} (${e.result_48.score}×)` : ""}</div>
     ${e.caption ? `<div class="cap">${esc(e.caption)}</div>` : ""}
     ${e.search_query ? `<div class="q">Search text (${esc(e.search_source)}): <i>${esc(e.search_query)}</i></div>` : ""}
-    ${links(e)}</div>
+    ${links(e)}</div></div>
     <div>${chart(e.points, e.first_flag_age)}</div></div></div>`;
 }
 
 function liveCard(p, i) {
-  return `<div class="card ${p.tier}">
+  const idx = reg(p);
+  return `<div class="card ${p.tier}"><div class="withimg">${img(p, idx)}<div>
     <div class="top"><span><b>#${i}</b> <span class="who">@${esc(p.username)}</span> <span class="age">· ${esc(p.type||"")} · ${p.age_hours}h old</span></span>
       <span class="badge">${p.tier.toUpperCase()} · ⭐ ${p.vscore ?? "–"}</span></div>
     <div class="stats"><span><b>${p.score}×</b> <span class="age">usual</span></span><span>❤️ <b>${likesTxt(p, p.likes_hidden)}</b></span><span>💬 <b>${n(p.comments)}</b></span>
@@ -140,7 +177,7 @@ function liveCard(p, i) {
       <span class="age">usual: ${n(p.baseline)}</span></div>
     ${p.caption ? `<div class="cap">${esc(p.caption)}</div>` : ""}
     ${p.search_query ? `<div class="q">Search text (${esc(p.search_source)}): <i>${esc(p.search_query)}</i></div>` : ""}
-    ${links(p)}</div>`;
+    ${links(p)}</div></div></div>`;
 }
 
 const FILTERS = {
@@ -166,25 +203,35 @@ function controls() {
     const items = Object.values((ARCH && ARCH.posts) || {});
     c.innerHTML = Object.entries(FILTERS).map(([k, [label, fn]]) =>
       `<button class="chip ${FILTER===k?"on":""}" data-f="${k}">${label} <span class="count">${items.filter(fn).length}</span></button>`).join("")
-      + `<select id="sort">${Object.entries(SORTS).map(([k,[l]]) => `<option value="${k}" ${SORT===k?"selected":""}>${l}</option>`).join("")}</select>`;
+      + `<select id="sort">${Object.entries(SORTS).map(([k,[l]]) => `<option value="${k}" ${SORT===k?"selected":""}>${l}</option>`).join("")}</select>`
+      + viewBtns();
     c.querySelectorAll("[data-f]").forEach(b => b.onclick = () => { FILTER = b.dataset.f; render(); });
     c.querySelector("#sort").onchange = ev => { SORT = ev.target.value; render(); };
   } else if (TAB === "leaders") {
     c.innerHTML = ["day","week"].map(k => `<button class="chip ${PERIOD===k?"on":""}" data-p="${k}">${k === "day" ? "Today" : "Last 7 days"}</button>`).join("");
     c.querySelectorAll("[data-p]").forEach(b => b.onclick = () => { PERIOD = b.dataset.p; render(); });
+  } else if (TAB === "live") {
+    c.innerHTML = `<span class="count">Ranked by ⭐ Viral Score</span><span style="margin-left:auto"></span>` + viewBtns();
   } else c.innerHTML = "";
+  c.querySelectorAll("[data-v]").forEach(b => b.onclick = () => { VIEW = b.dataset.v; render(); });
 }
+const viewBtns = () => ["list","grid"].map(v => `<button class="chip view ${VIEW===v?"on":""}" data-v="${v}">${v === "list" ? "☰ List" : "▦ Grid"}</button>`).join("");
 
 function render() {
   document.querySelectorAll("nav button").forEach(b => b.classList.toggle("on", b.dataset.tab === TAB));
   controls();
   const out = document.getElementById("out");
+  window.__items = [];
+  out.classList.toggle("grid", VIEW === "grid" && (TAB === "flagged" || TAB === "live"));
   if (TAB === "flagged") {
     const items = Object.values((ARCH && ARCH.posts) || {}).filter(FILTERS[FILTER][1]).sort(SORTS[SORT][1]);
+    if (VIEW === "grid" && items.length) { out.innerHTML = items.slice(0, 200).map((e, i) => { const r = e.result_48 || e.result_24;
+      return tile(e, i + 1, reg(e), e.peak_vscore, r ? r.verdict : e.peak_tier); }).join(""); return; }
     out.innerHTML = items.length ? items.slice(0, 200).map((e, i) => flaggedCard(e, i + 1)).join("")
       : `<div class="empty">No flagged posts here yet. They're kept as soon as a post turns rising or viral.</div>`;
   } else if (TAB === "live") {
     const posts = (DATA && DATA.posts) || [];
+    if (VIEW === "grid" && posts.length) { out.innerHTML = posts.slice(0, 120).map((p, i) => tile(p, i + 1, reg(p), p.vscore, p.tier)).join(""); return; }
     out.innerHTML = posts.length ? posts.map((p, i) => liveCard(p, i + 1)).join("") : `<div class="empty">No posts in the last 24h.</div>`;
   } else if (TAB === "leaders") {
     const rows = ((DATA && DATA.leaderboard) || {})[PERIOD] || [];
