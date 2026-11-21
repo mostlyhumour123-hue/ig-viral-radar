@@ -110,6 +110,8 @@
 <header>
   <h1>IG Viral Radar</h1>
   <div class="sub" id="meta">Loading…</div>
+  <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:8px">
+    <button id="scanbtn" class="chip" style="font-weight:700;min-height:40px">🔎 Scan now</button><span class="count" id="scanmsg"></span></div>
   <div id="warn"></div>
 </header>
 <nav>
@@ -296,7 +298,7 @@ function render() {
 document.querySelectorAll("nav button").forEach(b => b.onclick = () => { TAB = b.dataset.tab; render(); });
 
 // ---------------- My pages
-let MP = { type: "REELS", page: null, only: null, sort: "vscore", hide: true, manage: false, edits: {} };
+let MP = { type: "REELS", page: null, only: null, sort: "vscore", hide: true, manage: false, edits: {}, tier: "all" };
 const LS = { get(k, d) { try { return JSON.parse(localStorage.getItem(k)) ?? d; } catch (e) { return d; } },
              set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} } };
 const kindOf = p => p.kind || (p.type === "REELS" ? "REELS" : "FEED");
@@ -310,7 +312,11 @@ function myPages() {
   const short = LS.get("igr_short", {}), mine = short[MP.page] || [];
   const hot = pg => posts.filter(p => inPage(pg, p.username) && p.tier !== "normal").length;
   const accs = (P[MP.page].accounts || []);
+  const base = posts.filter(p => inPage(MP.page, p.username) && (!MP.only || p.username === MP.only)
+    && !(MP.hide && (p.posted_on || []).includes(MP.page)));
+  const tcount = t => base.filter(p => t === "all" || (t === "hot" ? p.tier !== "normal" : p.tier === t)).length;
   let list = posts.filter(p => inPage(MP.page, p.username) && (!MP.only || p.username === MP.only)
+    && (MP.tier === "all" || (MP.tier === "hot" ? p.tier !== "normal" : p.tier === MP.tier))
     && !(MP.hide && (p.posted_on || []).includes(MP.page)));
   const tr = p => (p.also_on || []).length;
   list.sort(MP.sort === "new" ? (a, b) => a.age_hours - b.age_hours : MP.sort === "com" ? (a, b) => (b.comments||0) - (a.comments||0)
@@ -321,7 +327,9 @@ function myPages() {
     <div><div class="lbl">2 · My page</div><div class="pages">${names.map(n => `<button class="pg ${MP.page===n?"on":""}" data-mp="${esc(n)}"><b>${esc(n)}</b><small>${(P[n].accounts||[]).length} tracked · ${hot(n)} hot</small></button>`).join("")}
       <button class="pg" data-mgr="1"><b>${MP.manage ? "Close" : "⚙ Manage"}</b><small>pages &amp; accounts</small></button></div></div>`;
   if (MP.manage) h += manager(P, names);
-  h += `<div><div class="lbl">3 · Posts</div><div class="controls" style="padding:0;margin:0">
+  h += `<div><div class="lbl">3 · Posts</div><div class="controls" style="padding:0;margin:0 0 8px">${[["all","All"],["viral","🔥 Viral"],["rising","📈 Rising"],["hot","Viral + rising"]].map(([k,l]) =>
+      `<button class="chip ${MP.tier===k?"on":""}" data-tier="${k}" style="font-weight:700">${l} <span class="count">${tcount(k)}</span></button>`).join("")}</div>
+    <div class="controls" style="padding:0;margin:0">
       <button class="chip ${!MP.only?"on":""}" data-only="">All ${accs.length}</button>${accs.map(a => `<button class="chip ${MP.only===a?"on":""}" data-only="${esc(a)}">@${esc(a)}</button>`).join("")}
       <select id="mpsort">${[["vscore","⭐ Viral Score"],["tr","🔁 On many pages"],["new","Newest"],["com","Most comments"]].map(([k,l]) => `<option value="${k}" ${MP.sort===k?"selected":""}>${l}</option>`).join("")}</select></div>
     <div class="bar2"><b>Telegram alerts:</b> ${e.alerts === false ? "off" : `on, ⭐${e.min ?? 55}+`} <span class="count">(change: /pagealert ${esc(MP.page)} 60 · off)</span>
@@ -355,6 +363,7 @@ function manager(P, names) {
 function bindMy() {
   const o = document.getElementById("out"), q = (sel, f) => o.querySelectorAll(sel).forEach(b => b.onclick = () => f(b));
   q("[data-mt]", b => { MP.type = b.dataset.mt; render(); });
+  q("[data-tier]", b => { MP.tier = b.dataset.tier; render(); });
   q("[data-mp]", b => { MP.page = b.dataset.mp; MP.only = null; render(); });
   q("[data-mgr]", () => { MP.manage = !MP.manage; render(); });
   q("[data-only]", b => { MP.only = b.dataset.only || null; render(); });
@@ -370,7 +379,21 @@ function bindMy() {
 }
 
 const get = f => fetch(f + "?t=" + Date.now()).then(r => r.ok ? r.json() : null).catch(() => null);
-Promise.all([get("data.json"), get("archive.json")]).then(([d, a]) => {
+// Scan now: opens your bot with "/start scan" (one tap on Start), then this page refreshes itself
+const smsg = t => { document.getElementById("scanmsg").textContent = t; };
+document.getElementById("scanbtn").onclick = () => {
+  const bot = DATA && DATA.bot;
+  if (!bot) { smsg("Send /scan to your bot in Telegram (the button works after the next scan)."); return; }
+  const before = DATA.generated_at, t0 = Date.now();
+  window.open("https://t.me/" + bot + "?start=scan", "_blank");
+  smsg("Tap START in Telegram — this page updates by itself in ~3–5 min.");
+  const poll = async () => { const d = await get("data.json");
+    if (d && d.generated_at !== before) { smsg("✅ Updated."); load(); return; }
+    if (Date.now() - t0 < 12 * 60000) setTimeout(poll, 20000); else smsg("No new scan yet — did you tap Start?"); };
+  setTimeout(poll, 45000);
+};
+setInterval(() => { if (document.visibilityState === "visible") load(); }, 5 * 60000);
+function load() { return Promise.all([get("data.json"), get("archive.json")]).then(([d, a]) => {
   DATA = d; ARCH = a || {posts: {}};
   if (!d || !d.generated_at) { document.getElementById("meta").textContent = "No data yet — the first scan hasn't run."; render(); return; }
   const t = new Date(d.generated_at), mins = Math.round((Date.now() - t) / 60000);
@@ -380,7 +403,8 @@ Promise.all([get("data.json"), get("archive.json")]).then(([d, a]) => {
     `${Object.keys(ARCH.posts || {}).length} in archive · rising ≥ ${d.thresholds.rising}×, viral ≥ ${d.thresholds.viral}×`;
   if (d.stop_reason) document.getElementById("warn").innerHTML = `<div class="warn">Last scan stopped early: ${esc(d.stop_reason)}</div>`;
   render();
-});
+}); }
+load();
 </script>
 </body>
 </html>
