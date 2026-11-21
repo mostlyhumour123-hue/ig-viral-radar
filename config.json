@@ -1,5 +1,5 @@
 {
-  "scan_every_minutes": 60,
+  "scan_every_minutes": 30,
   "graph_api_version": "v26.0",
   "posts_per_account": 50,
   "window_hours": 24,
@@ -88,5 +88,14 @@
         "imstillculture"
       ]
     }
-  }
+  },
+  "track_hours": 72,
+  "speed_threshold": 4,
+  "min_gain_per_hour": 50,
+  "archive_days": 90,
+  "adaptive_bars": true,
+  "list_max": 10,
+  "min_vscore_viral": 55,
+  "min_vscore_rising": 40,
+  "thumbs_top_live": 40
 }
