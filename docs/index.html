@@ -50,8 +50,15 @@
   td.err { color:var(--viral); font-size:13px; }
   .empty { color:var(--muted); text-align:center; padding:40px; }
   .hidden { display:none; }
-  .withimg { display:grid; grid-template-columns: 110px 1fr; gap:14px; align-items:start; }
-  @media (max-width: 640px) { .withimg { grid-template-columns: 84px 1fr; gap:10px; } }
+  .withimg { display:grid; grid-template-columns: 110px minmax(0, 1fr); gap:14px; align-items:start; }
+  .withimg > div, .row > div { min-width:0; }
+  .stats { overflow-wrap:anywhere; }
+  #modal .big { width:100%; display:block; }
+  #modal .info { padding:10px 12px 14px; font-size:14px; }
+  #modal .info .cap { white-space:normal; margin:6px 0 10px; }
+  #modal .btns { display:flex; gap:8px; flex-wrap:wrap; }
+  #modal .btns a, #modal .btns span { background:var(--bg); border:1px solid var(--line); border-radius:999px; padding:6px 12px; font-size:13px; cursor:pointer; color:var(--link); }
+  @media (max-width: 640px) { .withimg { grid-template-columns: 84px minmax(0, 1fr); gap:10px; } }
   .thumb { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:8px; background:var(--line); cursor:pointer; display:block; }
   .thumb.none { display:flex; align-items:center; justify-content:center; color:var(--muted); font-size:11px; text-align:center; }
   .grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(160px, 1fr)); gap:10px; }
@@ -91,8 +98,15 @@ let DATA = null, ARCH = null, TAB = "flagged", FILTER = "live", SORT = "vscore",
 function embedUrl(link) { const m = String(link || "").match(/instagram\.com\/(p|reel|tv)\/([^/?#]+)/); return m ? `https://www.instagram.com/${m[1]}/${m[2]}/embed/` : null; }
 function openPost(i) { const p = window.__items[i]; if (!p) return; const u = embedUrl(p.permalink);
   document.getElementById("mtitle").innerHTML = `@${esc(p.username)} · ⭐ ${p.vscore ?? p.peak_vscore ?? "–"} · <a href="${esc(p.permalink)}" target="_blank" rel="noopener">Open in Instagram ↗</a>`;
-  document.getElementById("mbody").innerHTML = u ? `<iframe src="${u}" loading="lazy" allowtransparency="true" allow="encrypted-media"></iframe>` : `<div class="empty">Preview not available.</div>`;
+  const st = p.last || p;
+  document.getElementById("mbody").innerHTML =
+    (p.thumb ? `<img class="big" src="${esc(p.thumb)}" alt="post by @${esc(p.username)}">` : "")
+    + `<div class="info"><div><b>${p.score ?? p.peak_score}×</b> usual · ❤️ ${p.likes_hidden ? "hidden" : n(st.likes)} · 💬 ${n(st.comments)}${st.views != null ? ` · ▶️ ${n(st.views)}` : ""}</div>`
+    + (p.caption ? `<div class="cap">${esc(p.caption)}</div>` : "")
+    + `<div class="btns">${u ? `<span onclick="playEmbed('${u}')">▶ Play here</span>` : ""}<a href="${esc(p.permalink)}" target="_blank" rel="noopener">Open in Instagram ↗</a>`
+    + (p.x_search_url ? `<a href="${esc(p.x_search_url)}" target="_blank" rel="noopener">Search on X ↗</a>` : "") + `</div></div>`;
   document.getElementById("modal").classList.add("open"); }
+function playEmbed(u) { document.getElementById("mbody").innerHTML = `<iframe src="${u}" allowtransparency="true" allow="encrypted-media"></iframe>`; }
 function closeModal() { document.getElementById("modal").classList.remove("open"); document.getElementById("mbody").innerHTML = ""; }
 document.addEventListener("keydown", e => { if (e.key === "Escape") closeModal(); });
 document.getElementById("modal").addEventListener("click", e => { if (e.target.id === "modal") closeModal(); });
