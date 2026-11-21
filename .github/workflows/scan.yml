@@ -1,48 +1,89 @@
 name: IG viral scan
 
-# Checks every 15 minutes for Telegram commands. A full scan only runs when it's due
-# (set with /every in Telegram) or when you send /scan or /add.
+# Triggered three ways:
+#  1. Instantly by the Cloudflare Worker when you message the Telegram bot (commands input)
+#  2. Every 15 min by the Worker's timer, plus this GitHub schedule as a backup
+#  3. The "Run workflow" button (forces a scan)
+# A scan only runs when it's due (/every), when you send /scan or /add, or when forced.
 on:
   schedule:
-    - cron: "*/15 * * * *"
-  workflow_dispatch: {}   # "Run workflow" button = scan now
+    - cron: "*/30 * * * *"
+  workflow_dispatch:
+    inputs:
+      commands:
+        description: "Telegram messages (JSON, sent by the Worker)"
+        required: false
+        default: ""
+      force:
+        description: "Scan now even if not due"
+        type: boolean
+        required: false
+        default: true
 
 permissions:
   contents: write
 
-concurrency:
-  group: ig-scan
-  cancel-in-progress: false
+env:
+  IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+  IG_USER_ID: ${{ secrets.IG_USER_ID }}
+  TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+  TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
 
 jobs:
-  scan:
+  commands:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-    env:
-      IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
-      IG_USER_ID: ${{ secrets.IG_USER_ID }}
-      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
-      TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+    timeout-minutes: 5
+    outputs:
+      due: ${{ steps.check.outputs.due }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: main
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
 
-      - name: Read Telegram commands
+      - name: Apply Telegram commands
         id: check
+        env:
+          TG_COMMANDS: ${{ inputs.commands }}
         run: python scan.py --commands-only
 
-      - name: Install OCR
-        if: steps.check.outputs.due == 'true' || github.event_name == 'workflow_dispatch'
+      - name: Save changes
+        run: |
+          git config user.name "ig-scan-bot"
+          git config user.email "ig-scan-bot@users.noreply.github.com"
+          git add config.json accounts.txt state/state.json
+          git diff --cached --quiet && exit 0
+          git commit -q -m "commands $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do git pull -q --rebase -X theirs origin main && git push -q && exit 0; sleep 5; done
+          exit 1
+
+  scan:
+    needs: commands
+    if: needs.commands.outputs.due == 'true' || (github.event_name == 'workflow_dispatch' && inputs.force && inputs.commands == '')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    concurrency:
+      group: ig-scan
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install OCR and charts
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y -qq tesseract-ocr
           pip install -q -r requirements.txt
 
       - name: Scan
-        if: steps.check.outputs.due == 'true' || github.event_name == 'workflow_dispatch'
         run: python scan.py
 
       - name: Save results
@@ -50,6 +91,8 @@ jobs:
         run: |
           git config user.name "ig-scan-bot"
           git config user.email "ig-scan-bot@users.noreply.github.com"
-          git add docs/data.json state/state.json config.json accounts.txt
-          git diff --cached --quiet || git commit -q -m "scan $(date -u +%Y-%m-%dT%H:%MZ)"
-          git pull -q --rebase && git push -q
+          git add docs/data.json docs/archive.json state/state.json config.json accounts.txt
+          git diff --cached --quiet && exit 0
+          git commit -q -m "scan $(date -u +%Y-%m-%dT%H:%MZ)"
+          for i in 1 2 3; do git pull -q --rebase -X theirs origin main && git push -q && exit 0; sleep 5; done
+          exit 1
