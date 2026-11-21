@@ -35,6 +35,10 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 STATE_FILE = ROOT / "state" / "state.json"
 DATA_FILE = ROOT / "docs" / "data.json"
+ARCHIVE_FILE = ROOT / "docs" / "archive.json"
+
+DEFAULTS = {"scan_every_minutes": 60, "track_hours": 72, "speed_threshold": 4,
+            "min_gain_per_hour": 50, "archive_days": 90}
 
 FULL_MEDIA_FIELDS = ("id,caption,media_type,media_product_type,permalink,timestamp,"
                      "like_count,comments_count,view_count,media_url,thumbnail_url")
@@ -255,18 +259,25 @@ def age_curve(age_h):
     return max(0.2, min(1.0, (age_h / 24) ** 0.5))
 
 
+def expected_rate(base, age_h):
+    """Engagement per hour a *usual* post gains at this age (derivative of age_curve)."""
+    return base * max(0.5 / (24 * max(age_h, 0.5)) ** 0.5, 0.01)
+
+
 def analyse_account(bd, cfg, now):
+    """Score every post up to track_hours old. Posts within window_hours are 'live';
+    older ones are only used to follow up flagged posts (24h/48h results)."""
     media = bd.get("media", {}).get("data", [])
     followers = bd.get("followers_count") or 0
-    mature, recent = [], []
+    mature, tracked = [], []
     for m in media:
         if not m.get("timestamp"):
             continue
         age_h = (now - parse_ts(m["timestamp"])).total_seconds() / 3600
         m["_age_h"] = age_h
-        if age_h <= cfg["window_hours"]:
-            recent.append(m)
-        elif age_h >= cfg["mature_after_hours"]:
+        if age_h <= cfg["track_hours"]:
+            tracked.append(m)
+        if age_h >= cfg["mature_after_hours"]:
             mature.append(m)
 
     # Many accounts hide like counts: then only comments are reliable.
@@ -282,7 +293,7 @@ def analyse_account(bd, cfg, now):
     base_views = statistics.median(view_vals) if len(view_vals) >= cfg["min_baseline_posts"] else None
 
     posts = []
-    for m in recent:
+    for m in tracked:
         curve = age_curve(m["_age_h"])
         eng = engagement(m, cfg)
         likes_hidden = m.get("like_count") is None
@@ -311,6 +322,7 @@ def analyse_account(bd, cfg, now):
             "caption": (m.get("caption") or "")[:300],
             "timestamp": m.get("timestamp"),
             "age_hours": round(m["_age_h"], 1),
+            "in_window": m["_age_h"] <= cfg["window_hours"],
             "likes": m.get("like_count"),
             "comments": m.get("comments_count"),
             "views": m.get("view_count"),
@@ -318,13 +330,15 @@ def analyse_account(bd, cfg, now):
             "baseline": round(base_eng, 1),
             "score": round(score, 2),
             "view_score": round(view_score, 2) if view_score else None,
+            "speed": None,
             "tier": tier,
+            "flag_reason": "score" if tier != "normal" else None,
             "likes_hidden": likes_hidden,
             "_image": m.get("thumbnail_url") or m.get("media_url"),
         })
     summary = {"username": bd.get("username"), "name": bd.get("name"), "followers": followers,
                "baseline": round(base_eng, 1), "baseline_note": baseline_note,
-               "posts_24h": len(recent), "error": None}
+               "posts_24h": sum(1 for p in posts if p["in_window"]), "error": None}
     return summary, posts
 
 
@@ -361,6 +375,9 @@ def post_block(p, rank_no=None):
              f"Score {p['score']}× normal · ❤️ {'hidden' if p.get('likes_hidden') else fmt_num(p['likes'])}"
              f" · 💬 {fmt_num(p['comments'])}"
              + (f" · ▶️ {fmt_num(p['views'])}" if p.get("views") else "")]
+    if p.get("speed") is not None and p.get("gain_per_hour"):
+        lines.append(f"🚀 Gaining {fmt_num(p['gain_per_hour'])}/h — {p['speed']}× a usual post's pace"
+                     + (" (flagged for speed)" if p.get("flag_reason") == "speed" else ""))
     if p.get("search_query"):
         lines.append(f"Text ({p['search_source']}): <i>{escape(p['search_query'])}</i>")
     links = []
@@ -389,9 +406,10 @@ HELP_TEXT = (
     "/minlikes 100 — ignore posts below 100 likes+2×comments\n"
     "/top 10 — current top posts, ranked\n"
     "/leaders — account leaderboard (7 days) · /leaders day\n"
+    "/history — flagged posts & their results (week) · /history day | month | viral | fizzled\n"
     "/scan — scan at the next check\n"
     "/settings — show everything\n\n"
-    "Commands are picked up every 15 minutes, so replies can take up to 15 min.")
+    "Replies usually arrive within a minute or two.")
 
 
 def write_accounts(names, path=ROOT / "accounts.txt"):
@@ -428,7 +446,7 @@ def top_text(data, n):
             + "\n\n".join(post_block(p, i) for i, p in enumerate(posts[:n], 1)))
 
 
-def leaders_text(board, days, now=None):
+def leaders_rows(board, days, now=None):
     now = now or now_utc()
     cut = now - timedelta(days=days)
     stats = {}
@@ -441,15 +459,21 @@ def leaders_text(board, days, now=None):
         s["best"] = max(s["best"], v["best"])
         if v["tier"] in ("viral", "rising"):
             s[v["tier"]] += 1
-    if not stats:
+    rows = [{"username": u, "viral": s["viral"], "rising": s["rising"], "avg": round(s["sum"] / s["posts"], 2),
+             "best": round(s["best"], 2), "posts": s["posts"]} for u, s in stats.items()]
+    rows.sort(key=lambda r: (r["viral"], r["rising"], r["avg"]), reverse=True)
+    return rows
+
+
+def leaders_text(board, days, now=None):
+    rows = leaders_rows(board, days, now)
+    if not rows:
         return f"No posts tracked in the last {days} day(s) yet — the leaderboard fills up as scans run."
-    order = sorted(stats.items(), key=lambda kv: (kv[1]["viral"], kv[1]["rising"], kv[1]["sum"] / kv[1]["posts"]),
-                   reverse=True)
     medals = {1: "🥇", 2: "🥈", 3: "🥉"}
     lines = [f"🏅 <b>Account leaderboard</b> — last {days} day(s)\n"]
-    for i, (u, s) in enumerate(order[:20], 1):
-        lines.append(f"{medals.get(i, f'#{i}')} @{escape(u)} — 🔥 {s['viral']} viral · 📈 {s['rising']} rising · "
-                     f"avg {s['sum'] / s['posts']:.1f}× · best {s['best']:.1f}× · {s['posts']} post{'s' if s['posts'] != 1 else ''}")
+    for i, r in enumerate(rows[:20], 1):
+        lines.append(f"{medals.get(i, f'#{i}')} @{escape(r['username'])} — 🔥 {r['viral']} viral · 📈 {r['rising']} rising · "
+                     f"avg {r['avg']:.1f}× · best {r['best']:.1f}× · {r['posts']} post{'s' if r['posts'] != 1 else ''}")
     return "\n".join(lines)
 
 
@@ -536,6 +560,8 @@ def apply_command(text, cfg, accounts, ctx=None):
     if cmd in ("leaders", "leaderboard"):
         days = 1 if args and args[0] in ("day", "today", "1") else 7
         return leaders_text(ctx.get("board"), days), False, False, False
+    if cmd == "history":
+        return history_text(ctx.get("archive"), args[0] if args else "week"), False, False, False
     if cmd == "scan":
         return "🔎 Scanning now…", False, False, True
     return "Unknown command. Send /help.", False, False, False
@@ -543,11 +569,20 @@ def apply_command(text, cfg, accounts, ctx=None):
 
 def process_commands(cfg, state, tg_token, tg_chat):
     """Read new Telegram messages from the owner and apply them. Returns scan_now."""
-    updates = tg_get_updates(tg_token, state.get("tg_offset", 0))
+    updates = []
+    raw = os.environ.get("TG_COMMANDS", "").strip()
+    if raw:  # passed in by the Cloudflare Worker (webhook mode)
+        try:
+            updates = [{"update_id": None, "message": m} for m in json.loads(raw)]
+        except json.JSONDecodeError:
+            print("  could not read TG_COMMANDS")
+    else:
+        updates = tg_get_updates(tg_token, state.get("tg_offset", 0))
     accounts = read_accounts()
     cfg_changed = acc_changed = scan_now = False
     for u in updates:
-        state["tg_offset"] = u["update_id"] + 1
+        if u["update_id"] is not None:
+            state["tg_offset"] = u["update_id"] + 1
         msg = u.get("message") or {}
         if str(msg.get("chat", {}).get("id")) != str(tg_chat):
             continue  # ignore anyone who isn't you
@@ -555,7 +590,8 @@ def process_commands(cfg, state, tg_token, tg_chat):
         if not text.startswith("/"):
             telegram("Send /help to see commands.", tg_token, tg_chat)
             continue
-        ctx = {"data": load_json(DATA_FILE, {}), "board": state.get("board", {})}
+        ctx = {"data": load_json(DATA_FILE, {}), "board": state.get("board", {}),
+               "archive": load_json(ARCHIVE_FILE, {})}
         reply, c, a, s = apply_command(text, cfg, accounts, ctx)
         cfg_changed |= c
         acc_changed |= a
@@ -575,6 +611,183 @@ def set_output(key, value):
             f.write(f"{key}={value}\n")
 
 
+# ---------------------------------------------------------------- archive & report cards
+def verdict(score, cfg, peak=None):
+    cooling = peak is not None and peak > 0 and score < 0.5 * peak
+    if score >= cfg["viral_threshold"]:
+        return "viral", "🔥 Went viral" + (" — now cooling off" if cooling else "")
+    if score >= cfg["rising_threshold"]:
+        return "rising", "📈 Held up (rising)" + (" — cooling off" if cooling else "")
+    return "fizzled", "💤 Fizzled out"
+
+
+def snapshot(p):
+    return {"age": p["age_hours"], "score": p["score"], "likes": p.get("likes"), "comments": p.get("comments"),
+            "views": p.get("views"), "engagement": p["engagement"]}
+
+
+def update_archive(archive, tracked, state, cfg, now):
+    """Add newly flagged posts, follow archived ones, and return report cards to send."""
+    posts = archive.setdefault("posts", {})
+    by_id = {p["id"]: p for p in tracked}
+    reports = []
+    for p in tracked:
+        if p["tier"] != "normal" and p["in_window"] and p["id"] not in posts:
+            posts[p["id"]] = {
+                "id": p["id"], "username": p["username"], "permalink": p["permalink"], "type": p["type"],
+                "caption": p["caption"], "timestamp": p["timestamp"], "likes_hidden": p["likes_hidden"],
+                "first_flagged_at": now.isoformat(timespec="seconds"), "first_flag_age": p["age_hours"],
+                "first_tier": p["tier"], "flag_reason": p.get("flag_reason"),
+                "peak_score": 0, "peak_tier": "normal", "peak_age": None,
+                "points": [], "result_24": None, "result_48": None, "status": "live",
+            }
+    rank = {"normal": 0, "rising": 1, "viral": 2}
+    for pid, e in posts.items():
+        if e["status"] != "live":
+            continue
+        p = by_id.get(pid)
+        if p:
+            # full score history (from first sighting), as [age_h, score, engagement, comments, views]
+            pts = []
+            for h in state["posts"].get(pid, {}).get("history", []):
+                age = (datetime.fromisoformat(h[0]) - parse_ts(e["timestamp"])).total_seconds() / 3600
+                pts.append([round(age, 2), h[2] if len(h) > 2 else None, h[1],
+                            h[3] if len(h) > 3 else None, h[4] if len(h) > 4 else None])
+            e["points"] = pts[-120:]
+            e["last"] = snapshot(p)
+            for k in ("search_query", "search_source", "x_search_url", "x_search_latest_url"):
+                if p.get(k):
+                    e[k] = p[k]
+            if p["score"] >= e["peak_score"]:
+                e["peak_score"], e["peak_age"] = p["score"], p["age_hours"]
+            if rank[p["tier"]] > rank.get(e["peak_tier"], 0):
+                e["peak_tier"] = p["tier"]
+        age_now = (now - parse_ts(e["timestamp"])).total_seconds() / 3600
+        last = e.get("last") or {}
+        if e["result_24"] is None and age_now >= 24 and last:
+            code, label = verdict(last["score"], cfg, e["peak_score"])
+            e["result_24"] = {**last, "verdict": code, "label": label, "stale": p is None}
+            reports.append(("24h", e))
+        if e["result_48"] is None and age_now >= 48 and last and last.get("age", 0) >= 40:
+            code, label = verdict(last["score"], cfg, e["peak_score"])
+            e["result_48"] = {**last, "verdict": code, "label": label.replace("Went viral", "Still viral"),
+                              "stale": p is None}
+            if code == "viral":
+                reports.append(("48h", e))
+        if age_now > cfg["track_hours"] or (p is None and age_now > 24 and e["result_24"] is not None
+                                               and (e["result_48"] is not None or age_now > 50)):
+            e["status"] = "done"
+    # retention
+    cut = now - timedelta(days=cfg["archive_days"])
+    archive["posts"] = {k: v for k, v in posts.items() if parse_ts(v["timestamp"]) > cut}
+    archive["updated"] = now.isoformat(timespec="seconds")
+    archive["thresholds"] = {"rising": cfg["rising_threshold"], "viral": cfg["viral_threshold"]}
+    return reports
+
+
+def render_chart(e, cfg, path):
+    """PNG of score over post age, with rising/viral lines. Returns path or None."""
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+    except ImportError:
+        return None
+    pts = [pt for pt in e.get("points", []) if pt[1] is not None]
+    if len(pts) < 2:
+        return None
+    xs, ys = [pt[0] for pt in pts], [pt[1] for pt in pts]
+    fig, ax = plt.subplots(figsize=(6, 3.2), dpi=150)
+    ax.axhspan(cfg["viral_threshold"], max(max(ys) * 1.15, cfg["viral_threshold"] * 1.3), color="#ff5a36", alpha=0.08)
+    ax.axhline(cfg["viral_threshold"], color="#ff5a36", ls="--", lw=1, label=f"viral {cfg['viral_threshold']}×")
+    ax.axhline(cfg["rising_threshold"], color="#e0a020", ls="--", lw=1, label=f"rising {cfg['rising_threshold']}×")
+    ax.plot(xs, ys, color="#2557d6", lw=2, marker="o", ms=3)
+    ax.axvline(24, color="#999", lw=0.8, ls=":")
+    ax.text(24.3, 0.2, "24h", fontsize=7, color="#777")
+    fa = e.get("first_flag_age")
+    if fa is not None:
+        near = min(pts, key=lambda pt: abs(pt[0] - fa))
+        ax.plot([near[0]], [near[1]], marker="o", ms=7, mfc="none", mec="#ff5a36", mew=1.5)
+        ax.annotate("flagged", (near[0], near[1]), textcoords="offset points", xytext=(6, -10), fontsize=7, color="#ff5a36")
+    ax.set_xlabel("hours since posted")
+    ax.set_ylabel("× usual")
+    ax.set_xlim(0, max(26, max(xs) + 1))
+    ax.set_ylim(0, max(max(ys) * 1.15, cfg["viral_threshold"] * 1.3))
+    ax.set_title(f"@{e['username']}", fontsize=10, loc="left")
+    ax.legend(fontsize=7, loc="upper left", frameon=False)
+    for side in ("top", "right"):
+        ax.spines[side].set_visible(False)
+    fig.tight_layout()
+    fig.savefig(path)
+    plt.close(fig)
+    return path
+
+
+def telegram_photo(path, caption, token, chat_id):
+    boundary = "----igradar" + str(int(time.time() * 1000))
+    parts = []
+    for name, value in (("chat_id", str(chat_id)), ("caption", caption[:1024]), ("parse_mode", "HTML")):
+        parts.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"{name}\"\r\n\r\n{value}\r\n".encode())
+    parts.append(f"--{boundary}\r\nContent-Disposition: form-data; name=\"photo\"; filename=\"chart.png\"\r\n"
+                 f"Content-Type: image/png\r\n\r\n".encode() + Path(path).read_bytes() + b"\r\n")
+    parts.append(f"--{boundary}--\r\n".encode())
+    req = urllib.request.Request(f"https://api.telegram.org/bot{token}/sendPhoto", data=b"".join(parts),
+                                 headers={"Content-Type": f"multipart/form-data; boundary={boundary}"})
+    try:
+        urllib.request.urlopen(req, timeout=30)
+        return True
+    except Exception as ex:
+        print(f"  Telegram photo failed: {ex}")
+        return False
+
+
+def report_text(kind, e):
+    r = e["result_24"] if kind == "24h" else e["result_48"]
+    likes = "hidden" if e.get("likes_hidden") else fmt_num(r.get("likes"))
+    head = f"📋 <b>{kind} result</b> · @{escape(e['username'])}\n<b>{r['label']}</b>"
+    body = (f"\nNow {r['score']}× usual · peak {e['peak_score']}× at {e['peak_age']}h"
+            f"\n❤️ {likes} · 💬 {fmt_num(r.get('comments'))}" + (f" · ▶️ {fmt_num(r['views'])}" if r.get("views") else "")
+            + f"\nFirst flagged {e['first_tier']} at {e['first_flag_age']}h"
+            + (" (speed)" if e.get("flag_reason") == "speed" else ""))
+    if r.get("stale"):
+        body += f"\n<i>(last seen at {r['age']}h — dropped out of the account's latest posts)</i>"
+    links = []
+    if e.get("permalink"):
+        links.append(f"<a href=\"{escape(e['permalink'])}\">Open post</a>")
+    if e.get("x_search_url"):
+        links.append(f"<a href=\"{escape(e['x_search_url'])}\">Search on X</a>")
+    return head + body + ("\n" + " · ".join(links) if links else "")
+
+
+def send_report(kind, e, cfg, token, chat_id):
+    text = report_text(kind, e)
+    path = render_chart(e, cfg, f"/tmp/chart_{e['id']}.png")
+    if not (path and telegram_photo(path, text, token, chat_id)):
+        telegram(text, token, chat_id)
+
+
+def history_text(archive, arg, now=None):
+    now = now or now_utc()
+    items = list((archive or {}).get("posts", {}).values())
+    days = 1 if arg in ("day", "today") else 30 if arg == "month" else 7
+    items = [e for e in items if parse_ts(e["timestamp"]) > now - timedelta(days=days)]
+    if arg in ("viral", "fizzled", "rising"):
+        items = [e for e in items if (e.get("result_24") or {}).get("verdict") == arg]
+    if not items:
+        return "Nothing in the archive for that yet — it fills up as posts get flagged."
+    items.sort(key=lambda e: e["timestamp"], reverse=True)
+    lines = [f"🗂 <b>Flagged posts</b> — last {days} day(s){' · ' + arg if arg in ('viral','fizzled','rising') else ''}\n"]
+    for e in items[:25]:
+        r = e.get("result_24")
+        status = r["label"] if r else "⏳ still live"
+        age = (now - parse_ts(e["timestamp"])).total_seconds() / 3600
+        lines.append(f"• @{escape(e['username'])} · {age:.0f}h ago · peak {e['peak_score']}× · {status}"
+                     + (f" · <a href=\"{escape(e['permalink'])}\">open</a>" if e.get("permalink") else ""))
+    if len(items) > 25:
+        lines.append(f"…and {len(items) - 25} more on the dashboard.")
+    return "\n".join(lines)
+
+
 # ---------------------------------------------------------------- main
 def main():
     ap = argparse.ArgumentParser()
@@ -587,7 +800,13 @@ def main():
     args = ap.parse_args()
 
     cfg = load_json(ROOT / "config.json", {})
-    cfg.setdefault("scan_every_minutes", 60)
+    for k, v in DEFAULTS.items():
+        cfg.setdefault(k, v)
+    if cfg.get("config_version", 1) < 2:  # one-time upgrade: read 50 posts per account
+        cfg["posts_per_account"] = max(cfg.get("posts_per_account", 25), 50)
+        cfg["config_version"] = 2
+        if not args.fixture:
+            save_json(ROOT / "config.json", {k: v for k, v in cfg.items() if k not in DEFAULTS or k == "scan_every_minutes"})
     token = os.environ.get("IG_ACCESS_TOKEN", "")
     ig_user_id = os.environ.get("IG_USER_ID", "")
     tg_token = os.environ.get("TELEGRAM_BOT_TOKEN", "")
@@ -618,10 +837,11 @@ def main():
 
     now = now_utc()
     state = load_json(STATE_FILE, {"posts": {}, "last_digest": None})
+    archive = load_json(ARCHIVE_FILE, {"posts": {}})
     accounts = read_accounts()
     print(f"Scanning {len(accounts)} accounts at {now.isoformat(timespec='seconds')}")
 
-    summaries, all_posts, stop_reason = [], [], None
+    summaries, tracked, stop_reason = [], [], None
     for i, user in enumerate(accounts):
         print(f"- @{user}")
         try:
@@ -640,25 +860,32 @@ def main():
             continue
         s, posts = analyse_account(bd, cfg, now)
         summaries.append(s)
-        all_posts.extend(posts)
+        tracked.extend(posts)
 
-    # Alerts, OCR and search links for flagged posts
     rank = {"normal": 0, "rising": 1, "viral": 2}
     min_alert = rank.get(cfg.get("alert_on", "rising"), 1)
     new_alerts = []
-    for p in all_posts:
+    for p in tracked:
         st = state["posts"].setdefault(p["id"], {"first_seen": now.isoformat(), "alerted_tier": "normal",
                                                  "history": []})
-        prev_eng = st["history"][-1][1] if st["history"] else None
-        prev_t = datetime.fromisoformat(st["history"][-1][0]) if st["history"] else None
-        st["history"] = (st["history"] + [[now.isoformat(), p["engagement"]]])[-48:]
+        hist = st["history"]
+        prev = hist[-1] if hist else None
+        hist.append([now.isoformat(), p["engagement"], p["score"], p.get("comments"), p.get("views")])
+        st["history"] = hist[-120:]
         st["timestamp"] = p["timestamp"]
-        if prev_eng is not None and prev_t and (now - prev_t).total_seconds() > 60:
-            p["gain_per_hour"] = round((p["engagement"] - prev_eng) / ((now - prev_t).total_seconds() / 3600))
-        else:
-            p["gain_per_hour"] = None
+        p["gain_per_hour"] = None
+        if prev:
+            hours = (now - datetime.fromisoformat(prev[0])).total_seconds() / 3600
+            if hours >= 0.33:
+                rate = (p["engagement"] - prev[1]) / hours
+                p["gain_per_hour"] = round(rate)
+                p["speed"] = round(rate / expected_rate(p["baseline"], max(p["age_hours"] - hours / 2, 0.5)), 1)
+                # Speed-based detection: a normal post gaining unusually fast gets promoted to rising.
+                if (p["in_window"] and p["tier"] == "normal" and p["speed"] >= cfg["speed_threshold"]
+                        and rate >= cfg["min_gain_per_hour"] and p["engagement"] >= cfg["min_engagement"]):
+                    p["tier"], p["flag_reason"] = "rising", "speed"
 
-        if p["tier"] != "normal":
+        if p["tier"] != "normal" or p["id"] in archive["posts"]:
             if "search_query" not in st:
                 q, src = "", ""
                 if cfg.get("ocr_enabled") and p.get("_image"):
@@ -671,14 +898,20 @@ def main():
             if p["search_query"]:
                 p["x_search_url"] = x_search_url(p["search_query"])
                 p["x_search_latest_url"] = x_search_url(p["search_query"], latest=True)
+        if p["in_window"] and p["tier"] != "normal":
             if rank[p["tier"]] >= min_alert and rank[p["tier"]] > rank[st["alerted_tier"]]:
                 new_alerts.append(p)
                 st["alerted_tier"] = p["tier"]
         p.pop("_image", None)
 
+    # Archive: every flagged post, followed to 72h, with 24h / 48h results
+    reports = update_archive(archive, tracked, state, cfg, now)
+
+    live = [p for p in tracked if p["in_window"]]
+
     # Leaderboard memory: each post's best score/tier, kept 8 days
     board = state.setdefault("board", {})
-    for p in all_posts:
+    for p in live:
         b = board.setdefault(p["id"], {"u": p["username"], "ts": p["timestamp"], "best": 0, "tier": "normal"})
         b["best"] = max(b["best"], p["score"] if p["engagement"] >= cfg["min_engagement"] else 0)
         if rank[p["tier"]] > rank[b["tier"]]:
@@ -686,13 +919,13 @@ def main():
     week_cut = now - timedelta(days=8)
     state["board"] = {k: v for k, v in board.items() if parse_ts(v["ts"]) > week_cut}
 
-    # forget posts older than 3 days
-    cutoff = now - timedelta(hours=72)
+    # forget per-post scan history after track_hours (+1 day margin)
+    cutoff = now - timedelta(hours=cfg["track_hours"] + 24)
     state["posts"] = {k: v for k, v in state["posts"].items()
                       if not v.get("timestamp") or parse_ts(v["timestamp"]) > cutoff}
 
-    all_posts.sort(key=lambda p: (rank[p["tier"]], p["score"]), reverse=True)
-    flagged = [p for p in all_posts if p["tier"] != "normal"]
+    live.sort(key=lambda p: (rank[p["tier"]], p["score"]), reverse=True)
+    flagged = [p for p in live if p["tier"] != "normal"]
 
     if use_tg:
         if stop_reason and "TOKEN" in stop_reason:
@@ -700,6 +933,8 @@ def main():
         if cfg.get("alerts_enabled", True):
             for p in new_alerts:
                 telegram(post_block(p), tg_token, tg_chat)
+        for kind, entry in reports:
+            send_report(kind, entry, cfg, tg_token, tg_chat)
         last = state.get("last_digest")
         due = (not last) or (now - datetime.fromisoformat(last)).total_seconds() >= cfg["digest_every_hours"] * 3600 - 300
         if cfg.get("digest_enabled", True) and due and flagged:
@@ -712,6 +947,7 @@ def main():
 
     state["last_scan"] = now.isoformat()
     save_json(STATE_FILE, state)
+    save_json(ARCHIVE_FILE, archive)
     save_json(DATA_FILE, {
         "generated_at": now.isoformat(timespec="seconds"),
         "window_hours": cfg["window_hours"],
@@ -719,11 +955,11 @@ def main():
         "stop_reason": stop_reason,
         "api_calls": ig.calls,
         "accounts": summaries,
-        "posts": all_posts,
+        "posts": live,
+        "leaderboard": {"day": leaders_rows(state["board"], 1, now), "week": leaders_rows(state["board"], 7, now)},
     })
-    print(f"Done: {len(all_posts)} posts in window, {len(flagged)} flagged, "
-          f"{len(new_alerts)} new alerts, {ig.calls} API calls.")
-
+    print(f"Done: {len(live)} posts in window, {len(flagged)} flagged, {len(new_alerts)} new alerts, "
+          f"{len(reports)} report cards, {ig.calls} API calls.")
 
 if __name__ == "__main__":
     main()
