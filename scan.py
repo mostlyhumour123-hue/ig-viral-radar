@@ -38,7 +38,7 @@ DATA_FILE = ROOT / "docs" / "data.json"
 ARCHIVE_FILE = ROOT / "docs" / "archive.json"
 
 DEFAULTS = {"scan_every_minutes": 60, "track_hours": 72, "speed_threshold": 4,
-            "min_gain_per_hour": 50, "archive_days": 90}
+            "min_gain_per_hour": 50, "archive_days": 90, "adaptive_bars": True, "list_max": 10}
 
 FULL_MEDIA_FIELDS = ("id,caption,media_type,media_product_type,permalink,timestamp,"
                      "like_count,comments_count,view_count,media_url,thumbnail_url")
@@ -292,6 +292,17 @@ def analyse_account(bd, cfg, now):
     base_com = max(statistics.median(com_vals), 1) if len(com_vals) >= cfg["min_baseline_posts"] else None
     base_views = statistics.median(view_vals) if len(view_vals) >= cfg["min_baseline_posts"] else None
 
+    def bars(ratios):
+        """Rising/viral bars: the configured levels, raised to this account's own top-25% / top-10%
+        of older posts, so accounts with frequent big hits don't flag everything."""
+        rb, vb = cfg["rising_threshold"], cfg["viral_threshold"]
+        if cfg.get("adaptive_bars", True) and len(ratios) >= 8:
+            q = statistics.quantiles(ratios, n=20)  # 5% steps
+            rb, vb = max(rb, q[14]), max(vb, q[17])  # 75th / 90th percentile
+        return round(rb, 2), round(max(vb, rb * 1.5), 2)
+    bars_likes = bars([e / base_eng for e in eng_vals])
+    bars_comments = bars([c / base_com for c in com_vals]) if base_com else bars_likes
+
     posts = []
     for m in tracked:
         curve = age_curve(m["_age_h"])
@@ -306,11 +317,12 @@ def analyse_account(bd, cfg, now):
         if base_views and m.get("view_count"):
             view_score = m["view_count"] / (base_views * curve)
             score = max(score, view_score)
+        rise_bar, viral_bar = bars_comments if (likes_hidden and base_com) else bars_likes
         if eng < cfg["min_engagement"] and not (view_score and view_score >= cfg["rising_threshold"]):
             tier = "normal"
-        elif score >= cfg["viral_threshold"]:
+        elif score >= viral_bar:
             tier = "viral"
-        elif score >= cfg["rising_threshold"]:
+        elif score >= rise_bar:
             tier = "rising"
         else:
             tier = "normal"
@@ -332,13 +344,15 @@ def analyse_account(bd, cfg, now):
             "view_score": round(view_score, 2) if view_score else None,
             "speed": None,
             "tier": tier,
+            "bars": [rise_bar, viral_bar],
             "flag_reason": "score" if tier != "normal" else None,
             "likes_hidden": likes_hidden,
             "_image": m.get("thumbnail_url") or m.get("media_url"),
         })
     summary = {"username": bd.get("username"), "name": bd.get("name"), "followers": followers,
                "baseline": round(base_eng, 1), "baseline_note": baseline_note,
-               "posts_24h": sum(1 for p in posts if p["in_window"]), "error": None}
+               "posts_24h": sum(1 for p in posts if p["in_window"]), "error": None,
+               "bars": {"likes": bars_likes, "comments": bars_comments}}
     return summary, posts
 
 
@@ -401,7 +415,7 @@ HELP_TEXT = (
     "/viral 5 — viral = 5× the account's usual engagement\n"
     "/rising 2.5 — rising = 2.5× usual\n"
     "/every 30 — scan every 30 min (15, 30, 45, 60, 120…)\n"
-    "/digest 1 — digest every 1 hour · /digest off\n"
+    "/digest 3 — extra summary every 3 hours · /digest off\n"
     "/alerts rising — alert on rising+viral · /alerts viral · /alerts off\n"
     "/minlikes 100 — ignore posts below 100 likes+2×comments\n"
     "/top 10 — current top posts, ranked\n"
@@ -766,6 +780,89 @@ def send_report(kind, e, cfg, token, chat_id):
         telegram(text, token, chat_id)
 
 
+def short_line(p, i):
+    icon = {"viral": "🔥", "rising": "📈"}.get(p["tier"], "▫️")
+    stats = (f"💬 {fmt_num(p.get('comments'))}" if p.get("likes_hidden") else f"❤️ {fmt_num(p.get('likes'))}")
+    if p.get("views"):
+        stats += f" · ▶️ {fmt_num(p['views'])}"
+    speed = " 🚀" if p.get("flag_reason") == "speed" else ""
+    text = f" — <i>{escape(p['search_query'][:60])}</i>" if p.get("search_query") else ""
+    link = f" · <a href=\"{escape(p['permalink'])}\">open</a>" if p.get("permalink") else ""
+    xl = f" · <a href=\"{escape(p['x_search_url'])}\">X</a>" if p.get("x_search_url") else ""
+    return (f"<b>#{i}</b> {icon} @{escape(p['username'] or '')} · <b>{p['score']}×</b> · {p['age_hours']:.0f}h · "
+            f"{stats}{speed}{text}{link}{xl}")
+
+
+def alert_list_text(posts, cfg):
+    rank = {"normal": 0, "rising": 1, "viral": 2}
+    posts = sorted(posts, key=lambda p: (rank[p["tier"]], p["score"]), reverse=True)
+    n = cfg.get("list_max", 10)
+    v = sum(1 for p in posts if p["tier"] == "viral")
+    head = f"🔔 <b>{len(posts)} new hot post{'s' if len(posts) != 1 else ''}</b> ({v} viral, {len(posts) - v} rising)\n"
+    lines = [short_line(p, i) for i, p in enumerate(posts[:n], 1)]
+    if len(posts) > n:
+        lines.append(f"…and {len(posts) - n} more — send /top 20 or open the dashboard.")
+    return head + "\n".join(lines)
+
+
+def render_grid(entries, cfg, path):
+    """One image with a small chart per post (up to 6)."""
+    try:
+        import matplotlib
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+    except ImportError:
+        return None
+    entries = [e for e in entries if len([p for p in e.get("points", []) if p[1] is not None]) >= 2][:6]
+    if not entries:
+        return None
+    cols = 2 if len(entries) > 1 else 1
+    rows = (len(entries) + cols - 1) // cols
+    fig, axes = plt.subplots(rows, cols, figsize=(6 * cols / 1.4, 2.6 * rows), dpi=130, squeeze=False)
+    for ax in axes.flat:
+        ax.set_visible(False)
+    for i, (ax, e) in enumerate(zip(axes.flat, entries), 1):
+        ax.set_visible(True)
+        pts = [p for p in e["points"] if p[1] is not None]
+        xs, ys = [p[0] for p in pts], [p[1] for p in pts]
+        top = max(max(ys) * 1.15, cfg["viral_threshold"] * 1.3)
+        ax.axhspan(cfg["viral_threshold"], top, color="#ff5a36", alpha=0.08)
+        ax.axhline(cfg["viral_threshold"], color="#ff5a36", ls="--", lw=0.8)
+        ax.axhline(cfg["rising_threshold"], color="#e0a020", ls="--", lw=0.8)
+        r = e.get("result_48") or e.get("result_24") or {}
+        color = {"viral": "#d63b1f", "rising": "#c98a00", "fizzled": "#7d8594"}.get(r.get("verdict"), "#2557d6")
+        ax.plot(xs, ys, color=color, lw=1.8)
+        ax.axvline(24, color="#bbb", lw=0.6, ls=":")
+        ax.set_xlim(0, max(26, max(xs) + 1))
+        ax.set_ylim(0, top)
+        ax.set_title(f"#{i} @{e['username']} — {r.get('label', '').split(' ', 1)[-1]}", fontsize=8, loc="left")
+        ax.tick_params(labelsize=7)
+        for side in ("top", "right"):
+            ax.spines[side].set_visible(False)
+    fig.tight_layout()
+    fig.savefig(path)
+    plt.close(fig)
+    return path
+
+
+def send_reports(reports, cfg, token, chat_id):
+    """All 24h/48h results from this scan in one message (+ one image of their graphs)."""
+    lines = []
+    for i, (kind, e) in enumerate(reports, 1):
+        r = e["result_24"] if kind == "24h" else e["result_48"]
+        link = f" · <a href=\"{escape(e['permalink'])}\">open</a>" if e.get("permalink") else ""
+        lines.append(f"<b>#{i}</b> @{escape(e['username'])} · {kind}: <b>{r['label']}</b> · now {r['score']}× "
+                     f"(peak {e['peak_score']}× at {e['peak_age']:.0f}h){link}")
+    head = f"📋 <b>{len(reports)} result{'s' if len(reports) != 1 else ''}</b> — how flagged posts ended up\n"
+    text = head + "\n".join(lines)
+    path = render_grid([e for _, e in reports], cfg, "/tmp/results_grid.png")
+    if path and len(text) <= 1000 and telegram_photo(path, text, token, chat_id):
+        return
+    if path:
+        telegram_photo(path, "📋 Graphs for the results below", token, chat_id)
+    telegram(text, token, chat_id)
+
+
 def history_text(archive, arg, now=None):
     now = now or now_utc()
     items = list((archive or {}).get("posts", {}).values())
@@ -805,6 +902,9 @@ def main():
     if cfg.get("config_version", 1) < 2:  # one-time upgrade: read 50 posts per account
         cfg["posts_per_account"] = max(cfg.get("posts_per_account", 25), 50)
         cfg["config_version"] = 2
+    if cfg.get("config_version", 1) < 3:  # one-time: one list per scan instead of a separate hourly digest
+        cfg["digest_enabled"] = False
+        cfg["config_version"] = 3
         if not args.fixture:
             save_json(ROOT / "config.json", {k: v for k, v in cfg.items() if k not in DEFAULTS or k == "scan_every_minutes"})
     token = os.environ.get("IG_ACCESS_TOKEN", "")
@@ -859,6 +959,11 @@ def main():
             print(f"  error: {bd['_error']}")
             continue
         s, posts = analyse_account(bd, cfg, now)
+        seen = state.setdefault("seen_accounts", [])
+        if user.lower() not in seen:  # first scan of this account: learn quietly, don't alert
+            seen.append(user.lower())
+            for p in posts:
+                p["_quiet"] = True
         summaries.append(s)
         tracked.extend(posts)
 
@@ -900,9 +1005,11 @@ def main():
                 p["x_search_latest_url"] = x_search_url(p["search_query"], latest=True)
         if p["in_window"] and p["tier"] != "normal":
             if rank[p["tier"]] >= min_alert and rank[p["tier"]] > rank[st["alerted_tier"]]:
-                new_alerts.append(p)
+                if not p.get("_quiet"):
+                    new_alerts.append(p)
                 st["alerted_tier"] = p["tier"]
         p.pop("_image", None)
+        p.pop("_quiet", None)
 
     # Archive: every flagged post, followed to 72h, with 24h / 48h results
     reports = update_archive(archive, tracked, state, cfg, now)
@@ -930,11 +1037,10 @@ def main():
     if use_tg:
         if stop_reason and "TOKEN" in stop_reason:
             telegram(f"⚠️ IG scanner: {escape(stop_reason)}\nRenew IG_ACCESS_TOKEN (see README).", tg_token, tg_chat)
-        if cfg.get("alerts_enabled", True):
-            for p in new_alerts:
-                telegram(post_block(p), tg_token, tg_chat)
-        for kind, entry in reports:
-            send_report(kind, entry, cfg, tg_token, tg_chat)
+        if cfg.get("alerts_enabled", True) and new_alerts:
+            telegram(alert_list_text(new_alerts, cfg), tg_token, tg_chat)
+        if reports:
+            send_reports(reports, cfg, tg_token, tg_chat)
         last = state.get("last_digest")
         due = (not last) or (now - datetime.fromisoformat(last)).total_seconds() >= cfg["digest_every_hours"] * 3600 - 300
         if cfg.get("digest_enabled", True) and due and flagged:
