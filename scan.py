@@ -885,7 +885,7 @@ def main():
                         and rate >= cfg["min_gain_per_hour"] and p["engagement"] >= cfg["min_engagement"]):
                     p["tier"], p["flag_reason"] = "rising", "speed"
 
-        if p["tier"] != "normal" or p["id"] in archive["posts"]:
+        if (p["in_window"] and p["tier"] != "normal") or p["id"] in archive["posts"]:
             if "search_query" not in st:
                 q, src = "", ""
                 if cfg.get("ocr_enabled") and p.get("_image"):
