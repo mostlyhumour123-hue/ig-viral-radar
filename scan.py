@@ -38,7 +38,8 @@ DATA_FILE = ROOT / "docs" / "data.json"
 ARCHIVE_FILE = ROOT / "docs" / "archive.json"
 
 DEFAULTS = {"scan_every_minutes": 60, "track_hours": 72, "speed_threshold": 4,
-            "min_gain_per_hour": 50, "archive_days": 90, "adaptive_bars": True, "list_max": 10}
+            "min_gain_per_hour": 50, "archive_days": 90, "adaptive_bars": True, "list_max": 10,
+            "min_vscore_viral": 55, "min_vscore_rising": 40}
 
 FULL_MEDIA_FIELDS = ("id,caption,media_type,media_product_type,permalink,timestamp,"
                      "like_count,comments_count,view_count,media_url,thumbnail_url")
@@ -264,6 +265,26 @@ def expected_rate(base, age_h):
     return base * max(0.5 / (24 * max(age_h, 0.5)) ** 0.5, 0.01)
 
 
+def viral_score(p):
+    """0-100. Breakout (x usual) matters most; real size and momentum are sanity checks.
+    Weights are starting guesses, tuned on real data."""
+    import math
+    cl = lambda x: max(0.0, min(1.0, x))
+    breakout = cl(math.log2(max(p["score"], 1)) / 5)                       # 32x usual = full marks
+    if p.get("likes_hidden"):
+        real = (p.get("comments") or 0) * 15                               # rough likes-equivalent
+    else:
+        real = (p.get("likes") or 0) + 2 * (p.get("comments") or 0)
+    size_eq = max(real, (p.get("views") or 0) / 50)
+    size = cl((math.log10(max(size_eq, 1)) - 2.5) / 1.5)                   # ~300 -> 0, ~10K -> 1
+    mom = cl(math.log2(max(p["speed"], 1)) / 4) if p.get("speed") is not None else breakout * 0.6
+    v = 0.55 * breakout + 0.25 * size + 0.20 * mom
+    if p.get("likes_hidden") and not p.get("views"):
+        v *= 0.8                                                           # only comments to go on
+    v *= 0.4 + 0.6 * size                                                  # tiny posts can't top the list
+    return round(100 * v)
+
+
 def analyse_account(bd, cfg, now):
     """Score every post up to track_hours old. Posts within window_hours are 'live';
     older ones are only used to follow up flagged posts (24h/48h results)."""
@@ -386,7 +407,7 @@ def post_block(p, rank_no=None):
     icon = {"viral": "🔥", "rising": "📈"}.get(p["tier"], "▫️")
     prefix = f"<b>#{rank_no}</b> " if rank_no else ""
     lines = [f"{prefix}{icon} <b>{p['tier'].upper()}</b> · @{escape(p['username'] or '')} · {p['age_hours']}h old",
-             f"Score {p['score']}× normal · ❤️ {'hidden' if p.get('likes_hidden') else fmt_num(p['likes'])}"
+             f"⭐ Viral score {p.get('vscore', '–')}/100 · {p['score']}× usual · ❤️ {'hidden' if p.get('likes_hidden') else fmt_num(p['likes'])}"
              f" · 💬 {fmt_num(p['comments'])}"
              + (f" · ▶️ {fmt_num(p['views'])}" if p.get("views") else "")]
     if p.get("speed") is not None and p.get("gain_per_hour"):
@@ -417,6 +438,7 @@ HELP_TEXT = (
     "/every 30 — scan every 30 min (15, 30, 45, 60, 120…)\n"
     "/digest 3 — extra summary every 3 hours · /digest off\n"
     "/alerts rising — alert on rising+viral · /alerts viral · /alerts off\n"
+    "/minscore 40 — lowest ⭐ Viral Score (0-100) that can be flagged\n"
     "/minlikes 100 — ignore posts below 100 likes+2×comments\n"
     "/top 10 — current top posts, ranked\n"
     "/leaders — account leaderboard (7 days) · /leaders day\n"
@@ -435,6 +457,7 @@ def settings_text(cfg, accounts):
             f"Accounts ({len(accounts)}): " + (", ".join("@" + a for a in accounts) or "none") + "\n"
             f"Scan every: {cfg['scan_every_minutes']} min\n"
             f"Rising: ≥ {cfg['rising_threshold']}× usual · Viral: ≥ {cfg['viral_threshold']}× usual\n"
+            f"Viral Score needed: ⭐ {cfg.get('min_vscore_rising', 40)} rising · ⭐ {cfg.get('min_vscore_viral', 55)} viral\n"
             f"Ignore posts under: {cfg['min_engagement']} engagements\n"
             f"Alerts: {cfg['alert_on'] if cfg.get('alerts_enabled', True) else 'off'}\n"
             f"Digest: " + (f"every {cfg['digest_every_hours']} h" if cfg.get('digest_enabled', True) else "off"))
@@ -562,6 +585,13 @@ def apply_command(text, cfg, accounts, ctx=None):
         else:
             return "Usage: /alerts rising | viral | off", False, False, False
         return f"✅ Alerts: {a}.", True, False, False
+    if cmd == "minscore":
+        v = num(0, 95)
+        if v is None:
+            return "Usage: /minscore 40  (0-95: lowest Viral Score that can be flagged)", False, False, False
+        cfg["min_vscore_rising"], cfg["min_vscore_viral"] = int(v), int(min(v + 15, 100))
+        return (f"✅ Rising needs ⭐ {int(v)}+, viral needs ⭐ {cfg['min_vscore_viral']}+ "
+                f"(plus beating the account's usual)."), True, False, False
     if cmd == "minlikes":
         v = num(0, 10_000_000)
         if v is None:
@@ -636,7 +666,7 @@ def verdict(score, cfg, peak=None):
 
 
 def snapshot(p):
-    return {"age": p["age_hours"], "score": p["score"], "likes": p.get("likes"), "comments": p.get("comments"),
+    return {"age": p["age_hours"], "score": p["score"], "vscore": p.get("vscore"), "likes": p.get("likes"), "comments": p.get("comments"),
             "views": p.get("views"), "engagement": p["engagement"]}
 
 
@@ -674,6 +704,7 @@ def update_archive(archive, tracked, state, cfg, now):
                     e[k] = p[k]
             if p["score"] >= e["peak_score"]:
                 e["peak_score"], e["peak_age"] = p["score"], p["age_hours"]
+            e["peak_vscore"] = max(e.get("peak_vscore") or 0, p.get("vscore") or 0)
             if rank[p["tier"]] > rank.get(e["peak_tier"], 0):
                 e["peak_tier"] = p["tier"]
         age_now = (now - parse_ts(e["timestamp"])).total_seconds() / 3600
@@ -789,13 +820,13 @@ def short_line(p, i):
     text = f" — <i>{escape(p['search_query'][:60])}</i>" if p.get("search_query") else ""
     link = f" · <a href=\"{escape(p['permalink'])}\">open</a>" if p.get("permalink") else ""
     xl = f" · <a href=\"{escape(p['x_search_url'])}\">X</a>" if p.get("x_search_url") else ""
-    return (f"<b>#{i}</b> {icon} @{escape(p['username'] or '')} · <b>{p['score']}×</b> · {p['age_hours']:.0f}h · "
+    return (f"<b>#{i}</b> {icon} @{escape(p['username'] or '')} · ⭐ <b>{p.get('vscore', '–')}</b> · {p['score']}× usual · {p['age_hours']:.0f}h · "
             f"{stats}{speed}{text}{link}{xl}")
 
 
 def alert_list_text(posts, cfg):
     rank = {"normal": 0, "rising": 1, "viral": 2}
-    posts = sorted(posts, key=lambda p: (rank[p["tier"]], p["score"]), reverse=True)
+    posts = sorted(posts, key=lambda p: (p.get("vscore", 0), p["score"]), reverse=True)
     n = cfg.get("list_max", 10)
     v = sum(1 for p in posts if p["tier"] == "viral")
     head = f"🔔 <b>{len(posts)} new hot post{'s' if len(posts) != 1 else ''}</b> ({v} viral, {len(posts) - v} rising)\n"
@@ -989,6 +1020,11 @@ def main():
                 if (p["in_window"] and p["tier"] == "normal" and p["speed"] >= cfg["speed_threshold"]
                         and rate >= cfg["min_gain_per_hour"] and p["engagement"] >= cfg["min_engagement"]):
                     p["tier"], p["flag_reason"] = "rising", "speed"
+        p["vscore"] = viral_score(p)
+        if p["tier"] == "viral" and p["vscore"] < cfg["min_vscore_viral"]:
+            p["tier"] = "rising"
+        if p["tier"] == "rising" and p["vscore"] < cfg["min_vscore_rising"]:
+            p["tier"], p["flag_reason"] = "normal", None
 
         if (p["in_window"] and p["tier"] != "normal") or p["id"] in archive["posts"]:
             if "search_query" not in st:
@@ -1031,7 +1067,7 @@ def main():
     state["posts"] = {k: v for k, v in state["posts"].items()
                       if not v.get("timestamp") or parse_ts(v["timestamp"]) > cutoff}
 
-    live.sort(key=lambda p: (rank[p["tier"]], p["score"]), reverse=True)
+    live.sort(key=lambda p: (p.get("vscore", 0), p["score"]), reverse=True)
     flagged = [p for p in live if p["tier"] != "normal"]
 
     if use_tg:
