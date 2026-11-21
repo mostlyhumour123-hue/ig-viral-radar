@@ -1238,13 +1238,18 @@ def main():
 
     # On-image text for the strongest live posts (cached), to spot the same meme on several accounts
     live_now = sorted([p for p in tracked if p["in_window"]], key=lambda p: p.get("vscore", 0), reverse=True)
-    for p in live_now[:cfg.get("text_match_top", 80)]:
+    for i, p in enumerate(live_now):
         st = state["posts"][p["id"]]
-        if "search_query" not in st and cfg.get("ocr_enabled") and p.get("_image"):
-            q = ocr_top_text(p["_image"], cfg["ocr_top_fraction"], cfg["search_query_max_words"])
-            st["search_query"], st["search_source"] = (q, "on-image text") if q else (
-                caption_to_query(p["caption"], cfg["search_query_max_words"]), "caption")
+        if "search_query" not in st:
+            if cfg.get("ocr_enabled") and p.get("_image") and (i < cfg.get("text_match_top", 80) or p.get("kind") == "REELS"):
+                q = ocr_top_text(p["_image"], cfg["ocr_top_fraction"], cfg["search_query_max_words"])
+                st["search_query"], st["search_source"] = (q, "on-image text") if q else (
+                    caption_to_query(p["caption"], cfg["search_query_max_words"]), "caption")
+            else:  # not read yet: use the caption for now (not cached, so the image is read if it climbs)
+                p.setdefault("search_query", caption_to_query(p["caption"], cfg["search_query_max_words"]))
+                p.setdefault("search_source", "caption")
         p.setdefault("search_query", st.get("search_query", ""))
+        p.setdefault("search_source", st.get("search_source", ""))
         if p["search_query"] and "x_search_url" not in p:
             p["x_search_url"] = x_search_url(p["search_query"])
             p["x_search_latest_url"] = x_search_url(p["search_query"], latest=True)
