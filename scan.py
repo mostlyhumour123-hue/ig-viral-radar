@@ -639,6 +639,8 @@ def apply_command(text, cfg, accounts, ctx=None):
             return None
         return v if lo <= v <= hi else None
 
+    if cmd == "start" and args and args[0] == "scan":  # dashboard "Scan now" button (t.me/<bot>?start=scan)
+        return "🔎 Scanning now — the dashboard refreshes itself when it's done.", False, False, True
     if cmd in ("start", "help"):
         return HELP_TEXT, False, False, False
     if cmd in ("settings", "list"):
@@ -1340,6 +1342,12 @@ def main():
             telegram(text, tg_token, tg_chat)
             state["last_digest"] = now.isoformat()
 
+    if use_tg and not state.get("bot_username"):
+        try:
+            with urllib.request.urlopen(f"https://api.telegram.org/bot{tg_token}/getMe", timeout=15) as r:
+                state["bot_username"] = json.load(r)["result"]["username"]
+        except Exception as e:
+            print("getMe failed:", e)
     state["last_scan"] = now.isoformat()
     save_json(STATE_FILE, state)
     save_json(ARCHIVE_FILE, archive)
@@ -1351,6 +1359,7 @@ def main():
         "api_calls": ig.calls,
         "accounts": summaries,
         "my_pages": cfg.get("my_pages", {}),
+        "bot": state.get("bot_username"),
         "posts": live,
         "leaderboard": {"day": leaders_rows(state["board"], 1, now), "week": leaders_rows(state["board"], 7, now)},
     })
