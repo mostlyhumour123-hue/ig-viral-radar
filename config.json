@@ -11,7 +11,7 @@
   "viral_threshold": 5,
   "alerts_enabled": true,
   "alert_on": "rising",
-  "digest_enabled": true,
+  "digest_enabled": false,
   "digest_every_hours": 1,
   "digest_top_n": 5,
   "ocr_enabled": true,
@@ -20,5 +20,5 @@
   "max_calls_per_run": 150,
   "seconds_between_calls": 1.0,
   "stop_when_usage_percent_above": 75,
-  "config_version": 2
+  "config_version": 3
 }
