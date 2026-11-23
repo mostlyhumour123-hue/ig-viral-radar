@@ -818,7 +818,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 64.9,
         "score": 2.15,
@@ -3141,7 +3141,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 66.4,
         "score": 1.43,
@@ -3955,7 +3955,7 @@
         "label": "📈 Held up (rising) — cooling off",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 62.5,
         "score": 4.92,
@@ -4769,7 +4769,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 66.8,
         "score": 1.61,
@@ -5583,7 +5583,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 69.1,
         "score": 13.19,
@@ -6397,7 +6397,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 69.9,
         "score": 1.29,
@@ -7211,7 +7211,7 @@
         "label": "🔥 Still viral — now cooling off",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 71.4,
         "score": 4.75,
@@ -8825,7 +8825,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 69.8,
         "score": 57.98,
@@ -9639,7 +9639,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 67.2,
         "score": 9.14,
@@ -11990,7 +11990,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 65.3,
         "score": 11.97,
@@ -14236,7 +14236,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 62.2,
         "score": 1.66,
@@ -15043,7 +15043,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 65.7,
         "score": 1.0,
@@ -15850,7 +15850,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 66.2,
         "score": 2.26,
@@ -16657,7 +16657,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 67.0,
         "score": 0.47,
@@ -17464,7 +17464,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 68.7,
         "score": 1.0,
@@ -18271,7 +18271,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 69.2,
         "score": 3.43,
@@ -21643,7 +21643,7 @@
         "label": "📈 Held up (rising) — cooling off",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 65.6,
         "score": 3.31,
@@ -22450,7 +22450,7 @@
         "label": "📈 Held up (rising) — cooling off",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 67.7,
         "score": 1.09,
@@ -23257,7 +23257,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 69.0,
         "score": 23.03,
@@ -24064,7 +24064,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 69.7,
         "score": 39.03,
@@ -24871,7 +24871,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 70.4,
         "score": 2.84,
@@ -25678,7 +25678,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 71.2,
         "score": 1.79,
@@ -39297,6 +39297,13 @@
           88002,
           6355,
           null
+        ],
+        [
+          61.33,
+          7.11,
+          88046,
+          6355,
+          null
         ]
       ],
       "result_24": {
@@ -39327,11 +39334,11 @@
       "last": {
         "age": 61.3,
         "score": 7.11,
-        "vscore": 80,
-        "likes": 75292,
+        "vscore": 72,
+        "likes": 75336,
         "comments": 6355,
         "views": null,
-        "engagement": 88002
+        "engagement": 88046
       },
       "search_query": "New York City moves to ban the boiling of live lobsters crabs",
       "search_source": "on-image text",
@@ -40088,7 +40095,7 @@
         "label": "📈 Held up (rising)",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 57.6,
         "score": 2.26,
@@ -41590,7 +41597,7 @@
         "label": "📈 Held up (rising)",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 68.7,
         "score": 2.78,
@@ -44815,6 +44822,13 @@
           30638,
           6756,
           null
+        ],
+        [
+          58.1,
+          2.48,
+          30644,
+          6757,
+          null
         ]
       ],
       "result_24": {
@@ -44845,11 +44859,11 @@
       "last": {
         "age": 58.1,
         "score": 2.48,
-        "vscore": 47,
-        "likes": 17126,
-        "comments": 6756,
+        "vscore": 48,
+        "likes": 17130,
+        "comments": 6757,
         "views": null,
-        "engagement": 30638
+        "engagement": 30644
       },
       "search_query": "24 hour flight and no changing seats where are you sitting fe",
       "search_source": "on-image text",
@@ -47164,7 +47178,7 @@
         "label": "📈 Held up (rising)",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 64.0,
         "score": 3.89,
@@ -51369,7 +51383,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 50.5,
         "score": 0.93,
@@ -52885,7 +52899,7 @@
         "label": "📈 Held up (rising)",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 54.5,
         "score": 5.18,
@@ -54320,7 +54334,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 54.2,
         "score": 15.43,
@@ -55678,7 +55692,7 @@
         "label": "🔥 Still viral — now cooling off",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 49.3,
         "score": 66.93,
@@ -62580,7 +62594,7 @@
       "flag_reason": "speed",
       "peak_score": 3.33,
       "peak_tier": "rising",
-      "peak_age": 55.8,
+      "peak_age": 55.9,
       "points": [
         [
           0.04,
@@ -63288,6 +63302,13 @@
           41200,
           46,
           null
+        ],
+        [
+          55.86,
+          3.33,
+          41224,
+          46,
+          null
         ]
       ],
       "result_24": {
@@ -63316,13 +63337,13 @@
       },
       "status": "live",
       "last": {
-        "age": 55.8,
+        "age": 55.9,
         "score": 3.33,
-        "vscore": 62,
-        "likes": 41108,
+        "vscore": 56,
+        "likes": 41132,
         "comments": 46,
         "views": null,
-        "engagement": 41200
+        "engagement": 41224
       },
       "search_query": "i just know alexander skarsgard already has this hanging in his closet",
       "search_source": "on-image text",
@@ -68578,7 +68599,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 52.3,
         "score": 12.51,
@@ -70286,6 +70307,13 @@
           75045,
           1729,
           null
+        ],
+        [
+          40.83,
+          6.07,
+          75125,
+          1732,
+          null
         ]
       ],
       "result_24": {
@@ -70304,12 +70332,12 @@
       "status": "live",
       "last": {
         "age": 40.8,
-        "score": 6.06,
-        "vscore": 81,
-        "likes": 71587,
-        "comments": 1729,
+        "score": 6.07,
+        "vscore": 68,
+        "likes": 71661,
+        "comments": 1732,
         "views": null,
-        "engagement": 75045
+        "engagement": 75125
       },
       "search_query": "those inhalers are 5 everywhere but america 4 mediaryz mediaryz In 2024",
       "search_source": "on-image text",
@@ -84820,7 +84848,7 @@
       "first_flag_age": 12.4,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 5.37,
+      "peak_score": 5.38,
       "peak_tier": "rising",
       "peak_age": 29.7,
       "points": [
@@ -85208,6 +85236,13 @@
           66430,
           99,
           null
+        ],
+        [
+          29.75,
+          5.38,
+          66530,
+          99,
+          null
         ]
       ],
       "result_24": {
@@ -85226,12 +85261,12 @@
       "status": "live",
       "last": {
         "age": 29.7,
-        "score": 5.37,
-        "vscore": 79,
-        "likes": 66232,
+        "score": 5.38,
+        "vscore": 66,
+        "likes": 66332,
         "comments": 99,
         "views": null,
-        "engagement": 66430
+        "engagement": 66530
       },
       "search_query": "hiding among the flowers as if she is one of ti pra",
       "search_source": "on-image text",
@@ -85675,6 +85710,13 @@
           35598,
           167,
           null
+        ],
+        [
+          32.21,
+          2.88,
+          35627,
+          168,
+          null
         ]
       ],
       "result_24": {
@@ -85694,11 +85736,11 @@
       "last": {
         "age": 32.2,
         "score": 2.88,
-        "vscore": 59,
-        "likes": 35264,
-        "comments": 167,
+        "vscore": 52,
+        "likes": 35291,
+        "comments": 168,
         "views": null,
-        "engagement": 35598
+        "engagement": 35627
       },
       "search_query": "Kalshi warns New York's lawsuit could shut down Its entire business nationwide",
       "search_source": "on-image text",
@@ -86212,6 +86254,13 @@
           119355,
           361,
           null
+        ],
+        [
+          36.67,
+          9.65,
+          119421,
+          361,
+          null
         ]
       ],
       "result_24": {
@@ -86229,13 +86278,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 36.6,
-        "score": 9.64,
-        "vscore": 84,
-        "likes": 118633,
+        "age": 36.7,
+        "score": 9.65,
+        "vscore": 77,
+        "likes": 118699,
         "comments": 361,
         "views": null,
-        "engagement": 119355
+        "engagement": 119421
       },
       "search_query": "Noah Schnapp reveals that he auditioned for the role of Haymitch in",
       "search_source": "on-image text",
@@ -86256,7 +86305,7 @@
       "first_flag_age": 20.4,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 13.67,
+      "peak_score": 13.68,
       "peak_tier": "viral",
       "peak_age": 37.7,
       "points": [
@@ -86770,6 +86819,13 @@
           169215,
           524,
           null
+        ],
+        [
+          37.7,
+          13.68,
+          169345,
+          527,
+          null
         ]
       ],
       "result_24": {
@@ -86788,12 +86844,12 @@
       "status": "live",
       "last": {
         "age": 37.7,
-        "score": 13.67,
-        "vscore": 90,
-        "likes": 168167,
-        "comments": 524,
+        "score": 13.68,
+        "vscore": 80,
+        "likes": 168291,
+        "comments": 527,
         "views": null,
-        "engagement": 169215
+        "engagement": 169345
       },
       "search_query": "she really chewed the girls in whoville up Tied 4 Bat",
       "search_source": "on-image text",
@@ -90888,6 +90944,13 @@
           10029,
           19,
           null
+        ],
+        [
+          34.51,
+          0.81,
+          10030,
+          19,
+          null
         ]
       ],
       "result_24": {
@@ -90908,10 +90971,10 @@
         "age": 34.5,
         "score": 0.81,
         "vscore": 25,
-        "likes": 9991,
+        "likes": 9992,
         "comments": 19,
         "views": null,
-        "engagement": 10029
+        "engagement": 10030
       },
       "search_query": "Dua Lipa stuns in new photos SME Sue Psa eS Be ae",
       "search_source": "on-image text",
@@ -96947,7 +97010,7 @@
       "thumb": "thumbs/18134359498761387.jpg"
     }
   },
-  "updated": "2026-11-23T15:33:25+00:00",
+  "updated": "2026-11-23T15:34:58+00:00",
   "thresholds": {
     "rising": 2.5,
     "viral": 5
