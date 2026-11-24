@@ -63651,7 +63651,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 71.8,
         "score": 19.54,
@@ -66114,7 +66114,7 @@
         "label": "📈 Held up (rising)",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 65.8,
         "score": 3.11,
@@ -67770,7 +67770,7 @@
         "label": "🔥 Still viral — now cooling off",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 68.3,
         "score": 30.66,
@@ -68668,7 +68668,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 71.1,
         "score": 1.18,
@@ -69566,7 +69566,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 66.9,
         "score": 16.52,
@@ -71556,7 +71556,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 71.8,
         "score": 9.43,
@@ -73170,7 +73170,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 61.1,
         "score": 1.71,
@@ -73926,13 +73926,6 @@
       "peak_tier": "rising",
       "peak_age": 56.0,
       "points": [
-        [
-          5.31,
-          2.26,
-          19731,
-          157,
-          null
-        ],
         [
           5.77,
           2.2,
@@ -74765,6 +74758,13 @@
           128668,
           2841,
           null
+        ],
+        [
+          67.05,
+          6.47,
+          128714,
+          2844,
+          null
         ]
       ],
       "result_24": {
@@ -74793,13 +74793,13 @@
       },
       "status": "live",
       "last": {
-        "age": 67.0,
+        "age": 67.1,
         "score": 6.47,
-        "vscore": 74,
-        "likes": 122986,
-        "comments": 2841,
+        "vscore": 71,
+        "likes": 123026,
+        "comments": 2844,
         "views": null,
-        "engagement": 128668
+        "engagement": 128714
       },
       "search_query": "those inhalers are 5 everywhere but america 4 mediaryz mediaryz In 2024",
       "search_source": "on-image text",
@@ -75689,7 +75689,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 71.4,
         "score": 38.42,
@@ -77815,13 +77815,6 @@
       "peak_age": 21.5,
       "points": [
         [
-          6.95,
-          6.47,
-          117065,
-          94,
-          null
-        ],
-        [
           7.24,
           6.61,
           122054,
@@ -78653,6 +78646,13 @@
           72537,
           491,
           null
+        ],
+        [
+          68.98,
+          1.48,
+          72581,
+          491,
+          null
         ]
       ],
       "result_24": {
@@ -78681,13 +78681,13 @@
       },
       "status": "live",
       "last": {
-        "age": 68.9,
+        "age": 69.0,
         "score": 1.48,
-        "vscore": 38,
-        "likes": 71555,
+        "vscore": 35,
+        "likes": 71599,
         "comments": 491,
         "views": null,
-        "engagement": 72537
+        "engagement": 72581
       },
       "search_query": "When you realize you’re not on Call Her Daddy but in a",
       "search_source": "on-image text",
@@ -80925,7 +80925,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 59.8,
         "score": 1.6,
@@ -81718,7 +81718,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 54.8,
         "score": 25.35,
@@ -82448,7 +82448,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 51.0,
         "score": 6.23,
@@ -83346,7 +83346,7 @@
         "label": "📈 Held up (rising)",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 71.7,
         "score": 1.78,
@@ -84897,7 +84897,7 @@
         "label": "📈 Held up (rising)",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 51.9,
         "score": 3.35,
@@ -88096,6 +88096,13 @@
           57884,
           74,
           null
+        ],
+        [
+          56.28,
+          2.91,
+          57891,
+          74,
+          null
         ]
       ],
       "result_24": {
@@ -88124,13 +88131,13 @@
       },
       "status": "live",
       "last": {
-        "age": 56.2,
-        "score": 2.92,
-        "vscore": 53,
-        "likes": 57736,
+        "age": 56.3,
+        "score": 2.91,
+        "vscore": 60,
+        "likes": 57743,
         "comments": 74,
         "views": null,
-        "engagement": 57884
+        "engagement": 57891
       },
       "search_query": "mean I'd marry a man who has a picture of me as",
       "search_source": "on-image text",
@@ -89020,7 +89027,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 68.3,
         "score": 1.32,
@@ -91013,7 +91020,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 50.9,
         "score": 36.7,
@@ -91703,6 +91710,13 @@
           82237,
           431,
           null
+        ],
+        [
+          49.2,
+          4.14,
+          82245,
+          431,
+          null
         ]
       ],
       "result_24": {
@@ -91732,12 +91746,12 @@
       "status": "live",
       "last": {
         "age": 49.2,
-        "score": 4.15,
-        "vscore": 62,
-        "likes": 81375,
+        "score": 4.14,
+        "vscore": 70,
+        "likes": 81383,
         "comments": 431,
         "views": null,
-        "engagement": 82237
+        "engagement": 82245
       },
       "search_query": "This is my Lucia NP ar Ses",
       "search_source": "on-image text",
@@ -92417,7 +92431,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 49.0,
         "score": 65.41,
@@ -93287,7 +93301,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 60.4,
         "score": 40.31,
@@ -94457,7 +94471,7 @@
         "label": "🔥 Still viral — now cooling off",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 48.8,
         "score": 5.71,
@@ -95168,6 +95182,13 @@
           18492,
           553,
           null
+        ],
+        [
+          50.57,
+          0.93,
+          18499,
+          553,
+          null
         ]
       ],
       "result_24": {
@@ -95196,13 +95217,13 @@
       },
       "status": "live",
       "last": {
-        "age": 50.5,
+        "age": 50.6,
         "score": 0.93,
         "vscore": 25,
-        "likes": 17386,
+        "likes": 17393,
         "comments": 553,
         "views": null,
-        "engagement": 18492
+        "engagement": 18499
       },
       "search_query": "oeople hate when they see you doing better than them and this",
       "search_source": "on-image text",
@@ -96001,7 +96022,7 @@
         "label": "📈 Held up (rising)",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 55.5,
         "score": 3.58,
@@ -96689,7 +96710,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 49.7,
         "score": 86.67,
@@ -97690,7 +97711,7 @@
         "label": "📈 Held up (rising)",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 51.8,
         "score": 2.89,
@@ -98455,7 +98476,7 @@
         "label": "📈 Held up (rising)",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 52.8,
         "score": 2.53,
@@ -99850,6 +99871,13 @@
           146383,
           299,
           null
+        ],
+        [
+          55.97,
+          7.36,
+          146517,
+          299,
+          null
         ]
       ],
       "result_24": {
@@ -99878,13 +99906,13 @@
       },
       "status": "live",
       "last": {
-        "age": 55.9,
+        "age": 56.0,
         "score": 7.36,
-        "vscore": 85,
-        "likes": 145785,
+        "vscore": 75,
+        "likes": 145919,
         "comments": 299,
         "views": null,
-        "engagement": 146383
+        "engagement": 146517
       },
       "search_query": "hiding among the flowers as if she is one of ti pra",
       "search_source": "on-image text",
@@ -100699,6 +100727,13 @@
           54505,
           245,
           null
+        ],
+        [
+          58.43,
+          2.74,
+          54515,
+          245,
+          null
         ]
       ],
       "result_24": {
@@ -100729,11 +100764,11 @@
       "last": {
         "age": 58.4,
         "score": 2.74,
-        "vscore": 45,
-        "likes": 54015,
+        "vscore": 47,
+        "likes": 54025,
         "comments": 245,
         "views": null,
-        "engagement": 54505
+        "engagement": 54515
       },
       "search_query": "Kalshi warns New York's lawsuit could shut down Its entire business nationwide",
       "search_source": "on-image text",
@@ -100758,13 +100793,6 @@
       "peak_tier": "viral",
       "peak_age": 51.9,
       "points": [
-        [
-          1.14,
-          0.25,
-          1005,
-          8,
-          null
-        ],
         [
           1.61,
           0.21,
@@ -101597,6 +101625,13 @@
           152185,
           441,
           null
+        ],
+        [
+          62.88,
+          7.65,
+          152215,
+          441,
+          null
         ]
       ],
       "result_24": {
@@ -101625,13 +101660,13 @@
       },
       "status": "live",
       "last": {
-        "age": 62.8,
+        "age": 62.9,
         "score": 7.65,
         "vscore": 75,
-        "likes": 151303,
+        "likes": 151333,
         "comments": 441,
         "views": null,
-        "engagement": 152185
+        "engagement": 152215
       },
       "search_query": "Noah Schnapp reveals that he auditioned for the role of Haymitch in",
       "search_source": "on-image text",
@@ -101656,13 +101691,6 @@
       "peak_tier": "viral",
       "peak_age": 52.9,
       "points": [
-        [
-          2.17,
-          0.16,
-          880,
-          7,
-          null
-        ],
         [
           2.63,
           0.33,
@@ -102495,6 +102523,13 @@
           244137,
           711,
           null
+        ],
+        [
+          63.91,
+          12.27,
+          244217,
+          711,
+          null
         ]
       ],
       "result_24": {
@@ -102525,11 +102560,11 @@
       "last": {
         "age": 63.9,
         "score": 12.27,
-        "vscore": 85,
-        "likes": 242715,
+        "vscore": 80,
+        "likes": 242795,
         "comments": 711,
         "views": null,
-        "engagement": 244137
+        "engagement": 244217
       },
       "search_query": "she really chewed the girls in whoville up Tied 4 Bat",
       "search_source": "on-image text",
@@ -103914,7 +103949,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 48.8,
         "score": 12.53,
@@ -104602,7 +104637,7 @@
         "label": "📈 Held up (rising)",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 51.7,
         "score": 3.02,
@@ -105346,7 +105381,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 50.8,
         "score": 1.83,
@@ -106834,7 +106869,7 @@
       "flag_reason": "score",
       "peak_score": 3.59,
       "peak_tier": "rising",
-      "peak_age": 41.4,
+      "peak_age": 41.5,
       "points": [
         [
           0.45,
@@ -107388,6 +107423,13 @@
           32711,
           122,
           null
+        ],
+        [
+          41.48,
+          3.59,
+          32720,
+          122,
+          null
         ]
       ],
       "result_24": {
@@ -107405,13 +107447,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 41.4,
+        "age": 41.5,
         "score": 3.59,
-        "vscore": 60,
-        "likes": 32467,
+        "vscore": 66,
+        "likes": 32476,
         "comments": 122,
         "views": null,
-        "engagement": 32711
+        "engagement": 32720
       },
       "search_query": "Two men discover by chance that they have the same tattoo even",
       "search_source": "on-image text",
@@ -108182,7 +108224,7 @@
         "label": "📈 Held up (rising)",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 53.9,
         "score": 2.06,
@@ -109442,7 +109484,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 48.8,
         "score": 38.46,
@@ -111374,6 +111416,13 @@
           10874,
           20,
           null
+        ],
+        [
+          60.73,
+          0.55,
+          10876,
+          20,
+          null
         ]
       ],
       "result_24": {
@@ -111405,10 +111454,10 @@
         "age": 60.7,
         "score": 0.55,
         "vscore": 25,
-        "likes": 10834,
+        "likes": 10836,
         "comments": 20,
         "views": null,
-        "engagement": 10874
+        "engagement": 10876
       },
       "search_query": "Dua Lipa stuns in new photos SME Sue Psa eS Be ae",
       "search_source": "on-image text",
@@ -112277,7 +112326,7 @@
         "label": "🔥 Still viral",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 60.8,
         "score": 10.67,
@@ -113331,7 +113380,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 51.8,
         "score": 1.37,
@@ -115863,6 +115912,13 @@
           31581,
           39,
           null
+        ],
+        [
+          53.07,
+          3.46,
+          31585,
+          39,
+          null
         ]
       ],
       "result_24": {
@@ -115891,13 +115947,13 @@
       },
       "status": "live",
       "last": {
-        "age": 53.0,
+        "age": 53.1,
         "score": 3.46,
-        "vscore": 57,
-        "likes": 31503,
+        "vscore": 65,
+        "likes": 31507,
         "comments": 39,
         "views": null,
-        "engagement": 31581
+        "engagement": 31585
       },
       "search_query": "the afternoon light shines beautifully on my grilled cheese",
       "search_source": "on-image text",
@@ -116605,7 +116661,7 @@
         "label": "📈 Held up (rising)",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 50.1,
         "score": 2.54,
@@ -119016,6 +119072,13 @@
           174252,
           185,
           null
+        ],
+        [
+          40.41,
+          8.77,
+          174359,
+          187,
+          null
         ]
       ],
       "result_24": {
@@ -119034,12 +119097,12 @@
       "status": "live",
       "last": {
         "age": 40.4,
-        "score": 8.79,
-        "vscore": 87,
-        "likes": 173882,
-        "comments": 185,
+        "score": 8.77,
+        "vscore": 81,
+        "likes": 173985,
+        "comments": 187,
         "views": null,
-        "engagement": 174252
+        "engagement": 174359
       },
       "search_query": "that baby doesn’t even look like me",
       "search_source": "on-image text",
@@ -119831,6 +119894,13 @@
           60330,
           69,
           null
+        ],
+        [
+          44.44,
+          6.62,
+          60385,
+          69,
+          null
         ]
       ],
       "result_24": {
@@ -119850,11 +119920,11 @@
       "last": {
         "age": 44.4,
         "score": 6.62,
-        "vscore": 83,
-        "likes": 60192,
+        "vscore": 78,
+        "likes": 60247,
         "comments": 69,
         "views": null,
-        "engagement": 60330
+        "engagement": 60385
       },
       "search_query": "A zoo in China has given up trying to help an overweight",
       "search_source": "on-image text",
@@ -122859,6 +122929,13 @@
           26983,
           25,
           null
+        ],
+        [
+          38.79,
+          2.96,
+          26988,
+          25,
+          null
         ]
       ],
       "result_24": {
@@ -122878,11 +122955,11 @@
       "last": {
         "age": 38.8,
         "score": 2.96,
-        "vscore": 55,
-        "likes": 26933,
+        "vscore": 60,
+        "likes": 26938,
         "comments": 25,
         "views": null,
-        "engagement": 26983
+        "engagement": 26988
       },
       "search_query": "If tigers are so dangerous explain this",
       "search_source": "on-image text",
@@ -124330,6 +124407,13 @@
           100586,
           105,
           null
+        ],
+        [
+          29.27,
+          5.06,
+          100654,
+          105,
+          null
         ]
       ],
       "result_24": {
@@ -124347,13 +124431,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 29.2,
-        "score": 5.08,
-        "vscore": 77,
-        "likes": 100376,
+        "age": 29.3,
+        "score": 5.06,
+        "vscore": 75,
+        "likes": 100444,
         "comments": 105,
         "views": null,
-        "engagement": 100586
+        "engagement": 100654
       },
       "search_query": "The way the life left his eyes oh I’m not hungry 6",
       "search_source": "on-image text",
@@ -124937,6 +125021,13 @@
           39179,
           74,
           null
+        ],
+        [
+          41.78,
+          1.97,
+          39184,
+          74,
+          null
         ]
       ],
       "result_24": {
@@ -124954,13 +125045,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 41.7,
-        "score": 1.98,
-        "vscore": 43,
-        "likes": 39031,
+        "age": 41.8,
+        "score": 1.97,
+        "vscore": 47,
+        "likes": 39036,
         "comments": 74,
         "views": null,
-        "engagement": 39179
+        "engagement": 39184
       },
       "search_query": "eg Sl CO ee cae C vay ma os ity KY we",
       "search_source": "on-image text",
@@ -129612,6 +129703,13 @@
           50093,
           752,
           null
+        ],
+        [
+          38.69,
+          2.52,
+          50124,
+          752,
+          null
         ]
       ],
       "result_24": {
@@ -129631,11 +129729,11 @@
       "last": {
         "age": 38.7,
         "score": 2.52,
-        "vscore": 49,
-        "likes": 48589,
+        "vscore": 45,
+        "likes": 48620,
         "comments": 752,
         "views": null,
-        "engagement": 50093
+        "engagement": 50124
       },
       "search_query": "does she participate or does she just watch Pop Crave PopCrave Katy",
       "search_source": "on-image text",
@@ -135138,9 +135236,9 @@
       "first_flag_age": 13.4,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 6.35,
+      "peak_score": 6.37,
       "peak_tier": "rising",
-      "peak_age": 31.1,
+      "peak_age": 31.2,
       "points": [
         [
           0.32,
@@ -135575,6 +135673,13 @@
           126403,
           212,
           null
+        ],
+        [
+          31.18,
+          6.37,
+          126666,
+          212,
+          null
         ]
       ],
       "result_24": {
@@ -135592,13 +135697,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 31.1,
-        "score": 6.35,
-        "vscore": 82,
-        "likes": 125979,
+        "age": 31.2,
+        "score": 6.37,
+        "vscore": 70,
+        "likes": 126242,
         "comments": 212,
         "views": null,
-        "engagement": 126403
+        "engagement": 126666
       },
       "search_query": "chris evans with two different versions of sue fie ae",
       "search_source": "on-image text",
@@ -136084,6 +136189,13 @@
           66561,
           109,
           null
+        ],
+        [
+          33.25,
+          3.35,
+          66640,
+          109,
+          null
         ]
       ],
       "result_24": {
@@ -136103,11 +136215,11 @@
       "last": {
         "age": 33.2,
         "score": 3.35,
-        "vscore": 60,
-        "likes": 66343,
+        "vscore": 51,
+        "likes": 66422,
         "comments": 109,
         "views": null,
-        "engagement": 66561
+        "engagement": 66640
       },
       "search_query": "was born in the right generation love silly little gay people in",
       "search_source": "on-image text",
@@ -136649,6 +136761,13 @@
           28769,
           115,
           null
+        ],
+        [
+          37.61,
+          1.45,
+          28814,
+          116,
+          null
         ]
       ],
       "result_24": {
@@ -136668,11 +136787,11 @@
       "last": {
         "age": 37.6,
         "score": 1.45,
-        "vscore": 40,
-        "likes": 28539,
-        "comments": 115,
+        "vscore": 33,
+        "likes": 28582,
+        "comments": 116,
         "views": null,
-        "engagement": 28769
+        "engagement": 28814
       },
       "search_query": "Javier Bardem and Pen lope Cruz Vy oon ’ ow im Sec",
       "search_source": "on-image text",
@@ -138026,6 +138145,13 @@
           43546,
           571,
           null
+        ],
+        [
+          35.34,
+          2.19,
+          43604,
+          572,
+          null
         ]
       ],
       "result_24": {
@@ -138045,11 +138171,11 @@
       "last": {
         "age": 35.3,
         "score": 2.19,
-        "vscore": 49,
-        "likes": 42404,
-        "comments": 571,
+        "vscore": 42,
+        "likes": 42460,
+        "comments": 572,
         "views": null,
-        "engagement": 43546
+        "engagement": 43604
       },
       "search_query": "Alexandra Daddario Is reportedly the leading contender for the next Bond girl",
       "search_source": "on-image text",
@@ -145169,6 +145295,13 @@
           14313,
           5,
           null
+        ],
+        [
+          26.6,
+          0.29,
+          14349,
+          5,
+          null
         ]
       ],
       "result_24": {
@@ -145188,11 +145321,11 @@
       "last": {
         "age": 26.6,
         "score": 0.29,
-        "vscore": 26,
-        "likes": 14303,
+        "vscore": 25,
+        "likes": 14339,
         "comments": 5,
         "views": null,
-        "engagement": 14313
+        "engagement": 14349
       },
       "search_query": "getting ready to make history a Sanna Pod",
       "search_source": "on-image text",
@@ -146441,6 +146574,13 @@
           35521,
           154,
           null
+        ],
+        [
+          25.25,
+          1.79,
+          35576,
+          154,
+          null
         ]
       ],
       "result_24": {
@@ -146458,13 +146598,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 25.2,
+        "age": 25.3,
         "score": 1.79,
-        "vscore": 50,
-        "likes": 35213,
+        "vscore": 44,
+        "likes": 35268,
         "comments": 154,
         "views": null,
-        "engagement": 35521
+        "engagement": 35576
       },
       "search_query": "these cinephiles",
       "search_source": "on-image text",
@@ -147075,7 +147215,7 @@
       "first_flag_age": 1.8,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 1.99,
+      "peak_score": 2.02,
       "peak_tier": "rising",
       "peak_age": 1.8,
       "points": [
@@ -147106,6 +147246,13 @@
           4916,
           28,
           null
+        ],
+        [
+          1.8,
+          2.02,
+          5035,
+          32,
+          null
         ]
       ],
       "result_24": null,
@@ -147113,12 +147260,12 @@
       "status": "live",
       "last": {
         "age": 1.8,
-        "score": 1.99,
-        "vscore": 43,
-        "likes": 4860,
-        "comments": 28,
+        "score": 2.02,
+        "vscore": 38,
+        "likes": 4971,
+        "comments": 32,
         "views": null,
-        "engagement": 4916
+        "engagement": 5035
       },
       "search_query": "Artificial intelligence detects breast cancer 5 years before it develops",
       "search_source": "on-image text",
@@ -147291,7 +147438,7 @@
       "thumb": "thumbs/18031112969698460.jpg"
     }
   },
-  "updated": "2026-11-24T17:45:45+00:00",
+  "updated": "2026-11-24T17:47:58+00:00",
   "thresholds": {
     "rising": 2.5,
     "viral": 5
