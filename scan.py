@@ -1128,6 +1128,17 @@ def main():
     if cfg.get("config_version", 1) < 4:  # one-time: your pages with suggested groupings
         cfg.setdefault("my_pages", json.loads(json.dumps(SUGGESTED_PAGES)))
         cfg["config_version"] = 4
+    if cfg.get("config_version", 1) < 5:  # one-time: lighter calls so all accounts fit in Meta's hourly limit
+        cfg["posts_per_account"] = min(cfg.get("posts_per_account", 30), 30)
+        cfg["stop_when_usage_percent_above"] = 90
+        cfg["config_version"] = 5
+        if not args.fixture:
+            raw = load_json(ROOT / "config.json", {})
+            raw.update(posts_per_account=cfg["posts_per_account"], config_version=5,
+                       stop_when_usage_percent_above=cfg["stop_when_usage_percent_above"])
+            if "my_pages" in cfg:
+                raw["my_pages"] = cfg["my_pages"]
+            save_json(ROOT / "config.json", raw)
         if not args.fixture:
             save_json(ROOT / "config.json", {k: v for k, v in cfg.items() if k not in DEFAULTS or k == "scan_every_minutes"})
     token = os.environ.get("IG_ACCESS_TOKEN", "")
@@ -1162,6 +1173,11 @@ def main():
     state = load_json(STATE_FILE, {"posts": {}, "last_digest": None})
     archive = load_json(ARCHIVE_FILE, {"posts": {}})
     accounts = read_accounts()
+    # Start where the last scan stopped, so accounts skipped by the rate limit go first next time
+    if accounts and state.get("resume_at") in accounts:
+        k = accounts.index(state["resume_at"])
+        accounts = accounts[k:] + accounts[:k]
+    state["resume_at"] = None
     print(f"Scanning {len(accounts)} accounts at {now.isoformat(timespec='seconds')}")
 
     summaries, tracked, stop_reason = [], [], None
@@ -1173,6 +1189,7 @@ def main():
             bd = ig.account(user)
         except StopScan as e:
             stop_reason = e.args[0]
+            state["resume_at"] = user
             for rest in accounts[i:]:
                 summaries.append({"username": rest, "error": "skipped this run: " + stop_reason})
             print(f"  STOPPED: {stop_reason}")
