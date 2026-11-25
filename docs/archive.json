@@ -91153,13 +91153,6 @@
       "peak_age": 47.7,
       "points": [
         [
-          12.67,
-          4.12,
-          54392,
-          286,
-          null
-        ],
-        [
           13.17,
           4.12,
           55537,
@@ -91991,6 +91984,13 @@
           84550,
           442,
           null
+        ],
+        [
+          70.93,
+          2.14,
+          84628,
+          442,
+          null
         ]
       ],
       "result_24": {
@@ -92019,13 +92019,13 @@
       },
       "status": "live",
       "last": {
-        "age": 69.9,
+        "age": 70.9,
         "score": 2.14,
         "vscore": 46,
-        "likes": 83666,
+        "likes": 83744,
         "comments": 442,
         "views": null,
-        "engagement": 84550
+        "engagement": 84628
       },
       "search_query": "This is my Lucia NP ar Ses",
       "search_source": "on-image text",
@@ -95643,7 +95643,7 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 71.3,
         "score": 0.5,
@@ -103267,13 +103267,6 @@
       "peak_age": 41.7,
       "points": [
         [
-          9.66,
-          2.11,
-          8150,
-          12,
-          null
-        ],
-        [
           10.16,
           2.11,
           8376,
@@ -104105,6 +104098,13 @@
           13808,
           35,
           null
+        ],
+        [
+          68.42,
+          2.37,
+          13815,
+          35,
+          null
         ]
       ],
       "result_24": {
@@ -104133,13 +104133,13 @@
       },
       "status": "live",
       "last": {
-        "age": 67.4,
-        "score": 1.75,
-        "vscore": 40,
-        "likes": 13738,
+        "age": 68.4,
+        "score": 2.37,
+        "vscore": 42,
+        "likes": 13745,
         "comments": 35,
         "views": null,
-        "engagement": 13808
+        "engagement": 13815
       },
       "search_query": "Facts News The award is not for Camilla but for her friend",
       "search_source": "on-image text",
@@ -107230,13 +107230,6 @@
       "peak_age": 67.2,
       "points": [
         [
-          9.48,
-          6.07,
-          3638,
-          15,
-          null
-        ],
-        [
           9.98,
           6.07,
           3735,
@@ -108068,6 +108061,13 @@
           308354,
           403,
           null
+        ],
+        [
+          68.25,
+          216.94,
+          311959,
+          407,
+          null
         ]
       ],
       "result_24": {
@@ -108096,13 +108096,13 @@
       },
       "status": "live",
       "last": {
-        "age": 67.2,
-        "score": 384.96,
+        "age": 68.2,
+        "score": 216.94,
         "vscore": 96,
-        "likes": 307548,
-        "comments": 403,
+        "likes": 311145,
+        "comments": 407,
         "views": null,
-        "engagement": 308354
+        "engagement": 311959
       },
       "search_query": "If tigers are so dangerous explain this oo wee i",
       "search_source": "on-image text",
@@ -108127,13 +108127,6 @@
       "peak_tier": "rising",
       "peak_age": 60.7,
       "points": [
-        [
-          4.95,
-          3.19,
-          14382,
-          38,
-          null
-        ],
         [
           5.45,
           3.14,
@@ -108966,6 +108959,13 @@
           34387,
           128,
           null
+        ],
+        [
+          63.21,
+          2.27,
+          34457,
+          128,
+          null
         ]
       ],
       "result_24": {
@@ -108994,13 +108994,13 @@
       },
       "status": "live",
       "last": {
-        "age": 62.2,
-        "score": 2.72,
-        "vscore": 51,
-        "likes": 34131,
+        "age": 63.2,
+        "score": 2.27,
+        "vscore": 47,
+        "likes": 34201,
         "comments": 128,
         "views": null,
-        "engagement": 34387
+        "engagement": 34457
       },
       "search_query": "Two men discover by chance that they have the same tattoo even",
       "search_source": "on-image text",
@@ -115428,13 +115428,6 @@
       "peak_age": 46.0,
       "points": [
         [
-          9.96,
-          1.48,
-          35378,
-          22,
-          null
-        ],
-        [
           10.46,
           1.56,
           38298,
@@ -116266,6 +116259,13 @@
           202160,
           117,
           null
+        ],
+        [
+          68.72,
+          4.52,
+          202742,
+          119,
+          null
         ]
       ],
       "result_24": {
@@ -116294,13 +116294,13 @@
       },
       "status": "live",
       "last": {
-        "age": 67.7,
-        "score": 4.04,
-        "vscore": 61,
-        "likes": 201926,
-        "comments": 117,
+        "age": 68.7,
+        "score": 4.52,
+        "vscore": 64,
+        "likes": 202504,
+        "comments": 119,
         "views": null,
-        "engagement": 202160
+        "engagement": 202742
       },
       "search_query": "ips aia te",
       "search_source": "on-image text",
@@ -121731,6 +121731,13 @@
           48077,
           894,
           null
+        ],
+        [
+          57.96,
+          1.0,
+          48166,
+          894,
+          null
         ]
       ],
       "result_24": {
@@ -121759,13 +121766,13 @@
       },
       "status": "live",
       "last": {
-        "age": 56.9,
+        "age": 58.0,
         "score": 1.0,
         "vscore": 25,
-        "likes": 46289,
+        "likes": 46378,
         "comments": 894,
         "views": null,
-        "engagement": 48077
+        "engagement": 48166
       },
       "search_query": "Rockstar really disappointed us What we wanted What we got",
       "search_source": "on-image text",
@@ -121790,13 +121797,6 @@
       "peak_tier": "viral",
       "peak_age": 46.4,
       "points": [
-        [
-          3.88,
-          0.18,
-          1314,
-          3,
-          null
-        ],
         [
           4.38,
           0.17,
@@ -122629,6 +122629,13 @@
           209468,
           221,
           null
+        ],
+        [
+          62.14,
+          5.31,
+          210603,
+          222,
+          null
         ]
       ],
       "result_24": {
@@ -122657,13 +122664,13 @@
       },
       "status": "live",
       "last": {
-        "age": 61.1,
-        "score": 5.3,
+        "age": 62.1,
+        "score": 5.31,
         "vscore": 72,
-        "likes": 209026,
-        "comments": 221,
+        "likes": 210159,
+        "comments": 222,
         "views": null,
-        "engagement": 209468
+        "engagement": 210603
       },
       "search_query": "that baby doesn’t even look like me",
       "search_source": "on-image text",
@@ -122861,13 +122868,6 @@
       "peak_tier": "viral",
       "peak_age": 63.7,
       "points": [
-        [
-          7.9,
-          2.14,
-          12152,
-          18,
-          null
-        ],
         [
           8.4,
           2.14,
@@ -123700,6 +123700,13 @@
           74230,
           92,
           null
+        ],
+        [
+          66.17,
+          4.92,
+          74645,
+          94,
+          null
         ]
       ],
       "result_24": {
@@ -123728,13 +123735,13 @@
       },
       "status": "live",
       "last": {
-        "age": 65.2,
-        "score": 5.88,
-        "vscore": 74,
-        "likes": 74046,
-        "comments": 92,
+        "age": 66.2,
+        "score": 4.92,
+        "vscore": 71,
+        "likes": 74457,
+        "comments": 94,
         "views": null,
-        "engagement": 74230
+        "engagement": 74645
       },
       "search_query": "A zoo in China has given up trying to help an overweight",
       "search_source": "on-image text",
@@ -123759,13 +123766,6 @@
       "peak_tier": "rising",
       "peak_age": 57.5,
       "points": [
-        [
-          0.81,
-          2.13,
-          728,
-          1,
-          null
-        ],
         [
           1.31,
           2.52,
@@ -124598,6 +124598,13 @@
           10420,
           3,
           null
+        ],
+        [
+          59.57,
+          2.88,
+          10450,
+          3,
+          null
         ]
       ],
       "result_24": {
@@ -124626,13 +124633,13 @@
       },
       "status": "live",
       "last": {
-        "age": 58.6,
-        "score": 2.96,
-        "vscore": 54,
-        "likes": 10414,
+        "age": 59.6,
+        "score": 2.88,
+        "vscore": 53,
+        "likes": 10444,
         "comments": 3,
         "views": null,
-        "engagement": 10420
+        "engagement": 10450
       },
       "search_query": "A good friend",
       "search_source": "caption",
@@ -124657,13 +124664,6 @@
       "peak_tier": "rising",
       "peak_age": 65.0,
       "points": [
-        [
-          8.27,
-          2.49,
-          2496,
-          2,
-          null
-        ],
         [
           8.77,
           2.51,
@@ -125496,6 +125496,13 @@
           10347,
           2,
           null
+        ],
+        [
+          67.03,
+          2.89,
+          10501,
+          2,
+          null
         ]
       ],
       "result_24": {
@@ -125524,13 +125531,13 @@
       },
       "status": "live",
       "last": {
-        "age": 66.0,
-        "score": 2.94,
-        "vscore": 63,
-        "likes": 10343,
+        "age": 67.0,
+        "score": 2.89,
+        "vscore": 62,
+        "likes": 10497,
         "comments": 2,
         "views": null,
-        "engagement": 10347
+        "engagement": 10501
       },
       "search_query": "vehicle detected oh my absolute god Vehicle detected blink at RE iii",
       "search_source": "on-image text",
@@ -125555,13 +125562,6 @@
       "peak_tier": "rising",
       "peak_age": 14.6,
       "points": [
-        [
-          2.05,
-          2.7,
-          1349,
-          4,
-          null
-        ],
         [
           2.55,
           2.67,
@@ -126394,6 +126394,13 @@
           6190,
           23,
           null
+        ],
+        [
+          60.81,
+          1.71,
+          6195,
+          23,
+          null
         ]
       ],
       "result_24": {
@@ -126422,13 +126429,13 @@
       },
       "status": "live",
       "last": {
-        "age": 59.8,
-        "score": 1.76,
-        "vscore": 34,
-        "likes": 6144,
+        "age": 60.8,
+        "score": 1.71,
+        "vscore": 33,
+        "likes": 6149,
         "comments": 23,
         "views": null,
-        "engagement": 6190
+        "engagement": 6195
       },
       "search_query": "f ti lain thi lf tigers are so dangerous explain this 3",
       "search_source": "on-image text",
@@ -126449,17 +126456,10 @@
       "first_flag_age": 17.3,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 3.58,
+      "peak_score": 3.81,
       "peak_tier": "rising",
-      "peak_age": 40.8,
+      "peak_age": 67.6,
       "points": [
-        [
-          8.82,
-          1.83,
-          6747,
-          80,
-          null
-        ],
         [
           9.32,
           1.87,
@@ -127292,6 +127292,13 @@
           22059,
           192,
           null
+        ],
+        [
+          67.59,
+          3.81,
+          22199,
+          195,
+          null
         ]
       ],
       "result_24": {
@@ -127320,13 +127327,13 @@
       },
       "status": "live",
       "last": {
-        "age": 66.6,
-        "score": 2.79,
-        "vscore": 53,
-        "likes": 21675,
-        "comments": 192,
+        "age": 67.6,
+        "score": 3.81,
+        "vscore": 58,
+        "likes": 21809,
+        "comments": 195,
         "views": null,
-        "engagement": 22059
+        "engagement": 22199
       },
       "search_query": "Wait if the Capitol can only reap kids aged 12 to 18",
       "search_source": "on-image text",
@@ -127351,13 +127358,6 @@
       "peak_tier": "rising",
       "peak_age": 58.0,
       "points": [
-        [
-          2.26,
-          1.88,
-          5724,
-          9,
-          null
-        ],
         [
           2.76,
           1.94,
@@ -128190,6 +128190,13 @@
           28867,
           25,
           null
+        ],
+        [
+          60.53,
+          1.91,
+          28936,
+          25,
+          null
         ]
       ],
       "result_24": {
@@ -128218,13 +128225,13 @@
       },
       "status": "live",
       "last": {
-        "age": 59.5,
-        "score": 2.29,
-        "vscore": 46,
-        "likes": 28817,
+        "age": 60.5,
+        "score": 1.91,
+        "vscore": 42,
+        "likes": 28886,
         "comments": 25,
         "views": null,
-        "engagement": 28867
+        "engagement": 28936
       },
       "search_query": "If tigers are so dangerous explain this",
       "search_source": "on-image text",
@@ -130373,6 +130380,13 @@
           118347,
           126,
           null
+        ],
+        [
+          51.0,
+          3.0,
+          118825,
+          127,
+          null
         ]
       ],
       "result_24": {
@@ -130401,13 +130415,13 @@
       },
       "status": "live",
       "last": {
-        "age": 50.0,
+        "age": 51.0,
         "score": 3.0,
         "vscore": 54,
-        "likes": 118095,
-        "comments": 126,
+        "likes": 118571,
+        "comments": 127,
         "views": null,
-        "engagement": 118347
+        "engagement": 118825
       },
       "search_query": "The way the life left his eyes oh I’m not hungry 6",
       "search_source": "on-image text",
@@ -130432,13 +130446,6 @@
       "peak_tier": "rising",
       "peak_age": 40.3,
       "points": [
-        [
-          5.25,
-          1.08,
-          9199,
-          21,
-          null
-        ],
         [
           5.75,
           1.13,
@@ -131271,6 +131278,13 @@
           40508,
           79,
           null
+        ],
+        [
+          63.51,
+          1.02,
+          40555,
+          79,
+          null
         ]
       ],
       "result_24": {
@@ -131299,13 +131313,13 @@
       },
       "status": "live",
       "last": {
-        "age": 62.5,
-        "score": 1.03,
+        "age": 63.5,
+        "score": 1.02,
         "vscore": 26,
-        "likes": 40350,
+        "likes": 40397,
         "comments": 79,
         "views": null,
-        "engagement": 40508
+        "engagement": 40555
       },
       "search_query": "eg Sl CO ee cae C vay ma os ity KY we",
       "search_source": "on-image text",
@@ -131962,13 +131976,6 @@
       "peak_tier": "rising",
       "peak_age": 66.5,
       "points": [
-        [
-          9.77,
-          2.02,
-          2199,
-          3,
-          null
-        ],
         [
           10.27,
           2.02,
@@ -132801,6 +132808,13 @@
           7930,
           5,
           null
+        ],
+        [
+          68.53,
+          2.21,
+          8027,
+          5,
+          null
         ]
       ],
       "result_24": {
@@ -132829,13 +132843,13 @@
       },
       "status": "live",
       "last": {
-        "age": 67.5,
-        "score": 2.25,
-        "vscore": 45,
-        "likes": 7920,
+        "age": 68.5,
+        "score": 2.21,
+        "vscore": 48,
+        "likes": 8017,
         "comments": 5,
         "views": null,
-        "engagement": 7930
+        "engagement": 8027
       },
       "search_query": "ineed everyone to see how happy this praline dog to get a",
       "search_source": "on-image text",
@@ -133078,9 +133092,9 @@
       "first_flag_age": 4.8,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 3.81,
+      "peak_score": 5.32,
       "peak_tier": "rising",
-      "peak_age": 50.6,
+      "peak_age": 51.6,
       "points": [
         [
           0.09,
@@ -133823,6 +133837,13 @@
           30130,
           155,
           null
+        ],
+        [
+          51.59,
+          5.32,
+          30941,
+          157,
+          null
         ]
       ],
       "result_24": {
@@ -133851,19 +133872,19 @@
       },
       "status": "live",
       "last": {
-        "age": 50.6,
-        "score": 3.81,
-        "vscore": 74,
-        "likes": 29820,
-        "comments": 155,
+        "age": 51.6,
+        "score": 5.32,
+        "vscore": 82,
+        "likes": 30627,
+        "comments": 157,
         "views": null,
-        "engagement": 30130
+        "engagement": 30941
       },
       "search_query": "Facts News Student suspended for 4 days after asking her teacher why",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=Facts+News+Student+suspended+for+4+days+after+asking+her+teacher+why&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=Facts+News+Student+suspended+for+4+days+after+asking+her+teacher+why&src=typed_query&f=live",
-      "peak_vscore": 74,
+      "peak_vscore": 82,
       "thumb": "thumbs/17905620087372557.jpg"
     },
     "18175261267480398": {
@@ -134504,6 +134525,13 @@
           41201,
           123,
           null
+        ],
+        [
+          48.33,
+          6.03,
+          41302,
+          124,
+          null
         ]
       ],
       "result_24": {
@@ -134518,16 +134546,27 @@
         "label": "🔥 Went viral",
         "stale": false
       },
-      "result_48": null,
+      "result_48": {
+        "age": 48.3,
+        "score": 6.03,
+        "vscore": 52,
+        "likes": 41054,
+        "comments": 124,
+        "views": null,
+        "engagement": 41302,
+        "verdict": "viral",
+        "label": "🔥 Still viral — now cooling off",
+        "stale": false
+      },
       "status": "live",
       "last": {
-        "age": 47.3,
-        "score": 14.41,
-        "vscore": 66,
-        "likes": 40955,
-        "comments": 123,
+        "age": 48.3,
+        "score": 6.03,
+        "vscore": 52,
+        "likes": 41054,
+        "comments": 124,
         "views": null,
-        "engagement": 41201
+        "engagement": 41302
       },
       "search_query": "fact thesis A photographer's chances ended up creating the most memorable image",
       "search_source": "on-image text",
@@ -136927,6 +136966,13 @@
           56201,
           365,
           1242334
+        ],
+        [
+          46.52,
+          6.15,
+          56415,
+          365,
+          1246869
         ]
       ],
       "result_24": {
@@ -136944,13 +136990,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 45.5,
-        "score": 6.14,
-        "vscore": 69,
-        "likes": 55471,
+        "age": 46.5,
+        "score": 6.15,
+        "vscore": 71,
+        "likes": 55685,
         "comments": 365,
-        "views": 1242334,
-        "engagement": 56201
+        "views": 1246869,
+        "engagement": 56415
       },
       "search_query": "Stake com A massive deep sea shark was filmed approaching a submarine",
       "search_source": "on-image text",
@@ -138628,6 +138674,13 @@
           7624,
           39,
           null
+        ],
+        [
+          53.19,
+          1.31,
+          7629,
+          39,
+          null
         ]
       ],
       "result_24": {
@@ -138656,13 +138709,13 @@
       },
       "status": "live",
       "last": {
-        "age": 52.2,
-        "score": 0.96,
-        "vscore": 22,
-        "likes": 7546,
+        "age": 53.2,
+        "score": 1.31,
+        "vscore": 27,
+        "likes": 7551,
         "comments": 39,
         "views": null,
-        "engagement": 7624
+        "engagement": 7629
       },
       "search_query": "Facts News Nearly 30 years later Small Soldiers’ co writer Adam Rifkin",
       "search_source": "on-image text",
@@ -141460,6 +141513,13 @@
           104129,
           658,
           2153576
+        ],
+        [
+          45.36,
+          2.53,
+          104244,
+          658,
+          2156691
         ]
       ],
       "result_24": {
@@ -141477,13 +141537,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 44.4,
+        "age": 45.4,
         "score": 2.53,
         "vscore": 50,
-        "likes": 102813,
+        "likes": 102928,
         "comments": 658,
-        "views": 2153576,
-        "engagement": 104129
+        "views": 2156691,
+        "engagement": 104244
       },
       "search_query": "An easter egg in GTA 6 has been found that transports you",
       "search_source": "on-image text",
@@ -142144,6 +142204,13 @@
           90064,
           124,
           null
+        ],
+        [
+          45.48,
+          0.98,
+          90570,
+          127,
+          null
         ]
       ],
       "result_24": {
@@ -142161,13 +142228,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 44.5,
+        "age": 45.5,
         "score": 0.98,
         "vscore": 25,
-        "likes": 89816,
-        "comments": 124,
+        "likes": 90316,
+        "comments": 127,
         "views": null,
-        "engagement": 90064
+        "engagement": 90570
       },
       "search_query": "Hear me out November 12 Jensen Huang resigns November 19 GTA VI",
       "search_source": "on-image text",
@@ -142786,6 +142853,13 @@
           13468,
           33,
           378778
+        ],
+        [
+          44.86,
+          1.47,
+          13510,
+          33,
+          380349
         ]
       ],
       "result_24": {
@@ -142803,13 +142877,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 43.9,
+        "age": 44.9,
         "score": 1.47,
         "vscore": 35,
-        "likes": 13402,
+        "likes": 13444,
         "comments": 33,
-        "views": 378778,
-        "engagement": 13468
+        "views": 380349,
+        "engagement": 13510
       },
       "search_query": "Stake com the dev that put that in is probably clapping like",
       "search_source": "on-image text",
@@ -143428,6 +143502,13 @@
           13113,
           189,
           null
+        ],
+        [
+          48.13,
+          0.62,
+          13134,
+          189,
+          null
         ]
       ],
       "result_24": {
@@ -143442,16 +143523,27 @@
         "label": "📈 Held up (rising)",
         "stale": false
       },
-      "result_48": null,
-      "status": "live",
-      "last": {
-        "age": 47.1,
+      "result_48": {
+        "age": 48.1,
         "score": 0.62,
         "vscore": 25,
-        "likes": 12735,
+        "likes": 12756,
         "comments": 189,
         "views": null,
-        "engagement": 13113
+        "engagement": 13134,
+        "verdict": "fizzled",
+        "label": "💤 Fizzled out",
+        "stale": false
+      },
+      "status": "live",
+      "last": {
+        "age": 48.1,
+        "score": 0.62,
+        "vscore": 25,
+        "likes": 12756,
+        "comments": 189,
+        "views": null,
+        "engagement": 13134
       },
       "search_query": "age ACERVO Two men discover by chance that they have the same",
       "search_source": "on-image text",
@@ -144140,6 +144232,13 @@
           116040,
           531,
           null
+        ],
+        [
+          45.69,
+          0.45,
+          21640,
+          532,
+          null
         ]
       ],
       "result_24": {
@@ -144157,13 +144256,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 44.7,
-        "score": 2.41,
-        "vscore": 36,
-        "likes": null,
-        "comments": 531,
+        "age": 45.7,
+        "score": 0.45,
+        "vscore": 25,
+        "likes": 20576,
+        "comments": 532,
         "views": null,
-        "engagement": 116040
+        "engagement": 21640
       },
       "search_query": "Just boysbeingboys",
       "search_source": "caption",
@@ -144406,9 +144505,9 @@
       "first_flag_age": 4.7,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 4.56,
+      "peak_score": 4.82,
       "peak_tier": "rising",
-      "peak_age": 20.7,
+      "peak_age": 47.4,
       "points": [
         [
           0.19,
@@ -145102,6 +145201,13 @@
           28018,
           35,
           null
+        ],
+        [
+          47.44,
+          4.82,
+          28043,
+          35,
+          null
         ]
       ],
       "result_24": {
@@ -145119,13 +145225,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 46.4,
-        "score": 3.55,
-        "vscore": 58,
-        "likes": 27948,
+        "age": 47.4,
+        "score": 4.82,
+        "vscore": 62,
+        "likes": 27973,
         "comments": 35,
         "views": null,
-        "engagement": 28018
+        "engagement": 28043
       },
       "search_query": "Facts News My favourite thing about Helena is that she literally has",
       "search_source": "on-image text",
@@ -145709,6 +145815,13 @@
           22492,
           140,
           1029053
+        ],
+        [
+          42.46,
+          2.46,
+          22525,
+          141,
+          1031302
         ]
       ],
       "result_24": {
@@ -145726,13 +145839,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 41.4,
+        "age": 42.5,
         "score": 2.46,
         "vscore": 49,
-        "likes": 22212,
-        "comments": 140,
-        "views": 1029053,
-        "engagement": 22492
+        "likes": 22243,
+        "comments": 141,
+        "views": 1031302,
+        "engagement": 22525
       },
       "search_query": "Stake com Inde Navarrette teasing her Rogue accent for X",
       "search_source": "on-image text",
@@ -145753,9 +145866,9 @@
       "first_flag_age": 2.5,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 9.1,
+      "peak_score": 9.13,
       "peak_tier": "viral",
-      "peak_age": 42.8,
+      "peak_age": 43.8,
       "points": [
         [
           0.01,
@@ -146400,6 +146513,13 @@
           61027,
           678,
           null
+        ],
+        [
+          43.77,
+          9.13,
+          61256,
+          680,
+          null
         ]
       ],
       "result_24": {
@@ -146417,13 +146537,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 42.8,
-        "score": 9.1,
-        "vscore": 75,
-        "likes": 59671,
-        "comments": 678,
+        "age": 43.8,
+        "score": 9.13,
+        "vscore": 76,
+        "likes": 59896,
+        "comments": 680,
         "views": null,
-        "engagement": 61027
+        "engagement": 61256
       },
       "search_query": "Nobody who says GTA3 is fire has actually played GTA3",
       "search_source": "on-image text",
@@ -147075,6 +147195,13 @@
           7574,
           65,
           176693
+        ],
+        [
+          41.78,
+          0.83,
+          7581,
+          65,
+          177127
         ]
       ],
       "result_24": {
@@ -147092,13 +147219,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 40.8,
+        "age": 41.8,
         "score": 0.83,
         "vscore": 22,
-        "likes": 7444,
+        "likes": 7451,
         "comments": 65,
-        "views": 176693,
-        "engagement": 7574
+        "views": 177127,
+        "engagement": 7581
       },
       "search_query": "Stake com Nvidia employee greets Jensen Huang with a warm hug during",
       "search_source": "on-image text",
@@ -147892,6 +148019,13 @@
           219719,
           382,
           null
+        ],
+        [
+          52.91,
+          3.87,
+          224291,
+          391,
+          null
         ]
       ],
       "result_24": {
@@ -147920,13 +148054,13 @@
       },
       "status": "live",
       "last": {
-        "age": 51.9,
-        "score": 3.83,
+        "age": 52.9,
+        "score": 3.87,
         "vscore": 72,
-        "likes": 218955,
-        "comments": 382,
+        "likes": 223509,
+        "comments": 391,
         "views": null,
-        "engagement": 219719
+        "engagement": 224291
       },
       "search_query": "chris evans with two different versions of sue fie ae",
       "search_source": "on-image text",
@@ -148748,6 +148882,13 @@
           87754,
           139,
           null
+        ],
+        [
+          54.98,
+          1.53,
+          88653,
+          143,
+          null
         ]
       ],
       "result_24": {
@@ -148776,13 +148917,13 @@
       },
       "status": "live",
       "last": {
-        "age": 54.0,
+        "age": 55.0,
         "score": 1.53,
-        "vscore": 36,
-        "likes": 87476,
-        "comments": 139,
+        "vscore": 37,
+        "likes": 88367,
+        "comments": 143,
         "views": null,
-        "engagement": 87754
+        "engagement": 88653
       },
       "search_query": "was born in the right generation love silly little gay people in",
       "search_source": "on-image text",
@@ -149687,9 +149828,9 @@
       "first_flag_age": 5.9,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 12.53,
+      "peak_score": 12.58,
       "peak_tier": "viral",
-      "peak_age": 43.9,
+      "peak_age": 44.9,
       "points": [
         [
           0.11,
@@ -150264,6 +150405,13 @@
           10094,
           11,
           null
+        ],
+        [
+          44.87,
+          12.58,
+          10145,
+          11,
+          null
         ]
       ],
       "result_24": {
@@ -150281,13 +150429,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 43.9,
-        "score": 12.53,
+        "age": 44.9,
+        "score": 12.58,
         "vscore": 81,
-        "likes": 10072,
+        "likes": 10123,
         "comments": 11,
         "views": null,
-        "engagement": 10094
+        "engagement": 10145
       },
       "search_query": "our 5 foot princess with her 6 foot tall friend",
       "search_source": "on-image text",
@@ -150892,6 +151040,13 @@
           6651,
           15,
           218646
+        ],
+        [
+          40.1,
+          0.11,
+          6667,
+          15,
+          219769
         ]
       ],
       "result_24": {
@@ -150909,13 +151064,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 39.1,
+        "age": 40.1,
         "score": 0.11,
-        "vscore": 20,
-        "likes": 6621,
+        "vscore": 21,
+        "likes": 6637,
         "comments": 15,
-        "views": 218646,
-        "engagement": 6651
+        "views": 219769,
+        "engagement": 6667
       },
       "search_query": "The very last pick of the 1983 NFL Draft got nicknamed 'Mr",
       "search_source": "on-image text",
@@ -151115,7 +151270,7 @@
         "stale": true
       },
       "result_48": null,
-      "status": "live",
+      "status": "done",
       "last": {
         "age": 13.6,
         "score": 1.51,
@@ -151973,6 +152128,13 @@
           57378,
           759,
           null
+        ],
+        [
+          57.07,
+          1.0,
+          57906,
+          763,
+          null
         ]
       ],
       "result_24": {
@@ -152001,13 +152163,13 @@
       },
       "status": "live",
       "last": {
-        "age": 56.1,
+        "age": 57.1,
         "score": 1.0,
         "vscore": 25,
-        "likes": 55860,
-        "comments": 759,
+        "likes": 56380,
+        "comments": 763,
         "views": null,
-        "engagement": 57378
+        "engagement": 57906
       },
       "search_query": "Alexandra Daddario Is reportedly the leading contender for the next Bond girl",
       "search_source": "on-image text",
@@ -152032,13 +152194,6 @@
       "peak_tier": "viral",
       "peak_age": 58.8,
       "points": [
-        [
-          2.05,
-          2.82,
-          1408,
-          4,
-          null
-        ],
         [
           2.55,
           2.81,
@@ -152871,6 +153026,13 @@
           17716,
           43,
           null
+        ],
+        [
+          60.82,
+          4.95,
+          17986,
+          44,
+          null
         ]
       ],
       "result_24": {
@@ -152899,13 +153061,13 @@
       },
       "status": "live",
       "last": {
-        "age": 59.8,
-        "score": 5.04,
-        "vscore": 79,
-        "likes": 17630,
-        "comments": 43,
+        "age": 60.8,
+        "score": 4.95,
+        "vscore": 78,
+        "likes": 17898,
+        "comments": 44,
         "views": null,
-        "engagement": 17716
+        "engagement": 17986
       },
       "search_query": "THE BEST",
       "search_source": "caption",
@@ -153636,6 +153798,13 @@
           8758,
           48,
           null
+        ],
+        [
+          48.9,
+          6.11,
+          8779,
+          48,
+          null
         ]
       ],
       "result_24": {
@@ -153650,16 +153819,27 @@
         "label": "🔥 Went viral",
         "stale": false
       },
-      "result_48": null,
-      "status": "live",
-      "last": {
-        "age": 47.9,
-        "score": 10.93,
-        "vscore": 54,
-        "likes": 8662,
+      "result_48": {
+        "age": 48.9,
+        "score": 6.11,
+        "vscore": 45,
+        "likes": 8683,
         "comments": 48,
         "views": null,
-        "engagement": 8758
+        "engagement": 8779,
+        "verdict": "viral",
+        "label": "🔥 Still viral",
+        "stale": false
+      },
+      "status": "live",
+      "last": {
+        "age": 48.9,
+        "score": 6.11,
+        "vscore": 45,
+        "likes": 8683,
+        "comments": 48,
+        "views": null,
+        "engagement": 8779
       },
       "search_query": "my brainis rotted man photos i took of a dog playing basketball",
       "search_source": "on-image text",
@@ -154264,6 +154444,13 @@
           7065,
           63,
           273697
+        ],
+        [
+          40.51,
+          0.12,
+          7122,
+          64,
+          275428
         ]
       ],
       "result_24": {
@@ -154281,13 +154468,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 39.5,
-        "score": 0.11,
+        "age": 40.5,
+        "score": 0.12,
         "vscore": 21,
-        "likes": 6939,
-        "comments": 63,
-        "views": 273697,
-        "engagement": 7065
+        "likes": 6994,
+        "comments": 64,
+        "views": 275428,
+        "engagement": 7122
       },
       "search_query": "Stake com Stake Stake The way her reporter voice disappears",
       "search_source": "on-image text",
@@ -154308,9 +154495,9 @@
       "first_flag_age": 10.1,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 2.18,
+      "peak_score": 2.99,
       "peak_tier": "rising",
-      "peak_age": 45.6,
+      "peak_age": 46.6,
       "points": [
         [
           0.35,
@@ -154990,6 +155177,13 @@
           17261,
           433,
           null
+        ],
+        [
+          46.61,
+          2.99,
+          17383,
+          439,
+          null
         ]
       ],
       "result_24": {
@@ -155007,13 +155201,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 45.6,
-        "score": 2.18,
-        "vscore": 46,
-        "likes": 16395,
-        "comments": 433,
+        "age": 46.6,
+        "score": 2.99,
+        "vscore": 49,
+        "likes": 16505,
+        "comments": 439,
         "views": null,
-        "engagement": 17261
+        "engagement": 17383
       },
       "search_query": "Facts News High school swimmer goes to prom with his football player",
       "search_source": "on-image text",
@@ -155646,6 +155840,13 @@
           7271,
           39,
           415742
+        ],
+        [
+          42.51,
+          0.12,
+          7333,
+          40,
+          418656
         ]
       ],
       "result_24": {
@@ -155663,13 +155864,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 41.5,
+        "age": 42.5,
         "score": 0.12,
         "vscore": 23,
-        "likes": 7193,
-        "comments": 39,
-        "views": 415742,
-        "engagement": 7271
+        "likes": 7253,
+        "comments": 40,
+        "views": 418656,
+        "engagement": 7333
       },
       "search_query": "Stake com Stake astoke Story of a man’s life",
       "search_source": "on-image text",
@@ -155690,9 +155891,9 @@
       "first_flag_age": 2.7,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 10.19,
+      "peak_score": 10.2,
       "peak_tier": "viral",
-      "peak_age": 37.2,
+      "peak_age": 38.2,
       "points": [
         [
           0.18,
@@ -156204,6 +156405,13 @@
           93306,
           1026,
           null
+        ],
+        [
+          38.2,
+          10.2,
+          93574,
+          1032,
+          null
         ]
       ],
       "result_24": {
@@ -156221,13 +156429,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 37.2,
-        "score": 10.19,
-        "vscore": 77,
-        "likes": 91254,
-        "comments": 1026,
+        "age": 38.2,
+        "score": 10.2,
+        "vscore": 76,
+        "likes": 91510,
+        "comments": 1032,
         "views": null,
-        "engagement": 93306
+        "engagement": 93574
       },
       "search_query": "How everyone so ahead??",
       "search_source": "caption",
@@ -156727,6 +156935,13 @@
           10497,
           72,
           367379
+        ],
+        [
+          38.29,
+          0.17,
+          10542,
+          73,
+          368791
         ]
       ],
       "result_24": {
@@ -156744,13 +156959,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 37.3,
+        "age": 38.3,
         "score": 0.17,
         "vscore": 25,
-        "likes": 10353,
-        "comments": 72,
-        "views": 367379,
-        "engagement": 10497
+        "likes": 10396,
+        "comments": 73,
+        "views": 368791,
+        "engagement": 10542
       },
       "search_query": "People who get the whole People wnsroak nfft far wamkhanm Aamilas",
       "search_source": "on-image text",
@@ -158239,6 +158454,13 @@
           27287,
           20,
           null
+        ],
+        [
+          47.77,
+          0.57,
+          27369,
+          20,
+          null
         ]
       ],
       "result_24": {
@@ -158256,13 +158478,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 46.8,
+        "age": 47.8,
         "score": 0.57,
         "vscore": 25,
-        "likes": 27247,
+        "likes": 27329,
         "comments": 20,
         "views": null,
-        "engagement": 27287
+        "engagement": 27369
       },
       "search_query": "All my friends are from WOE FM Rae Reeence Man su 4",
       "search_source": "on-image text",
@@ -158944,6 +159166,13 @@
           175927,
           370,
           null
+        ],
+        [
+          45.02,
+          2.83,
+          177959,
+          377,
+          null
         ]
       ],
       "result_24": {
@@ -158961,13 +159190,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 44.0,
-        "score": 2.81,
-        "vscore": 57,
-        "likes": 175187,
-        "comments": 370,
+        "age": 45.0,
+        "score": 2.83,
+        "vscore": 58,
+        "likes": 177205,
+        "comments": 377,
         "views": null,
-        "engagement": 175927
+        "engagement": 177959
       },
       "search_query": "Robert Pattinson for GQ",
       "search_source": "on-image text",
@@ -159446,9 +159675,9 @@
       "first_flag_age": 13.3,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 14.1,
+      "peak_score": 14.47,
       "peak_tier": "viral",
-      "peak_age": 44.6,
+      "peak_age": 45.6,
       "points": [
         [
           0.33,
@@ -160114,6 +160343,13 @@
           94580,
           621,
           null
+        ],
+        [
+          45.6,
+          14.47,
+          97141,
+          634,
+          null
         ]
       ],
       "result_24": {
@@ -160131,13 +160367,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 44.6,
-        "score": 14.1,
+        "age": 45.6,
+        "score": 14.47,
         "vscore": 94,
-        "likes": 93338,
-        "comments": 621,
+        "likes": 95873,
+        "comments": 634,
         "views": null,
-        "engagement": 94580
+        "engagement": 97141
       },
       "search_query": "iv hardestpost",
       "search_source": "on-image text",
@@ -160728,6 +160964,13 @@
           90276,
           836,
           3535678
+        ],
+        [
+          38.19,
+          2.55,
+          90609,
+          840,
+          3548514
         ]
       ],
       "result_24": {
@@ -160745,13 +160988,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 37.2,
-        "score": 2.54,
+        "age": 38.2,
+        "score": 2.55,
         "vscore": 50,
-        "likes": 88604,
-        "comments": 836,
-        "views": 3535678,
-        "engagement": 90276
+        "likes": 88929,
+        "comments": 840,
+        "views": 3548514,
+        "engagement": 90609
       },
       "search_query": "Find yourself a girl like Lucia",
       "search_source": "on-image text",
@@ -161377,6 +161620,13 @@
           3946,
           111,
           null
+        ],
+        [
+          42.24,
+          26.78,
+          3963,
+          112,
+          null
         ]
       ],
       "result_24": {
@@ -161394,13 +161644,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 41.2,
-        "score": 48.72,
-        "vscore": 78,
-        "likes": 3724,
-        "comments": 111,
+        "age": 42.2,
+        "score": 26.78,
+        "vscore": 73,
+        "likes": 3739,
+        "comments": 112,
         "views": null,
-        "engagement": 3946
+        "engagement": 3963
       },
       "search_query": "PHOTO TAKEN NOV 22 1963 HOW PRESIDENT KENNEDY LEFT THE OVAL",
       "search_source": "on-image text",
@@ -162059,6 +162309,13 @@
           12676,
           280,
           null
+        ],
+        [
+          36.96,
+          0.6,
+          12776,
+          281,
+          null
         ]
       ],
       "result_24": {
@@ -162076,13 +162333,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 36.0,
+        "age": 37.0,
         "score": 0.6,
         "vscore": 25,
-        "likes": 12116,
-        "comments": 280,
+        "likes": 12214,
+        "comments": 281,
         "views": null,
-        "engagement": 12676
+        "engagement": 12776
       },
       "search_query": "arg Fahhh Who treated Thanos better James Gunn Russo Brothers",
       "search_source": "on-image text",
@@ -162617,6 +162874,13 @@
           34434,
           45,
           null
+        ],
+        [
+          34.35,
+          9.83,
+          35696,
+          46,
+          null
         ]
       ],
       "result_24": {
@@ -162634,13 +162898,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 33.3,
-        "score": 9.79,
+        "age": 34.4,
+        "score": 9.83,
         "vscore": 91,
-        "likes": 34344,
-        "comments": 45,
+        "likes": 35604,
+        "comments": 46,
         "views": null,
-        "engagement": 34434
+        "engagement": 35696
       },
       "search_source": "caption",
       "peak_vscore": 92,
@@ -162658,9 +162922,9 @@
       "first_flag_age": 2.3,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 62.62,
+      "peak_score": 63.29,
       "peak_tier": "viral",
-      "peak_age": 26.5,
+      "peak_age": 27.5,
       "points": [
         [
           0.27,
@@ -163081,6 +163345,13 @@
           48700,
           667,
           null
+        ],
+        [
+          27.53,
+          63.29,
+          49222,
+          670,
+          null
         ]
       ],
       "result_24": {
@@ -163098,13 +163369,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 26.5,
-        "score": 62.62,
+        "age": 27.5,
+        "score": 63.29,
         "vscore": 100,
-        "likes": 47366,
-        "comments": 667,
+        "likes": 47882,
+        "comments": 670,
         "views": null,
-        "engagement": 48700
+        "engagement": 49222
       },
       "search_query": "Celebrity News Entertainment Nobody one does it better than her",
       "search_source": "on-image text",
@@ -163695,6 +163966,13 @@
           12680,
           57,
           null
+        ],
+        [
+          41.86,
+          4.52,
+          13151,
+          58,
+          null
         ]
       ],
       "result_24": {
@@ -163712,13 +163990,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 40.9,
-        "score": 4.46,
-        "vscore": 59,
-        "likes": 12566,
-        "comments": 57,
+        "age": 41.9,
+        "score": 4.52,
+        "vscore": 57,
+        "likes": 13035,
+        "comments": 58,
         "views": null,
-        "engagement": 12680
+        "engagement": 13151
       },
       "search_query": "Se imstillculture Anybody can play The note is only 20 percent The",
       "search_source": "on-image text",
@@ -164127,6 +164405,13 @@
           2991,
           14,
           97475
+        ],
+        [
+          30.14,
+          0.14,
+          3014,
+          14,
+          98253
         ]
       ],
       "result_24": {
@@ -164144,13 +164429,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 29.1,
+        "age": 30.1,
         "score": 0.14,
         "vscore": 13,
-        "likes": 2963,
+        "likes": 2986,
         "comments": 14,
-        "views": 97475,
-        "engagement": 2991
+        "views": 98253,
+        "engagement": 3014
       },
       "search_query": "Stake com Stake Stake During the filming of Aquaman 2018 the producers",
       "search_source": "on-image text",
@@ -164762,6 +165047,13 @@
           1459,
           17,
           112868
+        ],
+        [
+          45.3,
+          0.68,
+          1464,
+          17,
+          113411
         ]
       ],
       "result_24": {
@@ -164779,13 +165071,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 44.3,
-        "score": 3.04,
-        "vscore": 32,
-        "likes": 1425,
+        "age": 45.3,
+        "score": 0.68,
+        "vscore": 11,
+        "likes": 1430,
         "comments": 17,
-        "views": 112868,
-        "engagement": 1459
+        "views": 113411,
+        "engagement": 1464
       },
       "search_query": "You'll never guess what this commercial is all about",
       "search_source": "on-image text",
@@ -164806,9 +165098,9 @@
       "first_flag_age": 23.6,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 0.44,
+      "peak_score": 0.49,
       "peak_tier": "rising",
-      "peak_age": 47.3,
+      "peak_age": 48.3,
       "points": [
         [
           0.36,
@@ -165516,6 +165808,13 @@
           28455,
           11,
           null
+        ],
+        [
+          48.33,
+          0.49,
+          29019,
+          12,
+          null
         ]
       ],
       "result_24": {
@@ -165530,16 +165829,27 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "result_48": null,
+      "result_48": {
+        "age": 48.3,
+        "score": 0.49,
+        "vscore": 25,
+        "likes": 28995,
+        "comments": 12,
+        "views": null,
+        "engagement": 29019,
+        "verdict": "fizzled",
+        "label": "💤 Fizzled out",
+        "stale": false
+      },
       "status": "live",
       "last": {
-        "age": 47.3,
-        "score": 0.44,
+        "age": 48.3,
+        "score": 0.49,
         "vscore": 25,
-        "likes": 28433,
-        "comments": 11,
+        "likes": 28995,
+        "comments": 12,
         "views": null,
-        "engagement": 28455
+        "engagement": 29019
       },
       "search_query": "getting ready to make history a Sanna Pod",
       "search_source": "on-image text",
@@ -166429,6 +166739,13 @@
           24382,
           491,
           null
+        ],
+        [
+          46.88,
+          0.51,
+          24478,
+          495,
+          null
         ]
       ],
       "result_24": {
@@ -166446,13 +166763,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 45.9,
+        "age": 46.9,
         "score": 0.51,
         "vscore": 25,
-        "likes": 23400,
-        "comments": 491,
+        "likes": 23488,
+        "comments": 495,
         "views": null,
-        "engagement": 24382
+        "engagement": 24478
       },
       "search_query": "Bro that's straight up Arthur Morgan",
       "search_source": "on-image text",
@@ -167064,6 +167381,13 @@
           28415,
           545,
           null
+        ],
+        [
+          40.78,
+          0.46,
+          28577,
+          546,
+          null
         ]
       ],
       "result_24": {
@@ -167081,13 +167405,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 39.8,
+        "age": 40.8,
         "score": 0.46,
         "vscore": 25,
-        "likes": 27325,
-        "comments": 545,
+        "likes": 27485,
+        "comments": 546,
         "views": null,
-        "engagement": 28415
+        "engagement": 28577
       },
       "search_query": "Some actors become the character others just change jackets Gee Noe A",
       "search_source": "on-image text",
@@ -167804,6 +168128,13 @@
           49534,
           215,
           null
+        ],
+        [
+          46.98,
+          1.26,
+          49907,
+          217,
+          null
         ]
       ],
       "result_24": {
@@ -167821,13 +168152,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 46.0,
-        "score": 1.25,
+        "age": 47.0,
+        "score": 1.26,
         "vscore": 31,
-        "likes": 49104,
-        "comments": 215,
+        "likes": 49473,
+        "comments": 217,
         "views": null,
-        "engagement": 49534
+        "engagement": 49907
       },
       "search_query": "these cinephiles",
       "search_source": "on-image text",
@@ -168313,6 +168644,13 @@
           209230,
           169,
           252695
+        ],
+        [
+          37.04,
+          1.9,
+          210469,
+          170,
+          255468
         ]
       ],
       "result_24": {
@@ -168330,13 +168668,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 36.0,
-        "score": 1.89,
+        "age": 37.0,
+        "score": 1.9,
         "vscore": 30,
         "likes": null,
-        "comments": 169,
-        "views": 252695,
-        "engagement": 209230
+        "comments": 170,
+        "views": 255468,
+        "engagement": 210469
       },
       "search_query": "Getting older is seeing this episode differently",
       "search_source": "on-image text",
@@ -168357,9 +168695,9 @@
       "first_flag_age": 22.4,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 8.07,
+      "peak_score": 8.47,
       "peak_tier": "viral",
-      "peak_age": 44.1,
+      "peak_age": 45.1,
       "points": [
         [
           0.35,
@@ -169018,6 +169356,13 @@
           54101,
           553,
           null
+        ],
+        [
+          45.11,
+          8.47,
+          56858,
+          564,
+          null
         ]
       ],
       "result_24": {
@@ -169035,19 +169380,19 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 44.1,
-        "score": 8.07,
-        "vscore": 89,
-        "likes": 52995,
-        "comments": 553,
+        "age": 45.1,
+        "score": 8.47,
+        "vscore": 90,
+        "likes": 55730,
+        "comments": 564,
         "views": null,
-        "engagement": 54101
+        "engagement": 56858
       },
       "search_query": "3ya hardestpost RAs ae taille OA ee ee ee e ne se",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=3ya+hardestpost+RAs+ae+taille+OA+ee+ee+ee+e+ne+se&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=3ya+hardestpost+RAs+ae+taille+OA+ee+ee+ee+e+ne+se&src=typed_query&f=live",
-      "peak_vscore": 89,
+      "peak_vscore": 90,
       "thumb": "thumbs/18127925522317919.jpg"
     },
     "18167255116499377": {
@@ -169429,19 +169774,26 @@
           22550,
           129,
           null
+        ],
+        [
+          23.53,
+          1.53,
+          22903,
+          129,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 22.5,
-        "score": 1.84,
-        "vscore": 41,
-        "likes": 22292,
+        "age": 23.5,
+        "score": 1.53,
+        "vscore": 37,
+        "likes": 22645,
         "comments": 129,
         "views": null,
-        "engagement": 22550
+        "engagement": 22903
       },
       "search_query": "Artificial intelligence detects breast cancer 5 years before it develops",
       "search_source": "on-image text",
@@ -169462,9 +169814,9 @@
       "first_flag_age": 2.9,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 21.3,
+      "peak_score": 30.2,
       "peak_tier": "viral",
-      "peak_age": 23.6,
+      "peak_age": 24.7,
       "points": [
         [
           0.39,
@@ -169836,25 +170188,43 @@
           167011,
           490,
           null
+        ],
+        [
+          24.66,
+          30.2,
+          175736,
+          528,
+          null
         ]
       ],
-      "result_24": null,
+      "result_24": {
+        "age": 24.7,
+        "score": 30.2,
+        "vscore": 99,
+        "likes": 174680,
+        "comments": 528,
+        "views": null,
+        "engagement": 175736,
+        "verdict": "viral",
+        "label": "🔥 Went viral",
+        "stale": false
+      },
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 23.6,
-        "score": 21.3,
-        "vscore": 97,
-        "likes": 166031,
-        "comments": 490,
+        "age": 24.7,
+        "score": 30.2,
+        "vscore": 99,
+        "likes": 174680,
+        "comments": 528,
         "views": null,
-        "engagement": 167011
+        "engagement": 175736
       },
       "search_query": "Facts News The importance of giving people another shot",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=Facts+News+The+importance+of+giving+people+another+shot&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=Facts+News+The+importance+of+giving+people+another+shot&src=typed_query&f=live",
-      "peak_vscore": 97,
+      "peak_vscore": 99,
       "thumb": "thumbs/17892331269477869.jpg"
     },
     "18031112969698460": {
@@ -170222,6 +170592,13 @@
           12380,
           287,
           null
+        ],
+        [
+          25.11,
+          60.59,
+          12785,
+          297,
+          null
         ]
       ],
       "result_24": {
@@ -170239,19 +170616,19 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 24.1,
-        "score": 60.54,
-        "vscore": 99,
-        "likes": 11806,
-        "comments": 287,
+        "age": 25.1,
+        "score": 60.59,
+        "vscore": 100,
+        "likes": 12191,
+        "comments": 297,
         "views": null,
-        "engagement": 12380
+        "engagement": 12785
       },
       "search_query": "ngga has been friend zoned from childhood 7 EX sceE ’",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=ngga+has+been+friend+zoned+from+childhood+7+EX+sceE+%E2%80%99&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=ngga+has+been+friend+zoned+from+childhood+7+EX+sceE+%E2%80%99&src=typed_query&f=live",
-      "peak_vscore": 99,
+      "peak_vscore": 100,
       "thumb": "thumbs/18031112969698460.jpg"
     },
     "18114819683240965": {
@@ -170906,6 +171283,13 @@
           86114,
           107,
           null
+        ],
+        [
+          43.52,
+          1.39,
+          87440,
+          110,
+          null
         ]
       ],
       "result_24": {
@@ -170923,13 +171307,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 42.5,
-        "score": 1.38,
+        "age": 43.5,
+        "score": 1.39,
         "vscore": 36,
-        "likes": 85900,
-        "comments": 107,
+        "likes": 87220,
+        "comments": 110,
         "views": null,
-        "engagement": 86114
+        "engagement": 87440
       },
       "search_query": "when become really important in my franchise pik eee ae an ht",
       "search_source": "on-image text",
@@ -171590,6 +171974,13 @@
           17096,
           21,
           null
+        ],
+        [
+          43.03,
+          1.15,
+          17463,
+          21,
+          null
         ]
       ],
       "result_24": {
@@ -171607,13 +171998,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 42.0,
-        "score": 1.35,
-        "vscore": 38,
-        "likes": 17054,
+        "age": 43.0,
+        "score": 1.15,
+        "vscore": 32,
+        "likes": 17421,
         "comments": 21,
         "views": null,
-        "engagement": 17096
+        "engagement": 17463
       },
       "search_query": "A cat named Zeus took a 37 mile train trip from Essex",
       "search_source": "on-image text",
@@ -171945,19 +172336,26 @@
           39147,
           621,
           null
+        ],
+        [
+          21.91,
+          0.46,
+          40276,
+          651,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 20.9,
+        "age": 21.9,
         "score": 0.46,
         "vscore": 25,
-        "likes": 37905,
-        "comments": 621,
+        "likes": 38974,
+        "comments": 651,
         "views": null,
-        "engagement": 39147
+        "engagement": 40276
       },
       "search_query": "A mother and her 3 children return to the same beach 18",
       "search_source": "on-image text",
@@ -171978,9 +172376,9 @@
       "first_flag_age": 16.6,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 1.97,
+      "peak_score": 2.01,
       "peak_tier": "rising",
-      "peak_age": 36.4,
+      "peak_age": 37.4,
       "points": [
         [
           0.36,
@@ -172478,6 +172876,13 @@
           23192,
           14,
           null
+        ],
+        [
+          37.37,
+          2.01,
+          23746,
+          14,
+          null
         ]
       ],
       "result_24": {
@@ -172495,19 +172900,19 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 36.4,
-        "score": 1.97,
-        "vscore": 46,
-        "likes": 23164,
+        "age": 37.4,
+        "score": 2.01,
+        "vscore": 48,
+        "likes": 23718,
         "comments": 14,
         "views": null,
-        "engagement": 23192
+        "engagement": 23746
       },
       "search_query": "him turning into an alcoholic all on his own and her living",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=him+turning+into+an+alcoholic+all+on+his+own+and+her+living&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=him+turning+into+an+alcoholic+all+on+his+own+and+her+living&src=typed_query&f=live",
-      "peak_vscore": 46,
+      "peak_vscore": 48,
       "thumb": "thumbs/17981671194135522.jpg"
     },
     "17931173622428853": {
@@ -172522,9 +172927,9 @@
       "first_flag_age": 17.9,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 13.26,
+      "peak_score": 13.63,
       "peak_tier": "viral",
-      "peak_age": 37.6,
+      "peak_age": 38.6,
       "points": [
         [
           0.12,
@@ -173043,6 +173448,13 @@
           156401,
           643,
           null
+        ],
+        [
+          38.63,
+          13.63,
+          161366,
+          661,
+          null
         ]
       ],
       "result_24": {
@@ -173060,19 +173472,19 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 37.6,
-        "score": 13.26,
-        "vscore": 72,
+        "age": 38.6,
+        "score": 13.63,
+        "vscore": 73,
         "likes": null,
-        "comments": 643,
+        "comments": 661,
         "views": null,
-        "engagement": 156401
+        "engagement": 161366
       },
       "search_query": "LUCASFILM is reportedly eyeing CHAD STAHELSKI to write and direct a live",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=LUCASFILM+is+reportedly+eyeing+CHAD+STAHELSKI+to+write+and+direct+a+live&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=LUCASFILM+is+reportedly+eyeing+CHAD+STAHELSKI+to+write+and+direct+a+live&src=typed_query&f=live",
-      "peak_vscore": 72,
+      "peak_vscore": 73,
       "thumb": "thumbs/17931173622428853.jpg"
     },
     "18108164603381296": {
@@ -173087,9 +173499,9 @@
       "first_flag_age": 5.3,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 17.61,
+      "peak_score": 17.98,
       "peak_tier": "viral",
-      "peak_age": 24.5,
+      "peak_age": 25.5,
       "points": [
         [
           0.27,
@@ -173482,6 +173894,13 @@
           13696,
           122,
           null
+        ],
+        [
+          25.53,
+          17.98,
+          13986,
+          124,
+          null
         ]
       ],
       "result_24": {
@@ -173499,13 +173918,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 24.5,
-        "score": 17.61,
+        "age": 25.5,
+        "score": 17.98,
         "vscore": 96,
-        "likes": 13452,
-        "comments": 122,
+        "likes": 13738,
+        "comments": 124,
         "views": null,
-        "engagement": 13696
+        "engagement": 13986
       },
       "search_query": "Celebrity News Entertainment I'd go back in time and cause some ruckus",
       "search_source": "on-image text",
@@ -173970,6 +174389,13 @@
           203575,
           172,
           null
+        ],
+        [
+          29.18,
+          11.29,
+          120264,
+          175,
+          null
         ]
       ],
       "result_24": {
@@ -173987,13 +174413,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 28.2,
-        "score": 19.11,
-        "vscore": 41,
+        "age": 29.2,
+        "score": 11.29,
+        "vscore": 39,
         "likes": null,
-        "comments": 172,
+        "comments": 175,
         "views": null,
-        "engagement": 203575
+        "engagement": 120264
       },
       "search_query": "GTA 6 is the greatest game of all time bc why am",
       "search_source": "on-image text",
@@ -174360,19 +174786,26 @@
           33666,
           210,
           null
+        ],
+        [
+          23.57,
+          0.57,
+          34683,
+          213,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 22.6,
-        "score": 0.56,
+        "age": 23.6,
+        "score": 0.57,
         "vscore": 25,
-        "likes": 33246,
-        "comments": 210,
+        "likes": 34257,
+        "comments": 213,
         "views": null,
-        "engagement": 33666
+        "engagement": 34683
       },
       "search_query": "Who treated Cyclops better Fox Marvel mum 6A",
       "search_source": "on-image text",
@@ -174753,6 +175186,13 @@
           29004,
           227,
           null
+        ],
+        [
+          26.53,
+          4.35,
+          29785,
+          233,
+          null
         ]
       ],
       "result_24": {
@@ -174770,13 +175210,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 25.5,
-        "score": 10.15,
-        "vscore": 71,
-        "likes": 28550,
-        "comments": 227,
+        "age": 26.5,
+        "score": 4.35,
+        "vscore": 58,
+        "likes": 29319,
+        "comments": 233,
         "views": null,
-        "engagement": 29004
+        "engagement": 29785
       },
       "search_query": "fact thesis Konstantin Pronin 86 has travelled every year since WWII to",
       "search_source": "on-image text",
@@ -175066,19 +175506,26 @@
           846,
           17,
           301461
+        ],
+        [
+          20.48,
+          0.43,
+          853,
+          17,
+          305297
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 19.5,
-        "score": 9.03,
-        "vscore": 61,
-        "likes": 812,
+        "age": 20.5,
+        "score": 0.43,
+        "vscore": 20,
+        "likes": 819,
         "comments": 17,
-        "views": 301461,
-        "engagement": 846
+        "views": 305297,
+        "engagement": 853
       },
       "search_query": "Please tell me everybody else saw that too",
       "search_source": "on-image text",
@@ -175375,19 +175822,26 @@
           8814,
           80,
           null
+        ],
+        [
+          19.63,
+          3.2,
+          8999,
+          82,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 18.6,
-        "score": 3.22,
-        "vscore": 62,
-        "likes": 8654,
-        "comments": 80,
+        "age": 19.6,
+        "score": 3.2,
+        "vscore": 60,
+        "likes": 8835,
+        "comments": 82,
         "views": null,
-        "engagement": 8814
+        "engagement": 8999
       },
       "search_query": "3 RUMOR Hulk is going to be terrified of Doctor Doom in",
       "search_source": "on-image text",
@@ -175408,9 +175862,9 @@
       "first_flag_age": 3.8,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 3.39,
+      "peak_score": 3.62,
       "peak_tier": "rising",
-      "peak_age": 19.0,
+      "peak_age": 21.5,
       "points": [
         [
           0.28,
@@ -175740,25 +176194,32 @@
           146370,
           145,
           null
+        ],
+        [
+          21.54,
+          3.62,
+          153600,
+          150,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 20.5,
-        "score": 3.16,
-        "vscore": 68,
-        "likes": 146080,
-        "comments": 145,
+        "age": 21.5,
+        "score": 3.62,
+        "vscore": 73,
+        "likes": 153300,
+        "comments": 150,
         "views": null,
-        "engagement": 146370
+        "engagement": 153600
       },
       "search_query": "iy 4 Cinnamon Girl mi Lana Del Rey",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=iy+4+Cinnamon+Girl+mi+Lana+Del+Rey&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=iy+4+Cinnamon+Girl+mi+Lana+Del+Rey&src=typed_query&f=live",
-      "peak_vscore": 70,
+      "peak_vscore": 73,
       "thumb": "thumbs/17917904322556805.jpg"
     },
     "18122087119948102": {
@@ -176301,6 +176762,13 @@
           28910,
           1336,
           null
+        ],
+        [
+          36.34,
+          0.47,
+          29057,
+          1342,
+          null
         ]
       ],
       "result_24": {
@@ -176318,13 +176786,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 35.3,
+        "age": 36.3,
         "score": 0.47,
         "vscore": 25,
-        "likes": 26238,
-        "comments": 1336,
+        "likes": 26373,
+        "comments": 1342,
         "views": null,
-        "engagement": 28910
+        "engagement": 29057
       },
       "search_query": "ee Kit Kat commissions open ey kittischmitti Nobody who says GTAS is",
       "search_source": "on-image text",
@@ -176607,19 +177075,26 @@
           5378,
           26,
           null
+        ],
+        [
+          19.85,
+          2.5,
+          5478,
+          27,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 18.8,
-        "score": 2.68,
-        "vscore": 46,
-        "likes": 5326,
-        "comments": 26,
+        "age": 19.8,
+        "score": 2.5,
+        "vscore": 44,
+        "likes": 5424,
+        "comments": 27,
         "views": null,
-        "engagement": 5378
+        "engagement": 5478
       },
       "search_query": "Jennifer Lawrence ASTONISHING look in all black dress with her DAZZLING eyes",
       "search_source": "on-image text",
@@ -177000,19 +177475,26 @@
           8779,
           36,
           null
+        ],
+        [
+          23.28,
+          6.42,
+          9098,
+          36,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 22.3,
-        "score": 11.38,
-        "vscore": 67,
-        "likes": 8707,
+        "age": 23.3,
+        "score": 6.42,
+        "vscore": 62,
+        "likes": 9026,
         "comments": 36,
         "views": null,
-        "engagement": 8779
+        "engagement": 9098
       },
       "search_query": "Photographer captures cheetah cubs after She Ny WAX ORS eet aN",
       "search_source": "on-image text",
@@ -177589,6 +178071,13 @@
           23872,
           88,
           null
+        ],
+        [
+          38.16,
+          0.39,
+          24009,
+          88,
+          null
         ]
       ],
       "result_24": {
@@ -177606,13 +178095,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 37.1,
+        "age": 38.2,
         "score": 0.39,
         "vscore": 25,
-        "likes": 23696,
+        "likes": 23833,
         "comments": 88,
         "views": null,
-        "engagement": 23872
+        "engagement": 24009
       },
       "search_query": "10 was so unserious EvanAC EvanAboutCinema The four arenas of the Hunger",
       "search_source": "on-image text",
@@ -177888,19 +178377,26 @@
           5210,
           291,
           null
+        ],
+        [
+          20.1,
+          0.27,
+          5265,
+          292,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 19.1,
-        "score": 0.28,
+        "age": 20.1,
+        "score": 0.27,
         "vscore": 18,
-        "likes": 4628,
-        "comments": 291,
+        "likes": 4681,
+        "comments": 292,
         "views": null,
-        "engagement": 5210
+        "engagement": 5265
       },
       "search_query": "ah Ungel Ordered a cake for my daughter’s birthday and it got",
       "search_source": "on-image text",
@@ -178337,6 +178833,13 @@
           189372,
           160,
           null
+        ],
+        [
+          27.25,
+          10.32,
+          109956,
+          160,
+          null
         ]
       ],
       "result_24": {
@@ -178354,13 +178857,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 26.2,
-        "score": 17.78,
-        "vscore": 40,
+        "age": 27.2,
+        "score": 10.32,
+        "vscore": 37,
         "likes": null,
         "comments": 160,
         "views": null,
-        "engagement": 189372
+        "engagement": 109956
       },
       "search_query": "Mckenna Grace saw us joking about her acath looks because there wasn't",
       "search_source": "on-image text",
@@ -178685,19 +179188,26 @@
           19201,
           340,
           null
+        ],
+        [
+          19.76,
+          0.55,
+          19716,
+          343,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 18.7,
+        "age": 19.8,
         "score": 0.55,
         "vscore": 25,
-        "likes": 18521,
-        "comments": 340,
+        "likes": 19030,
+        "comments": 343,
         "views": null,
-        "engagement": 19201
+        "engagement": 19716
       },
       "search_query": "as strange as it may seem everything will work out because of",
       "search_source": "on-image text",
@@ -178973,19 +179483,26 @@
           129329,
           692,
           6612375
+        ],
+        [
+          16.95,
+          4.83,
+          133792,
+          739,
+          6826636
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 15.9,
+        "age": 16.9,
         "score": 4.83,
-        "vscore": 75,
-        "likes": 127945,
-        "comments": 692,
-        "views": 6612375,
-        "engagement": 129329
+        "vscore": 74,
+        "likes": 132314,
+        "comments": 739,
+        "views": 6826636,
+        "engagement": 133792
       },
       "search_query": "The first one is crazy 4 Ro SOTR",
       "search_source": "on-image text",
@@ -179485,6 +180002,13 @@
           3724,
           88,
           362734
+        ],
+        [
+          38.02,
+          0.06,
+          3744,
+          89,
+          364385
         ]
       ],
       "result_24": {
@@ -179502,13 +180026,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 37.0,
+        "age": 38.0,
         "score": 0.06,
         "vscore": 21,
-        "likes": 3548,
-        "comments": 88,
-        "views": 362734,
-        "engagement": 3724
+        "likes": 3566,
+        "comments": 89,
+        "views": 364385,
+        "engagement": 3744
       },
       "search_query": "Imagine being excited to go home for the holidays to see your",
       "search_source": "on-image text",
@@ -179529,9 +180053,9 @@
       "first_flag_age": 2.0,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 3.21,
+      "peak_score": 3.22,
       "peak_tier": "rising",
-      "peak_age": 16.8,
+      "peak_age": 17.8,
       "points": [
         [
           0.04,
@@ -179791,19 +180315,26 @@
           8338,
           20,
           null
+        ],
+        [
+          17.79,
+          3.22,
+          8625,
+          22,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 16.8,
-        "score": 3.21,
-        "vscore": 61,
-        "likes": 8298,
-        "comments": 20,
+        "age": 17.8,
+        "score": 3.22,
+        "vscore": 62,
+        "likes": 8581,
+        "comments": 22,
         "views": null,
-        "engagement": 8338
+        "engagement": 8625
       },
       "search_query": "DUDE just found out that if you go too long without doing",
       "search_source": "on-image text",
@@ -180079,19 +180610,26 @@
           12327,
           456,
           null
+        ],
+        [
+          19.12,
+          0.67,
+          12756,
+          469,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 18.1,
+        "age": 19.1,
         "score": 0.67,
         "vscore": 25,
-        "likes": 11415,
-        "comments": 456,
+        "likes": 11818,
+        "comments": 469,
         "views": null,
-        "engagement": 12327
+        "engagement": 12756
       },
       "search_query": "COM Complex PLEX Complex Lucia from 'GTA VI' is out here causing",
       "search_source": "on-image text",
@@ -180318,19 +180856,26 @@
           24784,
           82,
           null
+        ],
+        [
+          15.85,
+          0.51,
+          25619,
+          85,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 14.8,
+        "age": 15.9,
         "score": 0.51,
         "vscore": 25,
-        "likes": 24620,
-        "comments": 82,
+        "likes": 25449,
+        "comments": 85,
         "views": null,
-        "engagement": 24784
+        "engagement": 25619
       },
       "search_query": "That’s all I really need rn If you’re not following crazybitchprobs ,",
       "search_source": "caption",
@@ -180865,6 +181410,13 @@
           25850,
           16,
           null
+        ],
+        [
+          33.67,
+          0.46,
+          26422,
+          16,
+          null
         ]
       ],
       "result_24": {
@@ -180882,13 +181434,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 32.7,
-        "score": 0.45,
+        "age": 33.7,
+        "score": 0.46,
         "vscore": 25,
-        "likes": 25818,
+        "likes": 26390,
         "comments": 16,
         "views": null,
-        "engagement": 25850
+        "engagement": 26422
       },
       "search_query": "Know who they are they're robert pattinson all three of them Marvel",
       "search_source": "on-image text",
@@ -181087,19 +181639,26 @@
           3366,
           176,
           1521333
+        ],
+        [
+          13.98,
+          0.07,
+          3534,
+          180,
+          1593352
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 13.0,
+        "age": 14.0,
         "score": 0.07,
         "vscore": 25,
-        "likes": 3014,
-        "comments": 176,
-        "views": 1521333,
-        "engagement": 3366
+        "likes": 3174,
+        "comments": 180,
+        "views": 1593352,
+        "engagement": 3534
       },
       "search_query": "someone asked do they bounce mid play and she did this",
       "search_source": "on-image text",
@@ -181347,19 +181906,26 @@
           36887,
           149,
           null
+        ],
+        [
+          14.29,
+          3.64,
+          42632,
+          171,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 13.3,
-        "score": 3.93,
-        "vscore": 79,
-        "likes": 36589,
-        "comments": 149,
+        "age": 14.3,
+        "score": 3.64,
+        "vscore": 78,
+        "likes": 42290,
+        "comments": 171,
         "views": null,
-        "engagement": 36887
+        "engagement": 42632
       },
       "search_query": "A birdwatching expert found all 60 GTA 6 bird species and gave",
       "search_source": "on-image text",
@@ -181380,9 +181946,9 @@
       "first_flag_age": 3.0,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 8.22,
+      "peak_score": 8.84,
       "peak_tier": "viral",
-      "peak_age": 14.2,
+      "peak_age": 15.2,
       "points": [
         [
           0.48,
@@ -181586,25 +182152,32 @@
           57969,
           530,
           null
+        ],
+        [
+          15.24,
+          8.84,
+          64644,
+          591,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 14.2,
-        "score": 8.22,
-        "vscore": 90,
-        "likes": 56909,
-        "comments": 530,
+        "age": 15.2,
+        "score": 8.84,
+        "vscore": 91,
+        "likes": 63462,
+        "comments": 591,
         "views": null,
-        "engagement": 57969
+        "engagement": 64644
       },
       "search_query": "He be making that face on purpose dawg Pop Base The cast",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=He+be+making+that+face+on+purpose+dawg+Pop+Base+The+cast&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=He+be+making+that+face+on+purpose+dawg+Pop+Base+The+cast&src=typed_query&f=live",
-      "peak_vscore": 90,
+      "peak_vscore": 91,
       "thumb": "thumbs/18099500783407021.jpg"
     },
     "18110211821131938": {
@@ -181619,9 +182192,9 @@
       "first_flag_age": 6.0,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 13.56,
+      "peak_score": 14.1,
       "peak_tier": "viral",
-      "peak_age": 17.2,
+      "peak_age": 18.2,
       "points": [
         [
           0.48,
@@ -181874,25 +182447,32 @@
           135483,
           557,
           null
+        ],
+        [
+          18.24,
+          14.1,
+          145498,
+          596,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 17.2,
-        "score": 13.56,
-        "vscore": 70,
+        "age": 18.2,
+        "score": 14.1,
+        "vscore": 71,
         "likes": null,
-        "comments": 557,
+        "comments": 596,
         "views": null,
-        "engagement": 135483
+        "engagement": 145498
       },
       "search_query": "Warner Bros is developing a live action sequel to THE POLAR EXPRESQ’",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=Warner+Bros+is+developing+a+live+action+sequel+to+THE+POLAR+EXPRESQ%E2%80%99&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=Warner+Bros+is+developing+a+live+action+sequel+to+THE+POLAR+EXPRESQ%E2%80%99&src=typed_query&f=live",
-      "peak_vscore": 70,
+      "peak_vscore": 71,
       "thumb": "thumbs/18110211821131938.jpg"
     },
     "18123800648283081": {
@@ -181907,9 +182487,9 @@
       "first_flag_age": 9.2,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 3.86,
+      "peak_score": 4.06,
       "peak_tier": "rising",
-      "peak_age": 17.9,
+      "peak_age": 18.9,
       "points": [
         [
           0.68,
@@ -182169,25 +182749,32 @@
           30581,
           125,
           null
+        ],
+        [
+          18.94,
+          4.06,
+          33093,
+          135,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 17.9,
-        "score": 3.86,
-        "vscore": 78,
-        "likes": 30331,
-        "comments": 125,
+        "age": 18.9,
+        "score": 4.06,
+        "vscore": 79,
+        "likes": 32823,
+        "comments": 135,
         "views": null,
-        "engagement": 30581
+        "engagement": 33093
       },
       "search_query": "Outsider trading Bull Theory 2D Cathie Wood bought 81 5M of SNVDA",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=Outsider+trading+Bull+Theory+2D+Cathie+Wood+bought+81+5M+of+SNVDA&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=Outsider+trading+Bull+Theory+2D+Cathie+Wood+bought+81+5M+of+SNVDA&src=typed_query&f=live",
-      "peak_vscore": 78,
+      "peak_vscore": 79,
       "thumb": "thumbs/18123800648283081.jpg"
     },
     "18029361590873922": {
@@ -182380,19 +182967,26 @@
           231207,
           1058,
           null
+        ],
+        [
+          11.3,
+          1.0,
+          33165,
+          1141,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 10.3,
-        "score": 7.35,
-        "vscore": 68,
-        "likes": null,
-        "comments": 1058,
+        "age": 11.3,
+        "score": 1.0,
+        "vscore": 25,
+        "likes": 30883,
+        "comments": 1141,
         "views": null,
-        "engagement": 231207
+        "engagement": 33165
       },
       "search_query": "Rockstar Games is reportedly willing to sell Red Dead Redemption film and",
       "search_source": "on-image text",
@@ -182413,9 +183007,9 @@
       "first_flag_age": 14.7,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 5.02,
+      "peak_score": 5.08,
       "peak_tier": "viral",
-      "peak_age": 22.9,
+      "peak_age": 23.9,
       "points": [
         [
           0.18,
@@ -182780,25 +183374,32 @@
           3817,
           271,
           null
+        ],
+        [
+          23.94,
+          5.08,
+          3950,
+          280,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 22.9,
-        "score": 5.02,
-        "vscore": 61,
-        "likes": 3275,
-        "comments": 271,
+        "age": 23.9,
+        "score": 5.08,
+        "vscore": 63,
+        "likes": 3390,
+        "comments": 280,
         "views": null,
-        "engagement": 3817
+        "engagement": 3950
       },
       "search_query": "Celebrity News Entertainment Brie Larson Elizabeth Olsen Scarlett Johansson or Hayley atwell",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=Celebrity+News+Entertainment+Brie+Larson+Elizabeth+Olsen+Scarlett+Johansson+or+Hayley+atwell&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=Celebrity+News+Entertainment+Brie+Larson+Elizabeth+Olsen+Scarlett+Johansson+or+Hayley+atwell&src=typed_query&f=live",
-      "peak_vscore": 61,
+      "peak_vscore": 63,
       "thumb": "thumbs/18130585810889535.jpg"
     },
     "18135366553834989": {
@@ -183124,19 +183725,26 @@
           37355,
           438,
           null
+        ],
+        [
+          21.04,
+          0.69,
+          39934,
+          462,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 20.0,
-        "score": 0.66,
-        "vscore": 30,
-        "likes": 36479,
-        "comments": 438,
+        "age": 21.0,
+        "score": 0.69,
+        "vscore": 29,
+        "likes": 39010,
+        "comments": 462,
         "views": null,
-        "engagement": 37355
+        "engagement": 39934
       },
       "search_query": "Rockstar Games is reportedly willing to sell Red Dead Redemption film and",
       "search_source": "on-image text",
@@ -183686,19 +184294,26 @@
           6726,
           30,
           null
+        ],
+        [
+          21.5,
+          0.36,
+          7138,
+          31,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 20.5,
-        "score": 0.34,
+        "age": 21.5,
+        "score": 0.36,
         "vscore": 21,
-        "likes": 6666,
-        "comments": 30,
+        "likes": 7076,
+        "comments": 31,
         "views": null,
-        "engagement": 6726
+        "engagement": 7138
       },
       "search_query": "don't get why men love Henry Cavill so much Literally Henry Cavill",
       "search_source": "on-image text",
@@ -183932,19 +184547,26 @@
           1317,
           15,
           303620
+        ],
+        [
+          14.13,
+          0.03,
+          1373,
+          15,
+          317757
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 13.1,
+        "age": 14.1,
         "score": 0.03,
         "vscore": 20,
-        "likes": 1287,
+        "likes": 1343,
         "comments": 15,
-        "views": 303620,
-        "engagement": 1317
+        "views": 317757,
+        "engagement": 1373
       },
       "search_query": "Bro really set a stick on fire at the blackjack table and",
       "search_source": "on-image text",
@@ -184199,19 +184821,26 @@
           30156,
           406,
           null
+        ],
+        [
+          15.48,
+          0.64,
+          31567,
+          418,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 14.5,
-        "score": 0.63,
+        "age": 15.5,
+        "score": 0.64,
         "vscore": 25,
-        "likes": 29344,
-        "comments": 406,
+        "likes": 30731,
+        "comments": 418,
         "views": null,
-        "engagement": 30156
+        "engagement": 31567
       },
       "search_query": "Jason Lucia Fe be a",
       "search_source": "on-image text",
@@ -184232,9 +184861,9 @@
       "first_flag_age": 12.7,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 3.09,
+      "peak_score": 3.45,
       "peak_tier": "rising",
-      "peak_age": 18.2,
+      "peak_age": 19.2,
       "points": [
         [
           0.18,
@@ -184529,25 +185158,32 @@
           18010,
           281,
           null
+        ],
+        [
+          19.19,
+          3.45,
+          20723,
+          315,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 18.2,
-        "score": 3.09,
-        "vscore": 74,
-        "likes": 17448,
-        "comments": 281,
+        "age": 19.2,
+        "score": 3.45,
+        "vscore": 77,
+        "likes": 20093,
+        "comments": 315,
         "views": null,
-        "engagement": 18010
+        "engagement": 20723
       },
       "search_query": "half the women you meet get a week's vacation get a promotion",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=half+the+women+you+meet+get+a+week%27s+vacation+get+a+promotion&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=half+the+women+you+meet+get+a+week%27s+vacation+get+a+promotion&src=typed_query&f=live",
-      "peak_vscore": 74,
+      "peak_vscore": 77,
       "thumb": "thumbs/18391227514231345.jpg"
     },
     "18134907776490145": {
@@ -184562,9 +185198,9 @@
       "first_flag_age": 10.7,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 3.07,
+      "peak_score": 3.71,
       "peak_tier": "rising",
-      "peak_age": 13.2,
+      "peak_age": 14.2,
       "points": [
         [
           0.41,
@@ -184782,25 +185418,32 @@
           15254,
           150,
           null
+        ],
+        [
+          14.17,
+          3.71,
+          19133,
+          179,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 13.2,
-        "score": 3.07,
-        "vscore": 74,
-        "likes": 14954,
-        "comments": 150,
+        "age": 14.2,
+        "score": 3.71,
+        "vscore": 78,
+        "likes": 18775,
+        "comments": 179,
         "views": null,
-        "engagement": 15254
+        "engagement": 19133
       },
       "search_query": "A RED DEAD REDEMPTION’ movie or TV series might happen Rockstar has",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=A+RED+DEAD+REDEMPTION%E2%80%99+movie+or+TV+series+might+happen+Rockstar+has&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=A+RED+DEAD+REDEMPTION%E2%80%99+movie+or+TV+series+might+happen+Rockstar+has&src=typed_query&f=live",
-      "peak_vscore": 74,
+      "peak_vscore": 78,
       "thumb": "thumbs/18134907776490145.jpg"
     },
     "18016396286760720": {
@@ -184815,9 +185458,9 @@
       "first_flag_age": 22.0,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 2.2,
+      "peak_score": 2.27,
       "peak_tier": "rising",
-      "peak_age": 24.5,
+      "peak_age": 25.5,
       "points": [
         [
           0.26,
@@ -185161,6 +185804,13 @@
           11052,
           110,
           null
+        ],
+        [
+          25.52,
+          2.27,
+          11421,
+          113,
+          null
         ]
       ],
       "result_24": {
@@ -185178,13 +185828,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 24.5,
-        "score": 2.2,
-        "vscore": 57,
-        "likes": 10832,
-        "comments": 110,
+        "age": 25.5,
+        "score": 2.27,
+        "vscore": 56,
+        "likes": 11195,
+        "comments": 113,
         "views": null,
-        "engagement": 11052
+        "engagement": 11421
       },
       "search_query": "A woman shared a photo with her mother who",
       "search_source": "on-image text",
@@ -185205,9 +185855,9 @@
       "first_flag_age": 20.7,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 2.07,
+      "peak_score": 2.31,
       "peak_tier": "rising",
-      "peak_age": 22.7,
+      "peak_age": 23.7,
       "points": [
         [
           0.48,
@@ -185523,25 +186173,32 @@
           5738,
           227,
           null
+        ],
+        [
+          23.74,
+          2.31,
+          6679,
+          244,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 22.7,
-        "score": 2.07,
-        "vscore": 45,
-        "likes": 5284,
-        "comments": 227,
+        "age": 23.7,
+        "score": 2.31,
+        "vscore": 46,
+        "likes": 6191,
+        "comments": 244,
         "views": null,
-        "engagement": 5738
+        "engagement": 6679
       },
       "search_query": "fu imstillculture The most popular movie that takes place in every state",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=fu+imstillculture+The+most+popular+movie+that+takes+place+in+every+state&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=fu+imstillculture+The+most+popular+movie+that+takes+place+in+every+state&src=typed_query&f=live",
-      "peak_vscore": 45,
+      "peak_vscore": 46,
       "thumb": "thumbs/17927261226492381.jpg"
     },
     "18242049601318434": {
@@ -185832,19 +186489,26 @@
           1396,
           39,
           null
+        ],
+        [
+          17.86,
+          11.18,
+          1427,
+          40,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 16.8,
-        "score": 20.57,
-        "vscore": 51,
-        "likes": 1318,
-        "comments": 39,
+        "age": 17.9,
+        "score": 11.18,
+        "vscore": 49,
+        "likes": 1347,
+        "comments": 40,
         "views": null,
-        "engagement": 1396
+        "engagement": 1427
       },
       "search_query": "what tf are they putting in our food",
       "search_source": "on-image text",
@@ -186043,19 +186707,26 @@
           7101,
           6,
           203489
+        ],
+        [
+          11.53,
+          0.65,
+          4811,
+          7,
+          213140
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 10.5,
-        "score": 1.01,
+        "age": 11.5,
+        "score": 0.65,
         "vscore": 16,
         "likes": null,
-        "comments": 6,
-        "views": 203489,
-        "engagement": 7101
+        "comments": 7,
+        "views": 213140,
+        "engagement": 4811
       },
       "search_query": "Stake Stake com Colanag Gomez was live whan cqogmenne cacially",
       "search_source": "on-image text",
@@ -186076,9 +186747,9 @@
       "first_flag_age": 17.4,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 1.71,
+      "peak_score": 1.86,
       "peak_tier": "rising",
-      "peak_age": 18.4,
+      "peak_age": 19.4,
       "points": [
         [
           0.43,
@@ -186373,25 +187044,32 @@
           10075,
           99,
           null
+        ],
+        [
+          19.45,
+          1.86,
+          11234,
+          106,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 18.4,
-        "score": 1.71,
-        "vscore": 53,
-        "likes": 9877,
-        "comments": 99,
+        "age": 19.4,
+        "score": 1.86,
+        "vscore": 56,
+        "likes": 11022,
+        "comments": 106,
         "views": null,
-        "engagement": 10075
+        "engagement": 11234
       },
       "search_query": "Zoro and Sasuke Robert Pattinson level of Havoc Crave AAAMIUECAIVIIRAA CIA ta",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=Zoro+and+Sasuke+Robert+Pattinson+level+of+Havoc+Crave+AAAMIUECAIVIIRAA+CIA+ta&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=Zoro+and+Sasuke+Robert+Pattinson+level+of+Havoc+Crave+AAAMIUECAIVIIRAA+CIA+ta&src=typed_query&f=live",
-      "peak_vscore": 53,
+      "peak_vscore": 56,
       "thumb": "thumbs/17920426212541667.jpg"
     },
     "18156623665538815": {
@@ -186406,9 +187084,9 @@
       "first_flag_age": 19.3,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 2.73,
+      "peak_score": 2.76,
       "peak_tier": "rising",
-      "peak_age": 20.4,
+      "peak_age": 21.4,
       "points": [
         [
           0.1,
@@ -186738,25 +187416,32 @@
           16841,
           48,
           null
+        ],
+        [
+          21.36,
+          2.76,
+          17489,
+          48,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 20.4,
-        "score": 2.73,
-        "vscore": 59,
-        "likes": 16745,
+        "age": 21.4,
+        "score": 2.76,
+        "vscore": 62,
+        "likes": 17393,
         "comments": 48,
         "views": null,
-        "engagement": 16841
+        "engagement": 17489
       },
       "search_query": "Grand Theft Auto VI 2026",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=Grand+Theft+Auto+VI+2026&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=Grand+Theft+Auto+VI+2026&src=typed_query&f=live",
-      "peak_vscore": 60,
+      "peak_vscore": 62,
       "thumb": "thumbs/18156623665538815.jpg"
     },
     "18043669820893745": {
@@ -186771,9 +187456,9 @@
       "first_flag_age": 19.8,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 2.79,
+      "peak_score": 2.89,
       "peak_tier": "rising",
-      "peak_age": 20.9,
+      "peak_age": 21.9,
       "points": [
         [
           0.13,
@@ -187068,25 +187753,32 @@
           23827,
           617,
           null
+        ],
+        [
+          21.9,
+          2.89,
+          25302,
+          688,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 20.9,
-        "score": 2.79,
-        "vscore": 66,
-        "likes": 22593,
-        "comments": 617,
+        "age": 21.9,
+        "score": 2.89,
+        "vscore": 67,
+        "likes": 23926,
+        "comments": 688,
         "views": null,
-        "engagement": 23827
+        "engagement": 25302
       },
       "search_query": "Lucia from 'GTA VI' is out here causing In Grand Theft Auto",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=Lucia+from+%27GTA+VI%27+is+out+here+causing+In+Grand+Theft+Auto&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=Lucia+from+%27GTA+VI%27+is+out+here+causing+In+Grand+Theft+Auto&src=typed_query&f=live",
-      "peak_vscore": 66,
+      "peak_vscore": 67,
       "thumb": "thumbs/18043669820893745.jpg"
     },
     "18110595584362993": {
@@ -187384,19 +188076,26 @@
           8657,
           261,
           null
+        ],
+        [
+          21.57,
+          1.36,
+          8832,
+          273,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 20.6,
-        "score": 3.27,
-        "vscore": 42,
-        "likes": 8135,
-        "comments": 261,
+        "age": 21.6,
+        "score": 1.36,
+        "vscore": 29,
+        "likes": 8286,
+        "comments": 273,
         "views": null,
-        "engagement": 8657
+        "engagement": 8832
       },
       "search_query": "JUST IN Chinese President Xi Jinping calls to destroy and ban nuclear",
       "search_source": "on-image text",
@@ -187417,9 +188116,9 @@
       "first_flag_age": 10.1,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 2.77,
+      "peak_score": 2.87,
       "peak_tier": "rising",
-      "peak_age": 10.1,
+      "peak_age": 11.1,
       "points": [
         [
           0.35,
@@ -187588,29 +188287,1672 @@
           2349,
           14,
           null
+        ],
+        [
+          11.11,
+          2.87,
+          2565,
+          15,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 10.1,
-        "score": 2.77,
-        "vscore": 40,
-        "likes": 2321,
-        "comments": 14,
+        "age": 11.1,
+        "score": 2.87,
+        "vscore": 42,
+        "likes": 2535,
+        "comments": 15,
         "views": null,
-        "engagement": 2349
+        "engagement": 2565
       },
       "search_query": "Stake com Lady Gaga recreating the Abracadabra video with fans as the",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=Stake+com+Lady+Gaga+recreating+the+Abracadabra+video+with+fans+as+the&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=Stake+com+Lady+Gaga+recreating+the+Abracadabra+video+with+fans+as+the&src=typed_query&f=live",
-      "peak_vscore": 40,
+      "peak_vscore": 42,
       "thumb": "thumbs/18143301970625277.jpg"
+    },
+    "18149783263598099": {
+      "id": "18149783263598099",
+      "username": "knowyourmeme",
+      "permalink": "https://www.instagram.com/p/DgIZCTTM75W/",
+      "type": "FEED",
+      "caption": "this meme just gets later and later every year",
+      "timestamp": "2026-11-24T16:32:09+0000",
+      "likes_hidden": false,
+      "first_flagged_at": "2026-11-25T15:31:51+00:00",
+      "first_flag_age": 23.0,
+      "first_tier": "rising",
+      "flag_reason": "speed",
+      "peak_score": 1.48,
+      "peak_tier": "rising",
+      "peak_age": 23.0,
+      "points": [
+        [
+          0.23,
+          0.07,
+          555,
+          1,
+          null
+        ],
+        [
+          0.73,
+          0.18,
+          1508,
+          15,
+          null
+        ],
+        [
+          1.23,
+          0.28,
+          2743,
+          30,
+          null
+        ],
+        [
+          1.73,
+          0.41,
+          4768,
+          50,
+          null
+        ],
+        [
+          2.23,
+          0.55,
+          7163,
+          74,
+          null
+        ],
+        [
+          2.26,
+          0.56,
+          7325,
+          75,
+          null
+        ],
+        [
+          2.73,
+          0.65,
+          9475,
+          104,
+          null
+        ],
+        [
+          3.39,
+          0.81,
+          13107,
+          132,
+          null
+        ],
+        [
+          3.98,
+          0.91,
+          15992,
+          160,
+          null
+        ],
+        [
+          4.73,
+          0.93,
+          18891,
+          195,
+          null
+        ],
+        [
+          5.24,
+          0.95,
+          20336,
+          212,
+          null
+        ],
+        [
+          5.74,
+          0.95,
+          21877,
+          228,
+          null
+        ],
+        [
+          6.23,
+          0.97,
+          23217,
+          239,
+          null
+        ],
+        [
+          6.26,
+          0.97,
+          23304,
+          240,
+          null
+        ],
+        [
+          6.73,
+          0.98,
+          24463,
+          250,
+          null
+        ],
+        [
+          7.23,
+          0.99,
+          25661,
+          281,
+          null
+        ],
+        [
+          7.73,
+          1.0,
+          26800,
+          295,
+          null
+        ],
+        [
+          8.23,
+          1.01,
+          27981,
+          306,
+          null
+        ],
+        [
+          8.73,
+          1.02,
+          29122,
+          316,
+          null
+        ],
+        [
+          9.23,
+          1.04,
+          30336,
+          324,
+          null
+        ],
+        [
+          9.71,
+          1.04,
+          31172,
+          332,
+          null
+        ],
+        [
+          9.75,
+          1.04,
+          31229,
+          333,
+          null
+        ],
+        [
+          10.23,
+          1.04,
+          32002,
+          341,
+          null
+        ],
+        [
+          10.74,
+          1.04,
+          32886,
+          353,
+          null
+        ],
+        [
+          11.23,
+          1.04,
+          33687,
+          356,
+          null
+        ],
+        [
+          11.73,
+          1.04,
+          34426,
+          360,
+          null
+        ],
+        [
+          12.23,
+          1.05,
+          35378,
+          363,
+          null
+        ],
+        [
+          12.73,
+          1.05,
+          36368,
+          367,
+          null
+        ],
+        [
+          13.23,
+          1.06,
+          37489,
+          374,
+          null
+        ],
+        [
+          13.73,
+          1.07,
+          38498,
+          386,
+          null
+        ],
+        [
+          14.45,
+          1.09,
+          40053,
+          398,
+          null
+        ],
+        [
+          14.98,
+          1.09,
+          41116,
+          403,
+          null
+        ],
+        [
+          15.48,
+          1.1,
+          42162,
+          411,
+          null
+        ],
+        [
+          15.98,
+          1.11,
+          43307,
+          419,
+          null
+        ],
+        [
+          16.01,
+          1.12,
+          43376,
+          419,
+          null
+        ],
+        [
+          16.48,
+          1.13,
+          44565,
+          425,
+          null
+        ],
+        [
+          16.98,
+          1.14,
+          45648,
+          430,
+          null
+        ],
+        [
+          17.46,
+          1.15,
+          46825,
+          438,
+          null
+        ],
+        [
+          17.49,
+          1.15,
+          46889,
+          438,
+          null
+        ],
+        [
+          17.98,
+          1.17,
+          48308,
+          443,
+          null
+        ],
+        [
+          18.48,
+          1.19,
+          49801,
+          447,
+          null
+        ],
+        [
+          18.98,
+          1.2,
+          51070,
+          453,
+          null
+        ],
+        [
+          19.48,
+          1.26,
+          52472,
+          467,
+          null
+        ],
+        [
+          19.98,
+          1.28,
+          54117,
+          474,
+          null
+        ],
+        [
+          20.48,
+          1.33,
+          55816,
+          479,
+          null
+        ],
+        [
+          20.51,
+          1.3,
+          55938,
+          479,
+          null
+        ],
+        [
+          20.92,
+          1.32,
+          57057,
+          490,
+          null
+        ],
+        [
+          20.95,
+          1.32,
+          57143,
+          491,
+          null
+        ],
+        [
+          21.49,
+          1.25,
+          59045,
+          505,
+          null
+        ],
+        [
+          21.98,
+          1.27,
+          60853,
+          522,
+          null
+        ],
+        [
+          23.0,
+          1.48,
+          64996,
+          541,
+          null
+        ]
+      ],
+      "result_24": null,
+      "result_48": null,
+      "status": "live",
+      "last": {
+        "age": 23.0,
+        "score": 1.48,
+        "vscore": 46,
+        "likes": 63914,
+        "comments": 541,
+        "views": null,
+        "engagement": 64996
+      },
+      "search_query": "this meme just gets later and later every year",
+      "search_source": "caption",
+      "x_search_url": "https://x.com/search?q=this+meme+just+gets+later+and+later+every+year&src=typed_query",
+      "x_search_latest_url": "https://x.com/search?q=this+meme+just+gets+later+and+later+every+year&src=typed_query&f=live",
+      "peak_vscore": 46,
+      "thumb": "thumbs/18149783263598099.jpg"
+    },
+    "18118098572135243": {
+      "id": "18118098572135243",
+      "username": "boysbeingboys",
+      "permalink": "https://www.instagram.com/p/DgJfugxHLGE/",
+      "type": "FEED",
+      "caption": "Just boysbeingboys 🤝\n-\nAna de Armas has established herself as one of the most recognized actresses in contemporary Hollywood. Born in Cuba, she began her acting career in Spanish-language productions before transitioning to international cinema. Her performances in films such as Knives Out, No Time",
+      "timestamp": "2026-11-25T02:49:42+0000",
+      "likes_hidden": false,
+      "first_flagged_at": "2026-11-25T15:31:51+00:00",
+      "first_flag_age": 12.7,
+      "first_tier": "rising",
+      "flag_reason": "speed",
+      "peak_score": 0.65,
+      "peak_tier": "rising",
+      "peak_age": 12.7,
+      "points": [
+        [
+          0.44,
+          0.12,
+          979,
+          5,
+          null
+        ],
+        [
+          0.94,
+          0.22,
+          1763,
+          9,
+          null
+        ],
+        [
+          1.44,
+          0.19,
+          1900,
+          10,
+          null
+        ],
+        [
+          1.94,
+          0.21,
+          2470,
+          13,
+          null
+        ],
+        [
+          2.44,
+          0.22,
+          2844,
+          15,
+          null
+        ],
+        [
+          2.94,
+          0.23,
+          3591,
+          18,
+          null
+        ],
+        [
+          3.44,
+          0.23,
+          3791,
+          19,
+          null
+        ],
+        [
+          4.16,
+          0.22,
+          3955,
+          20,
+          null
+        ],
+        [
+          4.69,
+          0.21,
+          4153,
+          21,
+          null
+        ],
+        [
+          5.19,
+          0.2,
+          4154,
+          21,
+          null
+        ],
+        [
+          5.69,
+          0.19,
+          4154,
+          21,
+          null
+        ],
+        [
+          5.72,
+          0.19,
+          4154,
+          21,
+          null
+        ],
+        [
+          6.19,
+          0.19,
+          4154,
+          21,
+          null
+        ],
+        [
+          6.69,
+          0.18,
+          4155,
+          21,
+          null
+        ],
+        [
+          7.17,
+          0.17,
+          4136,
+          21,
+          null
+        ],
+        [
+          7.19,
+          0.17,
+          4136,
+          21,
+          null
+        ],
+        [
+          7.69,
+          0.17,
+          4137,
+          21,
+          null
+        ],
+        [
+          8.19,
+          0.16,
+          4137,
+          21,
+          null
+        ],
+        [
+          8.69,
+          0.16,
+          4138,
+          21,
+          null
+        ],
+        [
+          9.19,
+          0.17,
+          4512,
+          23,
+          null
+        ],
+        [
+          9.69,
+          0.16,
+          4492,
+          23,
+          null
+        ],
+        [
+          10.19,
+          0.16,
+          4688,
+          24,
+          null
+        ],
+        [
+          10.22,
+          0.16,
+          4688,
+          24,
+          null
+        ],
+        [
+          10.63,
+          0.18,
+          5890,
+          27,
+          null
+        ],
+        [
+          10.66,
+          0.18,
+          5890,
+          27,
+          null
+        ],
+        [
+          11.2,
+          0.19,
+          6332,
+          29,
+          null
+        ],
+        [
+          11.69,
+          0.2,
+          6556,
+          30,
+          null
+        ],
+        [
+          12.7,
+          0.65,
+          22893,
+          34,
+          null
+        ]
+      ],
+      "result_24": null,
+      "result_48": null,
+      "status": "live",
+      "last": {
+        "age": 12.7,
+        "score": 0.65,
+        "vscore": 43,
+        "likes": 22825,
+        "comments": 34,
+        "views": null,
+        "engagement": 22893
+      },
+      "search_query": "How beer 2 looks at me after saying I’d only have one",
+      "search_source": "on-image text",
+      "x_search_url": "https://x.com/search?q=How+beer+2+looks+at+me+after+saying+I%E2%80%99d+only+have+one&src=typed_query",
+      "x_search_latest_url": "https://x.com/search?q=How+beer+2+looks+at+me+after+saying+I%E2%80%99d+only+have+one&src=typed_query&f=live",
+      "peak_vscore": 43,
+      "thumb": "thumbs/18118098572135243.jpg"
+    },
+    "18094783382217860": {
+      "id": "18094783382217860",
+      "username": "boysbeingboys",
+      "permalink": "https://www.instagram.com/p/DgJGgd_N5HF/",
+      "type": "FEED",
+      "caption": "Just boysbeingboys 🤝\n-\nThe familiar sight of men sitting on benches or waiting outside fitting rooms while women shop has become a recognizable part of the shopping experience. Some enjoy browsing for hours, while others prefer to let their partners take the lead and simply wait until they’re finish",
+      "timestamp": "2026-11-24T23:09:34+0000",
+      "likes_hidden": false,
+      "first_flagged_at": "2026-11-25T15:31:51+00:00",
+      "first_flag_age": 16.4,
+      "first_tier": "rising",
+      "flag_reason": "speed",
+      "peak_score": 1.86,
+      "peak_tier": "rising",
+      "peak_age": 16.4,
+      "points": [
+        [
+          0.11,
+          0.24,
+          2117,
+          10,
+          null
+        ],
+        [
+          0.61,
+          0.36,
+          3169,
+          15,
+          null
+        ],
+        [
+          1.11,
+          0.4,
+          3803,
+          18,
+          null
+        ],
+        [
+          1.61,
+          0.4,
+          4765,
+          22,
+          null
+        ],
+        [
+          2.11,
+          0.38,
+          5198,
+          24,
+          null
+        ],
+        [
+          2.61,
+          0.41,
+          5521,
+          29,
+          null
+        ],
+        [
+          3.09,
+          0.44,
+          6473,
+          34,
+          null
+        ],
+        [
+          3.13,
+          0.44,
+          6473,
+          34,
+          null
+        ],
+        [
+          3.61,
+          0.47,
+          7426,
+          39,
+          null
+        ],
+        [
+          4.11,
+          0.47,
+          8031,
+          41,
+          null
+        ],
+        [
+          4.61,
+          0.48,
+          8620,
+          44,
+          null
+        ],
+        [
+          5.11,
+          0.48,
+          9120,
+          48,
+          null
+        ],
+        [
+          5.61,
+          0.49,
+          9691,
+          51,
+          null
+        ],
+        [
+          6.11,
+          0.5,
+          10428,
+          55,
+          null
+        ],
+        [
+          6.61,
+          0.49,
+          11371,
+          57,
+          null
+        ],
+        [
+          7.11,
+          0.48,
+          11573,
+          58,
+          null
+        ],
+        [
+          7.82,
+          0.52,
+          13053,
+          66,
+          null
+        ],
+        [
+          8.36,
+          0.52,
+          13647,
+          69,
+          null
+        ],
+        [
+          8.86,
+          0.55,
+          14835,
+          75,
+          null
+        ],
+        [
+          9.36,
+          0.55,
+          15033,
+          76,
+          null
+        ],
+        [
+          9.39,
+          0.54,
+          15033,
+          76,
+          null
+        ],
+        [
+          9.86,
+          0.54,
+          15232,
+          77,
+          null
+        ],
+        [
+          10.36,
+          0.56,
+          16222,
+          82,
+          null
+        ],
+        [
+          10.84,
+          0.56,
+          16545,
+          84,
+          null
+        ],
+        [
+          10.86,
+          0.56,
+          16545,
+          84,
+          null
+        ],
+        [
+          11.36,
+          0.57,
+          17335,
+          88,
+          null
+        ],
+        [
+          11.86,
+          0.56,
+          17336,
+          88,
+          null
+        ],
+        [
+          12.36,
+          0.55,
+          17536,
+          89,
+          null
+        ],
+        [
+          12.86,
+          0.55,
+          17852,
+          91,
+          null
+        ],
+        [
+          13.36,
+          0.58,
+          18945,
+          97,
+          null
+        ],
+        [
+          13.85,
+          0.61,
+          20314,
+          104,
+          null
+        ],
+        [
+          13.89,
+          0.6,
+          20314,
+          104,
+          null
+        ],
+        [
+          14.3,
+          0.62,
+          23123,
+          106,
+          null
+        ],
+        [
+          14.33,
+          0.62,
+          23125,
+          106,
+          null
+        ],
+        [
+          14.87,
+          0.66,
+          24890,
+          114,
+          null
+        ],
+        [
+          15.36,
+          0.69,
+          26442,
+          121,
+          null
+        ],
+        [
+          16.37,
+          1.86,
+          73835,
+          132,
+          null
+        ]
+      ],
+      "result_24": null,
+      "result_48": null,
+      "status": "live",
+      "last": {
+        "age": 16.4,
+        "score": 1.86,
+        "vscore": 62,
+        "likes": 73571,
+        "comments": 132,
+        "views": null,
+        "engagement": 73835
+      },
+      "search_query": "went shopping as Lucia with Jason and he sat down and went",
+      "search_source": "on-image text",
+      "x_search_url": "https://x.com/search?q=went+shopping+as+Lucia+with+Jason+and+he+sat+down+and+went&src=typed_query",
+      "x_search_latest_url": "https://x.com/search?q=went+shopping+as+Lucia+with+Jason+and+he+sat+down+and+went&src=typed_query&f=live",
+      "peak_vscore": 62,
+      "thumb": "thumbs/18094783382217860.jpg"
+    },
+    "18242589544319548": {
+      "id": "18242589544319548",
+      "username": "fcts",
+      "permalink": "https://www.instagram.com/p/DgI3XJcBQVs/",
+      "type": "FEED",
+      "caption": "President Donald Trump made those exact remarks during a November 23, 2026 phone interview with The New York Times, though Lori Huang has not commented publicly. Hours after Nvidia reinstated Jensen Huang as CEO following his November 12 resignation over an extramarital affair scandal, Trump praised",
+      "timestamp": "2026-11-24T20:58:14+0000",
+      "likes_hidden": false,
+      "first_flagged_at": "2026-11-25T15:31:51+00:00",
+      "first_flag_age": 18.6,
+      "first_tier": "rising",
+      "flag_reason": "speed",
+      "peak_score": 1.67,
+      "peak_tier": "rising",
+      "peak_age": 18.6,
+      "points": [
+        [
+          0.3,
+          0.01,
+          25,
+          0,
+          null
+        ],
+        [
+          0.8,
+          0.04,
+          83,
+          2,
+          null
+        ],
+        [
+          1.3,
+          0.11,
+          255,
+          4,
+          null
+        ],
+        [
+          1.8,
+          0.17,
+          470,
+          10,
+          null
+        ],
+        [
+          1.83,
+          0.17,
+          482,
+          10,
+          null
+        ],
+        [
+          2.3,
+          0.23,
+          722,
+          15,
+          null
+        ],
+        [
+          2.8,
+          0.29,
+          981,
+          21,
+          null
+        ],
+        [
+          3.3,
+          0.34,
+          1258,
+          26,
+          null
+        ],
+        [
+          3.8,
+          0.38,
+          1514,
+          34,
+          null
+        ],
+        [
+          4.3,
+          0.42,
+          1781,
+          39,
+          null
+        ],
+        [
+          4.8,
+          0.44,
+          1978,
+          42,
+          null
+        ],
+        [
+          5.28,
+          0.47,
+          2219,
+          47,
+          null
+        ],
+        [
+          5.32,
+          0.47,
+          2229,
+          47,
+          null
+        ],
+        [
+          5.8,
+          0.49,
+          2432,
+          53,
+          null
+        ],
+        [
+          6.3,
+          0.51,
+          2643,
+          54,
+          null
+        ],
+        [
+          6.8,
+          0.53,
+          2822,
+          56,
+          null
+        ],
+        [
+          7.3,
+          0.53,
+          2972,
+          58,
+          null
+        ],
+        [
+          7.8,
+          0.54,
+          3126,
+          59,
+          null
+        ],
+        [
+          8.3,
+          0.55,
+          3247,
+          61,
+          null
+        ],
+        [
+          8.8,
+          0.56,
+          3402,
+          66,
+          null
+        ],
+        [
+          9.3,
+          0.57,
+          3593,
+          67,
+          null
+        ],
+        [
+          10.01,
+          0.6,
+          3921,
+          72,
+          null
+        ],
+        [
+          10.55,
+          0.62,
+          4132,
+          73,
+          null
+        ],
+        [
+          11.05,
+          0.63,
+          4339,
+          74,
+          null
+        ],
+        [
+          11.55,
+          0.65,
+          4567,
+          75,
+          null
+        ],
+        [
+          11.58,
+          0.65,
+          4579,
+          75,
+          null
+        ],
+        [
+          12.05,
+          0.67,
+          4762,
+          77,
+          null
+        ],
+        [
+          12.55,
+          0.68,
+          4992,
+          78,
+          null
+        ],
+        [
+          13.03,
+          0.71,
+          5262,
+          82,
+          null
+        ],
+        [
+          13.05,
+          0.71,
+          5272,
+          82,
+          null
+        ],
+        [
+          13.55,
+          0.73,
+          5535,
+          83,
+          null
+        ],
+        [
+          14.05,
+          0.75,
+          5816,
+          85,
+          null
+        ],
+        [
+          14.55,
+          0.77,
+          6023,
+          87,
+          null
+        ],
+        [
+          15.05,
+          0.78,
+          6276,
+          89,
+          null
+        ],
+        [
+          15.55,
+          0.8,
+          6527,
+          91,
+          null
+        ],
+        [
+          16.04,
+          0.84,
+          6907,
+          96,
+          null
+        ],
+        [
+          16.08,
+          0.84,
+          6942,
+          97,
+          null
+        ],
+        [
+          16.49,
+          0.79,
+          7226,
+          101,
+          null
+        ],
+        [
+          16.51,
+          0.8,
+          7254,
+          101,
+          null
+        ],
+        [
+          17.06,
+          1.14,
+          7611,
+          103,
+          null
+        ],
+        [
+          17.55,
+          1.17,
+          7930,
+          106,
+          null
+        ],
+        [
+          18.56,
+          1.67,
+          8558,
+          111,
+          null
+        ]
+      ],
+      "result_24": null,
+      "result_48": null,
+      "status": "live",
+      "last": {
+        "age": 18.6,
+        "score": 1.67,
+        "vscore": 44,
+        "likes": 8336,
+        "comments": 111,
+        "views": null,
+        "engagement": 8558
+      },
+      "search_query": "BREAKING Trump reveals Jensen Huang his wife Lori have reconciled calling her",
+      "search_source": "on-image text",
+      "x_search_url": "https://x.com/search?q=BREAKING+Trump+reveals+Jensen+Huang+his+wife+Lori+have+reconciled+calling+her&src=typed_query",
+      "x_search_latest_url": "https://x.com/search?q=BREAKING+Trump+reveals+Jensen+Huang+his+wife+Lori+have+reconciled+calling+her&src=typed_query&f=live",
+      "peak_vscore": 44,
+      "thumb": "thumbs/18242589544319548.jpg"
+    },
+    "18130705351920012": {
+      "id": "18130705351920012",
+      "username": "fcts",
+      "permalink": "https://www.instagram.com/p/DgIbmlCxwwr/",
+      "type": "FEED",
+      "caption": "In 2009, an anonymous family in Saint-Michel, France, won a €50 million (roughly $54–$58 million) EuroMillions jackpot and has quietly supported their town ever since. Reported by outlets like Upworthy, they donated €400,000 to clear a local nursing home’s debt and fund housing, then gave €80,000 an",
+      "timestamp": "2026-11-24T16:54:43+0000",
+      "likes_hidden": false,
+      "first_flagged_at": "2026-11-25T15:31:51+00:00",
+      "first_flag_age": 22.6,
+      "first_tier": "rising",
+      "flag_reason": "speed",
+      "peak_score": 3.02,
+      "peak_tier": "rising",
+      "peak_age": 22.6,
+      "points": [
+        [
+          0.36,
+          0.06,
+          93,
+          0,
+          null
+        ],
+        [
+          0.85,
+          0.34,
+          506,
+          2,
+          null
+        ],
+        [
+          1.36,
+          0.6,
+          1151,
+          6,
+          null
+        ],
+        [
+          1.86,
+          0.87,
+          1960,
+          14,
+          null
+        ],
+        [
+          1.89,
+          0.88,
+          2001,
+          14,
+          null
+        ],
+        [
+          2.36,
+          1.06,
+          2714,
+          17,
+          null
+        ],
+        [
+          3.01,
+          1.1,
+          3887,
+          28,
+          null
+        ],
+        [
+          3.61,
+          1.07,
+          4902,
+          42,
+          null
+        ],
+        [
+          4.36,
+          1.45,
+          6182,
+          57,
+          null
+        ],
+        [
+          4.86,
+          1.51,
+          6807,
+          63,
+          null
+        ],
+        [
+          5.36,
+          1.55,
+          7344,
+          67,
+          null
+        ],
+        [
+          5.86,
+          1.56,
+          7741,
+          74,
+          null
+        ],
+        [
+          5.88,
+          1.56,
+          7758,
+          74,
+          null
+        ],
+        [
+          6.36,
+          1.57,
+          8119,
+          80,
+          null
+        ],
+        [
+          6.85,
+          1.58,
+          8481,
+          84,
+          null
+        ],
+        [
+          7.36,
+          1.58,
+          8815,
+          89,
+          null
+        ],
+        [
+          7.86,
+          1.58,
+          9122,
+          95,
+          null
+        ],
+        [
+          8.36,
+          1.58,
+          9386,
+          100,
+          null
+        ],
+        [
+          8.86,
+          1.57,
+          9612,
+          102,
+          null
+        ],
+        [
+          9.34,
+          1.56,
+          9822,
+          102,
+          null
+        ],
+        [
+          9.37,
+          1.56,
+          9837,
+          102,
+          null
+        ],
+        [
+          9.85,
+          1.57,
+          10115,
+          102,
+          null
+        ],
+        [
+          10.36,
+          1.57,
+          10378,
+          103,
+          null
+        ],
+        [
+          10.86,
+          1.57,
+          10636,
+          108,
+          null
+        ],
+        [
+          11.36,
+          1.57,
+          10902,
+          111,
+          null
+        ],
+        [
+          11.86,
+          1.57,
+          11166,
+          114,
+          null
+        ],
+        [
+          12.36,
+          1.58,
+          11440,
+          119,
+          null
+        ],
+        [
+          12.86,
+          1.59,
+          11728,
+          123,
+          null
+        ],
+        [
+          13.36,
+          1.6,
+          12019,
+          126,
+          null
+        ],
+        [
+          14.07,
+          1.61,
+          12437,
+          133,
+          null
+        ],
+        [
+          14.61,
+          1.62,
+          12747,
+          138,
+          null
+        ],
+        [
+          15.11,
+          1.62,
+          12991,
+          139,
+          null
+        ],
+        [
+          15.61,
+          1.62,
+          13224,
+          141,
+          null
+        ],
+        [
+          15.63,
+          1.63,
+          13244,
+          143,
+          null
+        ],
+        [
+          16.11,
+          1.63,
+          13487,
+          156,
+          null
+        ],
+        [
+          16.61,
+          1.63,
+          13725,
+          157,
+          null
+        ],
+        [
+          17.08,
+          1.64,
+          13986,
+          166,
+          null
+        ],
+        [
+          17.11,
+          1.64,
+          13999,
+          166,
+          null
+        ],
+        [
+          17.61,
+          1.64,
+          14206,
+          168,
+          null
+        ],
+        [
+          18.11,
+          1.65,
+          14459,
+          175,
+          null
+        ],
+        [
+          18.61,
+          1.66,
+          14725,
+          180,
+          null
+        ],
+        [
+          19.11,
+          1.66,
+          14942,
+          180,
+          null
+        ],
+        [
+          19.61,
+          1.66,
+          15177,
+          185,
+          null
+        ],
+        [
+          20.1,
+          1.67,
+          15430,
+          190,
+          null
+        ],
+        [
+          20.14,
+          1.67,
+          15450,
+          190,
+          null
+        ],
+        [
+          20.54,
+          1.54,
+          15676,
+          192,
+          null
+        ],
+        [
+          20.57,
+          1.54,
+          15689,
+          192,
+          null
+        ],
+        [
+          21.11,
+          2.16,
+          16024,
+          196,
+          null
+        ],
+        [
+          21.61,
+          2.18,
+          16323,
+          204,
+          null
+        ],
+        [
+          22.62,
+          3.02,
+          17059,
+          217,
+          null
+        ]
+      ],
+      "result_24": null,
+      "result_48": null,
+      "status": "live",
+      "last": {
+        "age": 22.6,
+        "score": 3.02,
+        "vscore": 60,
+        "likes": 16625,
+        "comments": 217,
+        "views": null,
+        "engagement": 17059
+      },
+      "search_query": "Facts News Someone in this village won 58 million in the lottery",
+      "search_source": "on-image text",
+      "x_search_url": "https://x.com/search?q=Facts+News+Someone+in+this+village+won+58+million+in+the+lottery&src=typed_query",
+      "x_search_latest_url": "https://x.com/search?q=Facts+News+Someone+in+this+village+won+58+million+in+the+lottery&src=typed_query&f=live",
+      "peak_vscore": 60,
+      "thumb": "thumbs/18130705351920012.jpg"
     }
   },
-  "updated": "2026-11-25T14:31:06+00:00",
+  "updated": "2026-11-25T15:31:51+00:00",
   "thresholds": {
     "rising": 2.5,
     "viral": 5
