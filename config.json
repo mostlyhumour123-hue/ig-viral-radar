@@ -1,7 +1,7 @@
 {
   "scan_every_minutes": 30,
   "graph_api_version": "v26.0",
-  "posts_per_account": 50,
+  "posts_per_account": 30,
   "window_hours": 24,
   "comment_weight": 2,
   "mature_after_hours": 48,
@@ -19,8 +19,8 @@
   "search_query_max_words": 12,
   "max_calls_per_run": 150,
   "seconds_between_calls": 1.0,
-  "stop_when_usage_percent_above": 75,
-  "config_version": 4,
+  "stop_when_usage_percent_above": 90,
+  "config_version": 5,
   "my_pages": {
     "Mostlyhumour": {
       "ig": null,
@@ -88,14 +88,5 @@
         "imstillculture"
       ]
     }
-  },
-  "track_hours": 72,
-  "speed_threshold": 4,
-  "min_gain_per_hour": 50,
-  "archive_days": 90,
-  "adaptive_bars": true,
-  "list_max": 10,
-  "min_vscore_viral": 55,
-  "min_vscore_rising": 40,
-  "thumbs_top_live": 40
+  }
 }
