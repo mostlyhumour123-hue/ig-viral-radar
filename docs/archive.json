@@ -166479,13 +166479,6 @@
       "peak_age": 65.3,
       "points": [
         [
-          12.09,
-          2.78,
-          7279,
-          16,
-          null
-        ],
-        [
           12.58,
           2.96,
           7908,
@@ -167317,6 +167310,13 @@
           64103,
           85,
           null
+        ],
+        [
+          69.59,
+          15.1,
+          64196,
+          85,
+          null
         ]
       ],
       "result_24": {
@@ -167345,13 +167345,13 @@
       },
       "status": "live",
       "last": {
-        "age": 69.1,
-        "score": 15.11,
-        "vscore": 76,
-        "likes": 63933,
+        "age": 69.6,
+        "score": 15.1,
+        "vscore": 77,
+        "likes": 64026,
         "comments": 85,
         "views": null,
-        "engagement": 64103
+        "engagement": 64196
       },
       "search_source": "caption",
       "peak_vscore": 94,
@@ -175599,13 +175599,6 @@
       "peak_age": 7.8,
       "points": [
         [
-          1.76,
-          1.99,
-          4916,
-          28,
-          null
-        ],
-        [
           1.8,
           2.02,
           5035,
@@ -176437,6 +176430,13 @@
           28519,
           163,
           null
+        ],
+        [
+          58.77,
+          1.71,
+          28584,
+          163,
+          null
         ]
       ],
       "result_24": {
@@ -176465,13 +176465,13 @@
       },
       "status": "live",
       "last": {
-        "age": 58.3,
-        "score": 1.73,
-        "vscore": 43,
-        "likes": 28193,
+        "age": 58.8,
+        "score": 1.71,
+        "vscore": 39,
+        "likes": 28258,
         "comments": 163,
         "views": null,
-        "engagement": 28519
+        "engagement": 28584
       },
       "search_query": "Artificial intelligence detects breast cancer 5 years before it develops",
       "search_source": "on-image text",
@@ -185686,6 +185686,13 @@
           977,
           19,
           350641
+        ],
+        [
+          55.71,
+          2.88,
+          978,
+          19,
+          350812
         ]
       ],
       "result_24": {
@@ -185714,13 +185721,13 @@
       },
       "status": "live",
       "last": {
-        "age": 55.2,
+        "age": 55.7,
         "score": 2.88,
-        "vscore": 53,
-        "likes": 939,
+        "vscore": 47,
+        "likes": 940,
         "comments": 19,
-        "views": 350641,
-        "engagement": 977
+        "views": 350812,
+        "engagement": 978
       },
       "search_query": "Please tell me everybody else saw that too",
       "search_source": "on-image text",
@@ -186500,6 +186507,13 @@
           10452,
           101,
           null
+        ],
+        [
+          54.87,
+          1.72,
+          10458,
+          101,
+          null
         ]
       ],
       "result_24": {
@@ -186528,13 +186542,13 @@
       },
       "status": "live",
       "last": {
-        "age": 54.4,
+        "age": 54.9,
         "score": 1.72,
-        "vscore": 43,
-        "likes": 10250,
+        "vscore": 40,
+        "likes": 10256,
         "comments": 101,
         "views": null,
-        "engagement": 10452
+        "engagement": 10458
       },
       "search_query": "3 RUMOR Hulk is going to be terrified of Doctor Doom in",
       "search_source": "on-image text",
@@ -186557,7 +186571,7 @@
       "flag_reason": "speed",
       "peak_score": 15.56,
       "peak_tier": "viral",
-      "peak_age": 56.3,
+      "peak_age": 56.8,
       "points": [
         [
           0.28,
@@ -187377,6 +187391,13 @@
           230990,
           221,
           null
+        ],
+        [
+          56.77,
+          15.56,
+          231359,
+          222,
+          null
         ]
       ],
       "result_24": {
@@ -187405,13 +187426,13 @@
       },
       "status": "live",
       "last": {
-        "age": 56.3,
+        "age": 56.8,
         "score": 15.56,
-        "vscore": 77,
-        "likes": 230548,
-        "comments": 221,
+        "vscore": 78,
+        "likes": 230915,
+        "comments": 222,
         "views": null,
-        "engagement": 230990
+        "engagement": 231359
       },
       "search_query": "iy 4 Cinnamon Girl mi Lana Del Rey",
       "search_source": "on-image text",
@@ -188886,6 +188907,13 @@
           6797,
           17,
           null
+        ],
+        [
+          55.08,
+          2.5,
+          6812,
+          17,
+          null
         ]
       ],
       "result_24": {
@@ -188914,13 +188942,13 @@
       },
       "status": "live",
       "last": {
-        "age": 54.6,
-        "score": 2.46,
-        "vscore": 48,
-        "likes": 6763,
+        "age": 55.1,
+        "score": 2.5,
+        "vscore": 44,
+        "likes": 6778,
         "comments": 17,
         "views": null,
-        "engagement": 6797
+        "engagement": 6812
       },
       "search_query": "Jennifer Lawrence ASTONISHING look in all black dress with her DAZZLING eyes",
       "search_source": "on-image text",
@@ -191174,6 +191202,13 @@
           5900,
           322,
           null
+        ],
+        [
+          55.34,
+          1.18,
+          5902,
+          322,
+          null
         ]
       ],
       "result_24": {
@@ -191202,13 +191237,13 @@
       },
       "status": "live",
       "last": {
-        "age": 54.9,
-        "score": 1.0,
-        "vscore": 19,
-        "likes": 5256,
+        "age": 55.3,
+        "score": 1.18,
+        "vscore": 23,
+        "likes": 5258,
         "comments": 322,
         "views": null,
-        "engagement": 5900
+        "engagement": 5902
       },
       "search_query": "ah Ungel Ordered a cake for my daughter’s birthday and it got",
       "search_source": "on-image text",
@@ -192651,6 +192686,13 @@
           22757,
           388,
           null
+        ],
+        [
+          54.99,
+          0.54,
+          22768,
+          389,
+          null
         ]
       ],
       "result_24": {
@@ -192679,13 +192721,13 @@
       },
       "status": "live",
       "last": {
-        "age": 54.5,
+        "age": 55.0,
         "score": 0.54,
         "vscore": 25,
-        "likes": 21981,
-        "comments": 388,
+        "likes": 21990,
+        "comments": 389,
         "views": null,
-        "engagement": 22757
+        "engagement": 22768
       },
       "search_query": "as strange as it may seem everything will work out because of",
       "search_source": "on-image text",
@@ -193451,6 +193493,13 @@
           197851,
           1193,
           9472415
+        ],
+        [
+          52.18,
+          5.15,
+          198021,
+          1193,
+          9478866
         ]
       ],
       "result_24": {
@@ -193479,13 +193528,13 @@
       },
       "status": "live",
       "last": {
-        "age": 51.7,
+        "age": 52.2,
         "score": 5.15,
-        "vscore": 76,
-        "likes": 195465,
+        "vscore": 66,
+        "likes": 195635,
         "comments": 1193,
-        "views": 9472415,
-        "engagement": 197851
+        "views": 9478866,
+        "engagement": 198021
       },
       "search_query": "The first one is crazy 4 Ro SOTR",
       "search_source": "on-image text",
@@ -194869,6 +194918,13 @@
           10873,
           37,
           null
+        ],
+        [
+          53.03,
+          1.79,
+          10882,
+          37,
+          null
         ]
       ],
       "result_24": {
@@ -194897,13 +194953,13 @@
       },
       "status": "live",
       "last": {
-        "age": 52.6,
+        "age": 53.0,
         "score": 1.79,
-        "vscore": 44,
-        "likes": 10799,
+        "vscore": 41,
+        "likes": 10808,
         "comments": 37,
         "views": null,
-        "engagement": 10873
+        "engagement": 10882
       },
       "search_query": "DUDE just found out that if you go too long without doing",
       "search_source": "on-image text",
@@ -195662,6 +195718,13 @@
           17608,
           548,
           null
+        ],
+        [
+          54.36,
+          3.52,
+          17631,
+          548,
+          null
         ]
       ],
       "result_24": {
@@ -195690,13 +195753,13 @@
       },
       "status": "live",
       "last": {
-        "age": 53.9,
-        "score": 2.98,
-        "vscore": 60,
-        "likes": 16512,
+        "age": 54.4,
+        "score": 3.52,
+        "vscore": 58,
+        "likes": 16535,
         "comments": 548,
         "views": null,
-        "engagement": 17608
+        "engagement": 17631
       },
       "search_query": "COM Complex PLEX Complex Lucia from 'GTA VI' is out here causing",
       "search_source": "on-image text",
@@ -198582,6 +198645,13 @@
           155924,
           369,
           null
+        ],
+        [
+          49.53,
+          9.32,
+          156254,
+          369,
+          null
         ]
       ],
       "result_24": {
@@ -198610,13 +198680,13 @@
       },
       "status": "live",
       "last": {
-        "age": 49.1,
-        "score": 9.45,
-        "vscore": 76,
-        "likes": 155186,
+        "age": 49.5,
+        "score": 9.32,
+        "vscore": 74,
+        "likes": 155516,
         "comments": 369,
         "views": null,
-        "engagement": 155924
+        "engagement": 156254
       },
       "search_query": "A birdwatching expert found all 60 GTA 6 bird species and gave",
       "search_source": "on-image text",
@@ -199326,6 +199396,13 @@
           130426,
           1019,
           null
+        ],
+        [
+          50.48,
+          16.53,
+          130532,
+          1020,
+          null
         ]
       ],
       "result_24": {
@@ -199354,13 +199431,13 @@
       },
       "status": "live",
       "last": {
-        "age": 50.0,
-        "score": 16.55,
-        "vscore": 86,
-        "likes": 128388,
-        "comments": 1019,
+        "age": 50.5,
+        "score": 16.53,
+        "vscore": 80,
+        "likes": 128492,
+        "comments": 1020,
         "views": null,
-        "engagement": 130426
+        "engagement": 130532
       },
       "search_query": "He be making that face on purpose dawg Pop Base The cast",
       "search_source": "on-image text",
@@ -200119,6 +200196,13 @@
           112198,
           1299,
           null
+        ],
+        [
+          53.47,
+          4.49,
+          112536,
+          1300,
+          null
         ]
       ],
       "result_24": {
@@ -200147,13 +200231,13 @@
       },
       "status": "live",
       "last": {
-        "age": 53.0,
-        "score": 4.53,
-        "vscore": 72,
-        "likes": 109600,
-        "comments": 1299,
+        "age": 53.5,
+        "score": 4.49,
+        "vscore": 69,
+        "likes": 109936,
+        "comments": 1300,
         "views": null,
-        "engagement": 112198
+        "engagement": 112536
       },
       "search_query": "Warner Bros is developing a live action sequel to THE POLAR EXPRESQ’",
       "search_source": "on-image text",
@@ -200919,6 +201003,13 @@
           89339,
           318,
           null
+        ],
+        [
+          54.18,
+          11.37,
+          89726,
+          319,
+          null
         ]
       ],
       "result_24": {
@@ -200947,13 +201038,13 @@
       },
       "status": "live",
       "last": {
-        "age": 53.7,
-        "score": 11.33,
-        "vscore": 83,
-        "likes": 88703,
-        "comments": 318,
+        "age": 54.2,
+        "score": 11.37,
+        "vscore": 87,
+        "likes": 89088,
+        "comments": 319,
         "views": null,
-        "engagement": 89339
+        "engagement": 89726
       },
       "search_query": "Outsider trading Bull Theory 2D Cathie Wood bought 81 5M of SNVDA",
       "search_source": "on-image text",
@@ -201642,6 +201733,13 @@
           49979,
           1720,
           null
+        ],
+        [
+          46.54,
+          1.77,
+          50020,
+          1721,
+          null
         ]
       ],
       "result_24": {
@@ -201659,13 +201757,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 46.1,
+        "age": 46.5,
         "score": 1.77,
-        "vscore": 44,
-        "likes": 46539,
-        "comments": 1720,
+        "vscore": 40,
+        "likes": 46578,
+        "comments": 1721,
         "views": null,
-        "engagement": 49979
+        "engagement": 50020
       },
       "search_query": "Rockstar Games is reportedly willing to sell Red Dead Redemption film and",
       "search_source": "on-image text",
@@ -204011,6 +204109,13 @@
           10082,
           36,
           null
+        ],
+        [
+          56.73,
+          2.02,
+          10091,
+          36,
+          null
         ]
       ],
       "result_24": {
@@ -204039,13 +204144,13 @@
       },
       "status": "live",
       "last": {
-        "age": 56.3,
-        "score": 1.71,
-        "vscore": 43,
-        "likes": 10010,
+        "age": 56.7,
+        "score": 2.02,
+        "vscore": 44,
+        "likes": 10019,
         "comments": 36,
         "views": null,
-        "engagement": 10082
+        "engagement": 10091
       },
       "search_query": "don't get why men love Henry Cavill so much Literally Henry Cavill",
       "search_source": "on-image text",
@@ -206250,6 +206355,13 @@
           58349,
           759,
           null
+        ],
+        [
+          54.42,
+          2.7,
+          58443,
+          760,
+          null
         ]
       ],
       "result_24": {
@@ -206278,13 +206390,13 @@
       },
       "status": "live",
       "last": {
-        "age": 54.0,
-        "score": 2.69,
-        "vscore": 49,
-        "likes": 56831,
-        "comments": 759,
+        "age": 54.4,
+        "score": 2.7,
+        "vscore": 45,
+        "likes": 56923,
+        "comments": 760,
         "views": null,
-        "engagement": 58349
+        "engagement": 58443
       },
       "search_query": "half the women you meet get a week's vacation get a promotion",
       "search_source": "on-image text",
@@ -207015,6 +207127,13 @@
           78347,
           545,
           null
+        ],
+        [
+          49.41,
+          3.62,
+          78389,
+          546,
+          null
         ]
       ],
       "result_24": {
@@ -207043,13 +207162,13 @@
       },
       "status": "live",
       "last": {
-        "age": 48.9,
+        "age": 49.4,
         "score": 3.62,
-        "vscore": 57,
-        "likes": 77257,
-        "comments": 545,
+        "vscore": 51,
+        "likes": 77297,
+        "comments": 546,
         "views": null,
-        "engagement": 78347
+        "engagement": 78389
       },
       "search_query": "A RED DEAD REDEMPTION’ movie or TV series might happen Rockstar has",
       "search_source": "on-image text",
@@ -209303,6 +209422,13 @@
           1593,
           44,
           null
+        ],
+        [
+          53.1,
+          18.53,
+          1594,
+          44,
+          null
         ]
       ],
       "result_24": {
@@ -209331,13 +209457,13 @@
       },
       "status": "live",
       "last": {
-        "age": 52.6,
-        "score": 18.52,
-        "vscore": 42,
-        "likes": 1505,
+        "age": 53.1,
+        "score": 18.53,
+        "vscore": 39,
+        "likes": 1506,
         "comments": 44,
         "views": null,
-        "engagement": 1593
+        "engagement": 1594
       },
       "search_query": "what tf are they putting in our food",
       "search_source": "on-image text",
@@ -210773,6 +210899,13 @@
           29103,
           225,
           null
+        ],
+        [
+          54.68,
+          1.35,
+          29181,
+          225,
+          null
         ]
       ],
       "result_24": {
@@ -210801,13 +210934,13 @@
       },
       "status": "live",
       "last": {
-        "age": 54.2,
-        "score": 1.34,
-        "vscore": 32,
-        "likes": 28653,
+        "age": 54.7,
+        "score": 1.35,
+        "vscore": 31,
+        "likes": 28731,
         "comments": 225,
         "views": null,
-        "engagement": 29103
+        "engagement": 29181
       },
       "search_query": "Zoro and Sasuke Robert Pattinson level of Havoc Crave AAAMIUECAIVIIRAA CIA ta",
       "search_source": "on-image text",
@@ -211650,6 +211783,13 @@
           26884,
           83,
           null
+        ],
+        [
+          56.6,
+          1.24,
+          26920,
+          83,
+          null
         ]
       ],
       "result_24": {
@@ -211678,13 +211818,13 @@
       },
       "status": "live",
       "last": {
-        "age": 56.1,
+        "age": 56.6,
         "score": 1.24,
-        "vscore": 30,
-        "likes": 26718,
+        "vscore": 29,
+        "likes": 26754,
         "comments": 83,
         "views": null,
-        "engagement": 26884
+        "engagement": 26920
       },
       "search_query": "Grand Theft Auto VI 2026",
       "search_source": "on-image text",
@@ -213173,6 +213313,13 @@
           9995,
           334,
           null
+        ],
+        [
+          56.81,
+          1.33,
+          9996,
+          334,
+          null
         ]
       ],
       "result_24": {
@@ -213201,13 +213348,13 @@
       },
       "status": "live",
       "last": {
-        "age": 56.3,
-        "score": 1.34,
-        "vscore": 35,
-        "likes": 9327,
+        "age": 56.8,
+        "score": 1.33,
+        "vscore": 33,
+        "likes": 9328,
         "comments": 334,
         "views": null,
-        "engagement": 9995
+        "engagement": 9996
       },
       "search_query": "JUST IN Chinese President Xi Jinping calls to destroy and ban nuclear",
       "search_source": "on-image text",
@@ -213896,6 +214043,13 @@
           3761,
           23,
           null
+        ],
+        [
+          46.35,
+          0.99,
+          3765,
+          23,
+          null
         ]
       ],
       "result_24": {
@@ -213913,13 +214067,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 45.9,
+        "age": 46.3,
         "score": 0.99,
         "vscore": 15,
-        "likes": 3715,
+        "likes": 3719,
         "comments": 23,
         "views": null,
-        "engagement": 3761
+        "engagement": 3765
       },
       "search_query": "Stake com Lady Gaga recreating the Abracadabra video with fans as the",
       "search_source": "on-image text",
@@ -215387,6 +215541,13 @@
           51136,
           95,
           null
+        ],
+        [
+          47.94,
+          1.81,
+          51238,
+          95,
+          null
         ]
       ],
       "result_24": {
@@ -215404,13 +215565,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 47.5,
+        "age": 47.9,
         "score": 1.81,
-        "vscore": 45,
-        "likes": 50946,
+        "vscore": 41,
+        "likes": 51048,
         "comments": 95,
         "views": null,
-        "engagement": 51136
+        "engagement": 51238
       },
       "search_query": "How beer 2 looks at me after saying I’d only have one",
       "search_source": "on-image text",
@@ -216176,6 +216337,13 @@
           274844,
           261,
           null
+        ],
+        [
+          51.61,
+          9.75,
+          275997,
+          261,
+          null
         ]
       ],
       "result_24": {
@@ -216204,13 +216372,13 @@
       },
       "status": "live",
       "last": {
-        "age": 51.1,
-        "score": 9.72,
-        "vscore": 81,
-        "likes": 274322,
+        "age": 51.6,
+        "score": 9.75,
+        "vscore": 84,
+        "likes": 275475,
         "comments": 261,
         "views": null,
-        "engagement": 274844
+        "engagement": 275997
       },
       "search_query": "went shopping as Lucia with Jason and he sat down and went",
       "search_source": "on-image text",
@@ -217011,6 +217179,13 @@
           13736,
           165,
           null
+        ],
+        [
+          53.8,
+          0.98,
+          13739,
+          165,
+          null
         ]
       ],
       "result_24": {
@@ -217039,13 +217214,13 @@
       },
       "status": "live",
       "last": {
-        "age": 53.3,
+        "age": 53.8,
         "score": 0.98,
         "vscore": 25,
-        "likes": 13406,
+        "likes": 13409,
         "comments": 165,
         "views": null,
-        "engagement": 13736
+        "engagement": 13739
       },
       "search_query": "BREAKING Trump reveals Jensen Huang his wife Lori have reconciled calling her",
       "search_source": "on-image text",
@@ -218499,6 +218674,13 @@
           32833,
           42,
           null
+        ],
+        [
+          46.98,
+          7.77,
+          33019,
+          42,
+          null
         ]
       ],
       "result_24": {
@@ -218516,13 +218698,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 46.5,
-        "score": 7.74,
-        "vscore": 68,
-        "likes": 32749,
+        "age": 47.0,
+        "score": 7.77,
+        "vscore": 74,
+        "likes": 32935,
         "comments": 42,
         "views": null,
-        "engagement": 32833
+        "engagement": 33019
       },
       "search_query": "when you have a friend and you’re both kinda",
       "search_source": "on-image text",
@@ -219337,6 +219519,13 @@
           14193,
           39,
           null
+        ],
+        [
+          55.35,
+          1.02,
+          14234,
+          39,
+          null
         ]
       ],
       "result_24": {
@@ -219365,13 +219554,13 @@
       },
       "status": "live",
       "last": {
-        "age": 54.9,
+        "age": 55.4,
         "score": 1.02,
         "vscore": 26,
-        "likes": 14115,
+        "likes": 14156,
         "comments": 39,
         "views": null,
-        "engagement": 14193
+        "engagement": 14234
       },
       "search_query": "Facts News Cari from The Incredibles is actually a really good babysitter",
       "search_source": "on-image text",
@@ -220587,6 +220776,13 @@
           45415,
           1387,
           null
+        ],
+        [
+          35.64,
+          6.11,
+          45819,
+          1398,
+          null
         ]
       ],
       "result_24": {
@@ -220604,13 +220800,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 35.2,
-        "score": 6.07,
-        "vscore": 73,
-        "likes": 42641,
-        "comments": 1387,
+        "age": 35.6,
+        "score": 6.11,
+        "vscore": 78,
+        "likes": 43023,
+        "comments": 1398,
         "views": null,
-        "engagement": 45415
+        "engagement": 45819
       },
       "search_query": "Ee Facts fact thesis She flew Navy helicopters raised 6 kids and",
       "search_source": "on-image text",
@@ -221117,6 +221313,13 @@
           7306,
           381,
           null
+        ],
+        [
+          34.65,
+          12.51,
+          7306,
+          381,
+          null
         ]
       ],
       "result_24": {
@@ -221134,9 +221337,9 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 34.2,
+        "age": 34.6,
         "score": 12.51,
-        "vscore": 77,
+        "vscore": 67,
         "likes": 6544,
         "comments": 381,
         "views": null,
@@ -221899,6 +222102,13 @@
           9360,
           352,
           null
+        ],
+        [
+          53.67,
+          1.25,
+          9392,
+          355,
+          null
         ]
       ],
       "result_24": {
@@ -221927,13 +222137,13 @@
       },
       "status": "live",
       "last": {
-        "age": 53.2,
+        "age": 53.7,
         "score": 1.25,
-        "vscore": 31,
-        "likes": 8656,
-        "comments": 352,
+        "vscore": 30,
+        "likes": 8682,
+        "comments": 355,
         "views": null,
-        "engagement": 9360
+        "engagement": 9392
       },
       "search_query": "What goes on here sip ia oWichita si COLORADO KANSAS ow 1",
       "search_source": "on-image text",
@@ -222433,6 +222643,13 @@
           840649,
           258,
           467614
+        ],
+        [
+          34.39,
+          7.59,
+          840641,
+          258,
+          468441
         ]
       ],
       "result_24": {
@@ -222450,13 +222667,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 33.9,
+        "age": 34.4,
         "score": 7.59,
-        "vscore": 78,
+        "vscore": 68,
         "likes": null,
         "comments": 258,
-        "views": 467614,
-        "engagement": 840649
+        "views": 468441,
+        "engagement": 840641
       },
       "search_query": "Bahamas speaker Patricia Deveaux goes viral for saying signify while being very",
       "search_source": "on-image text",
@@ -223110,6 +223327,13 @@
           234600,
           72,
           463156
+        ],
+        [
+          47.0,
+          2.12,
+          234598,
+          72,
+          463709
         ]
       ],
       "result_24": {
@@ -223127,13 +223351,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 46.5,
+        "age": 47.0,
         "score": 2.12,
-        "vscore": 49,
+        "vscore": 44,
         "likes": null,
         "comments": 72,
-        "views": 463156,
-        "engagement": 234600
+        "views": 463709,
+        "engagement": 234598
       },
       "search_query": "Season 7 Fiona was NOT playing",
       "search_source": "on-image text",
@@ -223647,6 +223871,13 @@
           190366,
           439,
           null
+        ],
+        [
+          36.13,
+          364.59,
+          191772,
+          443,
+          null
         ]
       ],
       "result_24": {
@@ -223664,13 +223895,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 35.7,
-        "score": 361.91,
-        "vscore": 92,
-        "likes": 189488,
-        "comments": 439,
+        "age": 36.1,
+        "score": 364.59,
+        "vscore": 100,
+        "likes": 190886,
+        "comments": 443,
         "views": null,
-        "engagement": 190366
+        "engagement": 191772
       },
       "search_query": "We made it to Japan",
       "search_source": "on-image text",
@@ -223691,9 +223922,9 @@
       "first_flag_age": 3.0,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 37.54,
+      "peak_score": 37.72,
       "peak_tier": "viral",
-      "peak_age": 33.5,
+      "peak_age": 34.0,
       "points": [
         [
           0.23,
@@ -224170,6 +224401,13 @@
           29244,
           332,
           null
+        ],
+        [
+          33.99,
+          37.72,
+          29386,
+          332,
+          null
         ]
       ],
       "result_24": {
@@ -224187,13 +224425,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 33.5,
-        "score": 37.54,
-        "vscore": 92,
-        "likes": 28580,
+        "age": 34.0,
+        "score": 37.72,
+        "vscore": 100,
+        "likes": 28722,
         "comments": 332,
         "views": null,
-        "engagement": 29244
+        "engagement": 29386
       },
       "search_query": "Celebrity News Entertainment Inde Navarrette in 2022 2026",
       "search_source": "on-image text",
@@ -224714,6 +224952,13 @@
           19617,
           12,
           null
+        ],
+        [
+          36.93,
+          2.63,
+          19709,
+          12,
+          null
         ]
       ],
       "result_24": {
@@ -224731,13 +224976,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 36.5,
-        "score": 2.62,
-        "vscore": 56,
-        "likes": 19593,
+        "age": 36.9,
+        "score": 2.63,
+        "vscore": 53,
+        "likes": 19685,
         "comments": 12,
         "views": null,
-        "engagement": 19617
+        "engagement": 19709
       },
       "search_query": "fact thesis Look at those otter toe beans 10 10 Bay aN",
       "search_source": "on-image text",
@@ -225216,6 +225461,13 @@
           5810,
           23,
           null
+        ],
+        [
+          33.13,
+          0.96,
+          5820,
+          23,
+          null
         ]
       ],
       "result_24": {
@@ -225233,13 +225485,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 32.7,
+        "age": 33.1,
         "score": 0.96,
         "vscore": 19,
-        "likes": 5764,
+        "likes": 5774,
         "comments": 23,
         "views": null,
-        "engagement": 5810
+        "engagement": 5820
       },
       "search_query": "Take Two CEO Strauss Zelnick was asked if GTA 7 could be",
       "search_source": "on-image text",
@@ -225725,6 +225977,13 @@
           162646,
           1543,
           null
+        ],
+        [
+          33.3,
+          6.57,
+          164512,
+          1561,
+          null
         ]
       ],
       "result_24": {
@@ -225742,13 +226001,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 32.8,
+        "age": 33.3,
         "score": 6.57,
-        "vscore": 78,
-        "likes": 159560,
-        "comments": 1543,
+        "vscore": 84,
+        "likes": 161390,
+        "comments": 1561,
         "views": null,
-        "engagement": 162646
+        "engagement": 164512
       },
       "search_query": "i find it crazy how spider man was willing to let the",
       "search_source": "on-image text",
@@ -226234,6 +226493,13 @@
           18073,
           505,
           null
+        ],
+        [
+          33.18,
+          31.15,
+          18195,
+          508,
+          null
         ]
       ],
       "result_24": {
@@ -226251,13 +226517,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 32.7,
-        "score": 30.94,
-        "vscore": 92,
-        "likes": 17063,
-        "comments": 505,
+        "age": 33.2,
+        "score": 31.15,
+        "vscore": 100,
+        "likes": 17179,
+        "comments": 508,
         "views": null,
-        "engagement": 18073
+        "engagement": 18195
       },
       "search_query": "They really posted this picture of them looking all smug just to",
       "search_source": "on-image text",
@@ -226904,6 +227170,13 @@
           146780,
           239,
           null
+        ],
+        [
+          42.83,
+          7.25,
+          147415,
+          242,
+          null
         ]
       ],
       "result_24": {
@@ -226921,13 +227194,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 42.4,
-        "score": 10.07,
-        "vscore": 82,
-        "likes": 146302,
-        "comments": 239,
+        "age": 42.8,
+        "score": 7.25,
+        "vscore": 79,
+        "likes": 146931,
+        "comments": 242,
         "views": null,
-        "engagement": 146780
+        "engagement": 147415
       },
       "search_query": "guys we might actually get the 4 hour cut if we keep",
       "search_source": "on-image text",
@@ -227602,6 +227875,13 @@
           7250,
           886,
           null
+        ],
+        [
+          45.2,
+          0.36,
+          7276,
+          889,
+          null
         ]
       ],
       "result_24": {
@@ -227619,13 +227899,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 44.7,
-        "score": 0.5,
+        "age": 45.2,
+        "score": 0.36,
         "vscore": 21,
-        "likes": 5478,
-        "comments": 886,
+        "likes": 5498,
+        "comments": 889,
         "views": null,
-        "engagement": 7250
+        "engagement": 7276
       },
       "search_query": "which heated rivalry’ guy is your type",
       "search_source": "on-image text",
@@ -228356,6 +228636,13 @@
           54430,
           62,
           null
+        ],
+        [
+          48.61,
+          2.7,
+          54885,
+          62,
+          null
         ]
       ],
       "result_24": {
@@ -228384,13 +228671,13 @@
       },
       "status": "live",
       "last": {
-        "age": 48.1,
-        "score": 3.73,
-        "vscore": 67,
-        "likes": 54306,
+        "age": 48.6,
+        "score": 2.7,
+        "vscore": 60,
+        "likes": 54761,
         "comments": 62,
         "views": null,
-        "engagement": 54430
+        "engagement": 54885
       },
       "search_query": "Call Me By Your Name’ was released 9 years ago today",
       "search_source": "on-image text",
@@ -228799,6 +229086,13 @@
           13388,
           153,
           null
+        ],
+        [
+          27.46,
+          3.51,
+          13407,
+          153,
+          null
         ]
       ],
       "result_24": {
@@ -228816,13 +229110,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 27.0,
+        "age": 27.5,
         "score": 3.51,
-        "vscore": 60,
-        "likes": 13082,
+        "vscore": 54,
+        "likes": 13101,
         "comments": 153,
         "views": null,
-        "engagement": 13388
+        "engagement": 13407
       },
       "search_query": "In case you haven’t seen anything beautiful",
       "search_source": "on-image text",
@@ -228843,9 +229137,9 @@
       "first_flag_age": 22.1,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 12.67,
+      "peak_score": 14.31,
       "peak_tier": "viral",
-      "peak_age": 45.3,
+      "peak_age": 47.8,
       "points": [
         [
           0.32,
@@ -229497,6 +229791,13 @@
           29199,
           141,
           null
+        ],
+        [
+          47.81,
+          14.31,
+          29916,
+          143,
+          null
         ]
       ],
       "result_24": {
@@ -229514,13 +229815,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 47.3,
-        "score": 8.54,
-        "vscore": 76,
-        "likes": 28917,
-        "comments": 141,
+        "age": 47.8,
+        "score": 14.31,
+        "vscore": 87,
+        "likes": 29630,
+        "comments": 143,
         "views": null,
-        "engagement": 29199
+        "engagement": 29916
       },
       "search_query": "a3 imstillculture Retro futuristic mid century faucet",
       "search_source": "on-image text",
@@ -230181,6 +230482,13 @@
           234600,
           72,
           316904
+        ],
+        [
+          48.41,
+          2.12,
+          234598,
+          72,
+          317273
         ]
       ],
       "result_24": {
@@ -230195,16 +230503,27 @@
         "label": "💤 Fizzled out",
         "stale": false
       },
-      "result_48": null,
-      "status": "live",
-      "last": {
-        "age": 47.9,
+      "result_48": {
+        "age": 48.4,
         "score": 2.12,
-        "vscore": 43,
+        "vscore": 39,
         "likes": null,
         "comments": 72,
-        "views": 316904,
-        "engagement": 234600
+        "views": 317273,
+        "engagement": 234598,
+        "verdict": "fizzled",
+        "label": "💤 Fizzled out",
+        "stale": false
+      },
+      "status": "live",
+      "last": {
+        "age": 48.4,
+        "score": 2.12,
+        "vscore": 39,
+        "likes": null,
+        "comments": 72,
+        "views": 317273,
+        "engagement": 234598
       },
       "search_query": "She had to process what was said before she spat out her",
       "search_source": "on-image text",
@@ -230606,6 +230925,13 @@
           33595,
           1040,
           null
+        ],
+        [
+          27.56,
+          1.36,
+          33992,
+          1051,
+          null
         ]
       ],
       "result_24": {
@@ -230623,13 +230949,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 27.1,
+        "age": 27.6,
         "score": 1.36,
-        "vscore": 35,
-        "likes": 31515,
-        "comments": 1040,
+        "vscore": 37,
+        "likes": 31890,
+        "comments": 1051,
         "views": null,
-        "engagement": 33595
+        "engagement": 33992
       },
       "search_query": "Jim Carrey is reportedly set to star alongside Macaulay Culkin in the",
       "search_source": "on-image text",
@@ -231010,6 +231336,13 @@
           48820,
           2820,
           null
+        ],
+        [
+          25.94,
+          1.97,
+          49210,
+          2839,
+          null
         ]
       ],
       "result_24": {
@@ -231027,13 +231360,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 25.5,
+        "age": 25.9,
         "score": 1.97,
         "vscore": 47,
-        "likes": 43180,
-        "comments": 2820,
+        "likes": 43532,
+        "comments": 2839,
         "views": null,
-        "engagement": 48820
+        "engagement": 49210
       },
       "search_query": "G Kevin Feige reportedly revealed this about the biggest secret Marvel is",
       "search_source": "on-image text",
@@ -231610,6 +231943,13 @@
           25344,
           93,
           null
+        ],
+        [
+          39.17,
+          1.25,
+          25423,
+          93,
+          null
         ]
       ],
       "result_24": {
@@ -231627,13 +231967,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 38.7,
-        "score": 1.74,
-        "vscore": 43,
-        "likes": 25158,
+        "age": 39.2,
+        "score": 1.25,
+        "vscore": 31,
+        "likes": 25237,
         "comments": 93,
         "views": null,
-        "engagement": 25344
+        "engagement": 25423
       },
       "search_query": "Michael B Jordan during a biceps workout",
       "search_source": "on-image text",
@@ -232231,6 +232571,13 @@
           22837,
           806,
           null
+        ],
+        [
+          40.36,
+          1.13,
+          22948,
+          809,
+          null
         ]
       ],
       "result_24": {
@@ -232248,13 +232595,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 39.9,
-        "score": 1.57,
-        "vscore": 40,
-        "likes": 21225,
-        "comments": 806,
+        "age": 40.4,
+        "score": 1.13,
+        "vscore": 28,
+        "likes": 21330,
+        "comments": 809,
         "views": null,
-        "engagement": 22837
+        "engagement": 22948
       },
       "search_query": "thinking about this generation of trans women who were allowed to transition",
       "search_source": "on-image text",
@@ -232915,6 +233262,13 @@
           13143,
           113,
           null
+        ],
+        [
+          44.0,
+          0.65,
+          13168,
+          113,
+          null
         ]
       ],
       "result_24": {
@@ -232932,13 +233286,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 43.5,
-        "score": 0.9,
+        "age": 44.0,
+        "score": 0.65,
         "vscore": 25,
-        "likes": 12917,
+        "likes": 12942,
         "comments": 113,
         "views": null,
-        "engagement": 13143
+        "engagement": 13168
       },
       "search_query": "The Vatican published Pope Francis’ diaries detailing three encounters with the devil",
       "search_source": "on-image text",
@@ -233627,6 +233981,13 @@
           12356,
           114,
           null
+        ],
+        [
+          46.34,
+          0.61,
+          12375,
+          114,
+          null
         ]
       ],
       "result_24": {
@@ -233644,13 +234005,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 45.9,
-        "score": 0.85,
+        "age": 46.3,
+        "score": 0.61,
         "vscore": 25,
-        "likes": 12128,
+        "likes": 12147,
         "comments": 114,
         "views": null,
-        "engagement": 12356
+        "engagement": 12375
       },
       "search_query": "Cher at 80 says date younger men because all the men my",
       "search_source": "on-image text",
@@ -234353,6 +234714,13 @@
           51011,
           470,
           null
+        ],
+        [
+          47.46,
+          2.52,
+          51233,
+          470,
+          null
         ]
       ],
       "result_24": {
@@ -234370,13 +234738,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 47.0,
-        "score": 3.5,
-        "vscore": 65,
-        "likes": 50071,
+        "age": 47.5,
+        "score": 2.52,
+        "vscore": 53,
+        "likes": 50293,
         "comments": 470,
         "views": null,
-        "engagement": 51011
+        "engagement": 51233
       },
       "search_query": "a lesbian two bisexuals a twink and a token Straight the world",
       "search_source": "on-image text",
@@ -234862,6 +235230,13 @@
           62566,
           100,
           null
+        ],
+        [
+          32.83,
+          2.89,
+          62742,
+          102,
+          null
         ]
       ],
       "result_24": {
@@ -234879,13 +235254,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 32.4,
+        "age": 32.8,
         "score": 2.89,
-        "vscore": 51,
-        "likes": 62366,
-        "comments": 100,
+        "vscore": 46,
+        "likes": 62538,
+        "comments": 102,
         "views": null,
-        "engagement": 62566
+        "engagement": 62742
       },
       "search_query": "Alright Mr B2csas we get it Nvidia CEO Jensen Huang Disclosed More",
       "search_source": "on-image text",
@@ -234906,9 +235281,9 @@
       "first_flag_age": 23.5,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 10.66,
-      "peak_tier": "rising",
-      "peak_age": 44.5,
+      "peak_score": 13.01,
+      "peak_tier": "viral",
+      "peak_age": 47.0,
       "points": [
         [
           0.47,
@@ -235546,6 +235921,13 @@
           26205,
           90,
           null
+        ],
+        [
+          46.97,
+          13.01,
+          27190,
+          90,
+          null
         ]
       ],
       "result_24": {
@@ -235563,13 +235945,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 46.5,
-        "score": 7.66,
-        "vscore": 74,
-        "likes": 26025,
+        "age": 47.0,
+        "score": 13.01,
+        "vscore": 86,
+        "likes": 27010,
         "comments": 90,
         "views": null,
-        "engagement": 26205
+        "engagement": 27190
       },
       "search_query": "yi imstillculture Brother and Sister trying to race a train on their",
       "search_source": "on-image text",
@@ -235590,9 +235972,9 @@
       "first_flag_age": 8.0,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 4.66,
+      "peak_score": 4.68,
       "peak_tier": "rising",
-      "peak_age": 30.0,
+      "peak_age": 30.5,
       "points": [
         [
           0.45,
@@ -236020,6 +236402,13 @@
           198100,
           1263,
           null
+        ],
+        [
+          30.46,
+          4.68,
+          198780,
+          1273,
+          null
         ]
       ],
       "result_24": {
@@ -236037,13 +236426,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 30.0,
-        "score": 4.66,
-        "vscore": 73,
-        "likes": 195574,
-        "comments": 1263,
+        "age": 30.5,
+        "score": 4.68,
+        "vscore": 69,
+        "likes": 196234,
+        "comments": 1273,
         "views": null,
-        "engagement": 198100
+        "engagement": 198780
       },
       "search_query": "Zyri the voice actress for Steven Universe has came out as a",
       "search_source": "on-image text",
@@ -236410,6 +236799,13 @@
           250891,
           77,
           942932
+        ],
+        [
+          24.73,
+          2.26,
+          250889,
+          77,
+          946936
         ]
       ],
       "result_24": {
@@ -236427,13 +236823,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 24.3,
+        "age": 24.7,
         "score": 2.26,
-        "vscore": 52,
+        "vscore": 47,
         "likes": null,
         "comments": 77,
-        "views": 942932,
-        "engagement": 250891
+        "views": 946936,
+        "engagement": 250889
       },
       "search_query": "He asked to be made unrecognizable so people wouldn't always associate him",
       "search_source": "on-image text",
@@ -236807,6 +237203,13 @@
           560433,
           172,
           752385
+        ],
+        [
+          25.49,
+          5.06,
+          560427,
+          172,
+          755329
         ]
       ],
       "result_24": {
@@ -236824,13 +237227,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 25.0,
+        "age": 25.5,
         "score": 5.06,
-        "vscore": 75,
+        "vscore": 66,
         "likes": null,
         "comments": 172,
-        "views": 752385,
-        "engagement": 560433
+        "views": 755329,
+        "engagement": 560427
       },
       "search_query": "Robin Williams could walk onto any stage with zero preparation and instantly",
       "search_source": "on-image text",
@@ -237162,19 +237565,26 @@
           122323,
           302,
           null
+        ],
+        [
+          21.67,
+          0.1,
+          1886,
+          308,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 21.2,
-        "score": 8.93,
-        "vscore": 52,
-        "likes": null,
-        "comments": 302,
+        "age": 21.7,
+        "score": 0.1,
+        "vscore": 9,
+        "likes": 1270,
+        "comments": 308,
         "views": null,
-        "engagement": 122323
+        "engagement": 1886
       },
       "search_query": "you get 1000 for each concert you wouldn't go to how much",
       "search_source": "on-image text",
@@ -237195,9 +237605,9 @@
       "first_flag_age": 11.7,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 6.06,
+      "peak_score": 6.08,
       "peak_tier": "viral",
-      "peak_age": 30.8,
+      "peak_age": 31.2,
       "points": [
         [
           0.23,
@@ -237639,6 +238049,13 @@
           4724,
           184,
           null
+        ],
+        [
+          31.23,
+          6.08,
+          4735,
+          185,
+          null
         ]
       ],
       "result_24": {
@@ -237656,13 +238073,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 30.8,
-        "score": 6.06,
-        "vscore": 62,
-        "likes": 4356,
-        "comments": 184,
+        "age": 31.2,
+        "score": 6.08,
+        "vscore": 57,
+        "likes": 4365,
+        "comments": 185,
         "views": null,
-        "engagement": 4724
+        "engagement": 4735
       },
       "search_query": "Celebrity News Entertainment Which One Has the Biggest Star Potential lea ma",
       "search_source": "on-image text",
@@ -238225,6 +238642,13 @@
           17404,
           50,
           null
+        ],
+        [
+          40.54,
+          2.35,
+          17608,
+          50,
+          null
         ]
       ],
       "result_24": {
@@ -238242,13 +238666,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 40.1,
-        "score": 2.33,
-        "vscore": 53,
-        "likes": 17304,
+        "age": 40.5,
+        "score": 2.35,
+        "vscore": 57,
+        "likes": 17508,
         "comments": 50,
         "views": null,
-        "engagement": 17404
+        "engagement": 17608
       },
       "search_query": "fact thesis A leopard named Pan Baobao has gotten so fat that",
       "search_source": "on-image text",
@@ -238755,6 +239179,13 @@
           24189,
           76,
           null
+        ],
+        [
+          34.79,
+          1.73,
+          24212,
+          76,
+          null
         ]
       ],
       "result_24": {
@@ -238772,13 +239203,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 34.3,
+        "age": 34.8,
         "score": 1.73,
-        "vscore": 43,
-        "likes": 24037,
+        "vscore": 40,
+        "likes": 24060,
         "comments": 76,
         "views": null,
-        "engagement": 24189
+        "engagement": 24212
       },
       "search_query": "Bm Facts News During the filming of Big Daddy 1999 Adam Sandler",
       "search_source": "on-image text",
@@ -238799,9 +239230,9 @@
       "first_flag_age": 15.8,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 5.96,
+      "peak_score": 6.01,
       "peak_tier": "viral",
-      "peak_age": 30.8,
+      "peak_age": 31.3,
       "points": [
         [
           0.27,
@@ -239243,6 +239674,13 @@
           4089,
           9,
           null
+        ],
+        [
+          31.27,
+          6.01,
+          4123,
+          9,
+          null
         ]
       ],
       "result_24": {
@@ -239260,13 +239698,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 30.8,
-        "score": 5.96,
-        "vscore": 59,
-        "likes": 4071,
+        "age": 31.3,
+        "score": 6.01,
+        "vscore": 62,
+        "likes": 4105,
         "comments": 9,
         "views": null,
-        "engagement": 4089
+        "engagement": 4123
       },
       "search_query": "love gifs of little animals being swept away by the current",
       "search_source": "on-image text",
@@ -239745,6 +240183,13 @@
           13533,
           378,
           null
+        ],
+        [
+          32.74,
+          1.81,
+          13596,
+          379,
+          null
         ]
       ],
       "result_24": {
@@ -239762,13 +240207,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 32.3,
+        "age": 32.7,
         "score": 1.81,
-        "vscore": 45,
-        "likes": 12777,
-        "comments": 378,
+        "vscore": 41,
+        "likes": 12838,
+        "comments": 379,
         "views": null,
-        "engagement": 13533
+        "engagement": 13596
       },
       "search_query": "Oh but life is just so unfair ep one eof Ya an",
       "search_source": "on-image text",
@@ -240107,19 +240552,26 @@
           64240,
           161,
           null
+        ],
+        [
+          22.62,
+          1.64,
+          64762,
+          164,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 22.2,
-        "score": 0.43,
-        "vscore": 25,
-        "likes": 63918,
-        "comments": 161,
+        "age": 22.6,
+        "score": 1.64,
+        "vscore": 40,
+        "likes": 64434,
+        "comments": 164,
         "views": null,
-        "engagement": 64240
+        "engagement": 64762
       },
       "search_query": "why does the gta6 map kinda look like peter griffin",
       "search_source": "on-image text",
@@ -240140,9 +240592,9 @@
       "first_flag_age": 15.8,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 547.72,
+      "peak_score": 581.72,
       "peak_tier": "viral",
-      "peak_age": 30.3,
+      "peak_age": 30.8,
       "points": [
         [
           0.32,
@@ -240570,6 +241022,13 @@
           47104,
           133,
           null
+        ],
+        [
+          30.82,
+          581.72,
+          50028,
+          138,
+          null
         ]
       ],
       "result_24": {
@@ -240587,13 +241046,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 30.3,
-        "score": 547.72,
-        "vscore": 92,
-        "likes": 46838,
-        "comments": 133,
+        "age": 30.8,
+        "score": 581.72,
+        "vscore": 100,
+        "likes": 49752,
+        "comments": 138,
         "views": null,
-        "engagement": 47104
+        "engagement": 50028
       },
       "search_query": "The villainess's outfit in K dramas",
       "search_source": "on-image text",
@@ -241023,6 +241482,13 @@
           9187,
           16,
           null
+        ],
+        [
+          29.62,
+          1.23,
+          9190,
+          16,
+          null
         ]
       ],
       "result_24": {
@@ -241040,13 +241506,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 29.2,
+        "age": 29.6,
         "score": 1.23,
-        "vscore": 31,
-        "likes": 9155,
+        "vscore": 30,
+        "likes": 9158,
         "comments": 16,
         "views": null,
-        "engagement": 9187
+        "engagement": 9190
       },
       "search_query": "Dolly Parton had the grace of saying about her God didn't let",
       "search_source": "on-image text",
@@ -241067,9 +241533,9 @@
       "first_flag_age": 21.3,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 6.84,
+      "peak_score": 6.89,
       "peak_tier": "rising",
-      "peak_age": 33.8,
+      "peak_age": 34.3,
       "points": [
         [
           0.02,
@@ -241553,6 +242019,13 @@
           101573,
           336,
           null
+        ],
+        [
+          34.27,
+          6.89,
+          102456,
+          337,
+          null
         ]
       ],
       "result_24": {
@@ -241570,13 +242043,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 33.8,
-        "score": 6.84,
-        "vscore": 63,
-        "likes": 100901,
-        "comments": 336,
+        "age": 34.3,
+        "score": 6.89,
+        "vscore": 71,
+        "likes": 101782,
+        "comments": 337,
         "views": null,
-        "engagement": 101573
+        "engagement": 102456
       },
       "search_query": "finally put up the christmas tree",
       "search_source": "on-image text",
@@ -241597,9 +242070,9 @@
       "first_flag_age": 18.5,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 3.35,
+      "peak_score": 3.49,
       "peak_tier": "rising",
-      "peak_age": 28.5,
+      "peak_age": 31.0,
       "points": [
         [
           0.01,
@@ -242034,6 +242507,13 @@
           7211,
           54,
           null
+        ],
+        [
+          31.0,
+          3.49,
+          7300,
+          55,
+          null
         ]
       ],
       "result_24": {
@@ -242051,19 +242531,19 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 30.5,
-        "score": 2.11,
-        "vscore": 41,
-        "likes": 7103,
-        "comments": 54,
+        "age": 31.0,
+        "score": 3.49,
+        "vscore": 58,
+        "likes": 7190,
+        "comments": 55,
         "views": null,
-        "engagement": 7211
+        "engagement": 7300
       },
       "search_query": "rae imstillculture Daniel Stern fired his agent for telling him to accept",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=rae+imstillculture+Daniel+Stern+fired+his+agent+for+telling+him+to+accept&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=rae+imstillculture+Daniel+Stern+fired+his+agent+for+telling+him+to+accept&src=typed_query&f=live",
-      "peak_vscore": 57,
+      "peak_vscore": 58,
       "thumb": "thumbs/18204251755379142.jpg"
     },
     "18027906008948222": {
@@ -242396,19 +242876,26 @@
           632116,
           194,
           200061
+        ],
+        [
+          22.91,
+          5.96,
+          645143,
+          198,
+          202060
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 22.4,
-        "score": 5.9,
-        "vscore": 59,
+        "age": 22.9,
+        "score": 5.96,
+        "vscore": 66,
         "likes": null,
-        "comments": 194,
-        "views": 200061,
-        "engagement": 632116
+        "comments": 198,
+        "views": 202060,
+        "engagement": 645143
       },
       "search_query": "Still one of the coolest things I've ever seen",
       "search_source": "on-image text",
@@ -242635,19 +243122,26 @@
           10523,
           78,
           null
+        ],
+        [
+          14.84,
+          1.83,
+          10781,
+          81,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 14.4,
-        "score": 1.82,
-        "vscore": 45,
-        "likes": 10367,
-        "comments": 78,
+        "age": 14.8,
+        "score": 1.83,
+        "vscore": 48,
+        "likes": 10619,
+        "comments": 81,
         "views": null,
-        "engagement": 10523
+        "engagement": 10781
       },
       "search_query": "fact thesis Six friends recreated a photo they took together 48 years",
       "search_source": "on-image text",
@@ -242895,19 +243389,26 @@
           39009,
           265,
           null
+        ],
+        [
+          16.35,
+          3.46,
+          39991,
+          269,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 15.9,
-        "score": 3.43,
-        "vscore": 58,
-        "likes": 38479,
-        "comments": 265,
+        "age": 16.3,
+        "score": 3.46,
+        "vscore": 65,
+        "likes": 39453,
+        "comments": 269,
         "views": null,
-        "engagement": 39009
+        "engagement": 39991
       },
       "search_query": "Facts News Chinese man adopted by billionaires as a toddler meets his",
       "search_source": "on-image text",
@@ -242930,7 +243431,7 @@
       "flag_reason": "score",
       "peak_score": 100.0,
       "peak_tier": "rising",
-      "peak_age": 32.0,
+      "peak_age": 32.5,
       "points": [
         [
           0.02,
@@ -243386,6 +243887,13 @@
           28040,
           100,
           null
+        ],
+        [
+          32.52,
+          100.0,
+          28042,
+          100,
+          null
         ]
       ],
       "result_24": {
@@ -243403,13 +243911,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 32.0,
+        "age": 32.5,
         "score": 100.0,
-        "vscore": 42,
+        "vscore": 36,
         "likes": null,
         "comments": 100,
         "views": null,
-        "engagement": 28040
+        "engagement": 28042
       },
       "search_query": "ngga has been friend zoned from childhood k Bie O97 0S 7",
       "search_source": "on-image text",
@@ -243755,19 +244263,26 @@
           130423,
           322,
           null
+        ],
+        [
+          22.8,
+          0.44,
+          8781,
+          324,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 22.3,
-        "score": 9.27,
-        "vscore": 53,
-        "likes": null,
-        "comments": 322,
+        "age": 22.8,
+        "score": 0.44,
+        "vscore": 24,
+        "likes": 8133,
+        "comments": 324,
         "views": null,
-        "engagement": 130423
+        "engagement": 8781
       },
       "search_query": "Zyri the voice of Steven Universe comes out as a trans woman",
       "search_source": "on-image text",
@@ -243788,9 +244303,9 @@
       "first_flag_age": 16.9,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 13.22,
+      "peak_score": 13.81,
       "peak_tier": "viral",
-      "peak_age": 26.0,
+      "peak_age": 26.4,
       "points": [
         [
           0.18,
@@ -244155,6 +244670,13 @@
           7724,
           407,
           null
+        ],
+        [
+          26.43,
+          13.81,
+          8066,
+          418,
+          null
         ]
       ],
       "result_24": {
@@ -244172,19 +244694,19 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 26.0,
-        "score": 13.22,
-        "vscore": 79,
-        "likes": 6910,
-        "comments": 407,
+        "age": 26.4,
+        "score": 13.81,
+        "vscore": 89,
+        "likes": 7230,
+        "comments": 418,
         "views": null,
-        "engagement": 7724
+        "engagement": 8066
       },
       "search_query": "Queen Latifah 56 and her 21 year old girlfriend poolside at the",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=Queen+Latifah+56+and+her+21+year+old+girlfriend+poolside+at+the&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=Queen+Latifah+56+and+her+21+year+old+girlfriend+poolside+at+the&src=typed_query&f=live",
-      "peak_vscore": 88,
+      "peak_vscore": 89,
       "thumb": "thumbs/18113429636225422.jpg"
     },
     "18136280704757326": {
@@ -244199,9 +244721,9 @@
       "first_flag_age": 17.9,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 6.5,
+      "peak_score": 6.63,
       "peak_tier": "viral",
-      "peak_age": 26.4,
+      "peak_age": 26.9,
       "points": [
         [
           0.17,
@@ -244573,6 +245095,13 @@
           4929,
           121,
           null
+        ],
+        [
+          26.92,
+          6.63,
+          5030,
+          127,
+          null
         ]
       ],
       "result_24": {
@@ -244590,13 +245119,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 26.4,
-        "score": 6.5,
-        "vscore": 60,
-        "likes": 4687,
-        "comments": 121,
+        "age": 26.9,
+        "score": 6.63,
+        "vscore": 70,
+        "likes": 4776,
+        "comments": 127,
         "views": null,
-        "engagement": 4929
+        "engagement": 5030
       },
       "search_query": "category hispanics latinas who look insanely arab",
       "search_source": "on-image text",
@@ -245068,6 +245597,13 @@
           119855,
           137,
           null
+        ],
+        [
+          31.41,
+          1.59,
+          121586,
+          139,
+          null
         ]
       ],
       "result_24": {
@@ -245085,13 +245621,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 30.9,
-        "score": 1.57,
-        "vscore": 40,
-        "likes": 119581,
-        "comments": 137,
+        "age": 31.4,
+        "score": 1.59,
+        "vscore": 44,
+        "likes": 121308,
+        "comments": 139,
         "views": null,
-        "engagement": 119855
+        "engagement": 121586
       },
       "search_query": "she really thought he was playing it up for the cameras to",
       "search_source": "on-image text",
@@ -245325,19 +245861,26 @@
           107071,
           468,
           null
+        ],
+        [
+          15.27,
+          198.52,
+          108677,
+          475,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 14.8,
-        "score": 198.69,
-        "vscore": 67,
+        "age": 15.3,
+        "score": 198.52,
+        "vscore": 73,
         "likes": null,
-        "comments": 468,
+        "comments": 475,
         "views": null,
-        "engagement": 107071
+        "engagement": 108677
       },
       "search_query": "Piece of shit game an dee ee 1 Final warning Jason is",
       "search_source": "on-image text",
@@ -245358,9 +245901,9 @@
       "first_flag_age": 19.3,
       "first_tier": "viral",
       "flag_reason": "score",
-      "peak_score": 96.45,
+      "peak_score": 102.41,
       "peak_tier": "viral",
-      "peak_age": 26.8,
+      "peak_age": 27.3,
       "points": [
         [
           0.02,
@@ -245739,6 +246282,13 @@
           66201,
           88,
           null
+        ],
+        [
+          27.27,
+          102.41,
+          70293,
+          91,
+          null
         ]
       ],
       "result_24": {
@@ -245756,13 +246306,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 26.8,
-        "score": 96.45,
-        "vscore": 92,
-        "likes": 66025,
-        "comments": 88,
+        "age": 27.3,
+        "score": 102.41,
+        "vscore": 100,
+        "likes": 70111,
+        "comments": 91,
         "views": null,
-        "engagement": 66201
+        "engagement": 70293
       },
       "search_query": "I've been laughing at this comment for half an hour G it's",
       "search_source": "on-image text",
@@ -245926,19 +246476,26 @@
           3992,
           327,
           null
+        ],
+        [
+          10.0,
+          1.25,
+          4031,
+          332,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 9.5,
-        "score": 1.07,
-        "vscore": 17,
-        "likes": 3338,
-        "comments": 327,
+        "age": 10.0,
+        "score": 1.25,
+        "vscore": 21,
+        "likes": 3367,
+        "comments": 332,
         "views": null,
-        "engagement": 3992
+        "engagement": 4031
       },
       "search_query": "Who poisoned the king OISONED Sok WHO KING",
       "search_source": "on-image text",
@@ -246144,19 +246701,26 @@
           5462,
           1473,
           null
+        ],
+        [
+          13.02,
+          1.55,
+          5714,
+          1524,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 12.5,
-        "score": 1.28,
-        "vscore": 26,
-        "likes": 2516,
-        "comments": 1473,
+        "age": 13.0,
+        "score": 1.55,
+        "vscore": 38,
+        "likes": 2666,
+        "comments": 1524,
         "views": null,
-        "engagement": 5462
+        "engagement": 5714
       },
       "search_query": "lf you're right brained you see a whale lf you're left brained",
       "search_source": "on-image text",
@@ -246530,6 +247094,13 @@
           3025,
           53,
           null
+        ],
+        [
+          25.49,
+          0.61,
+          3036,
+          53,
+          null
         ]
       ],
       "result_24": {
@@ -246547,13 +247118,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 25.0,
-        "score": 0.51,
+        "age": 25.5,
+        "score": 0.61,
         "vscore": 13,
-        "likes": 2919,
+        "likes": 2930,
         "comments": 53,
         "views": null,
-        "engagement": 3025
+        "engagement": 3036
       },
       "search_query": "we Drip Daddy ghee Odripdaddydosh Very realistic",
       "search_source": "on-image text",
@@ -246941,6 +247512,13 @@
           3310,
           17,
           null
+        ],
+        [
+          26.36,
+          0.66,
+          3329,
+          17,
+          null
         ]
       ],
       "result_24": {
@@ -246958,13 +247536,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 25.9,
-        "score": 0.56,
+        "age": 26.4,
+        "score": 0.66,
         "vscore": 14,
-        "likes": 3276,
+        "likes": 3295,
         "comments": 17,
         "views": null,
-        "engagement": 3310
+        "engagement": 3329
       },
       "search_query": "Name an actor with more range you can't ims es",
       "search_source": "on-image text",
@@ -247128,19 +247706,26 @@
           42566,
           75,
           502725
+        ],
+        [
+          9.76,
+          3.65,
+          43498,
+          75,
+          513706
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 9.3,
-        "score": 3.67,
-        "vscore": 66,
-        "likes": 42416,
+        "age": 9.8,
+        "score": 3.65,
+        "vscore": 67,
+        "likes": 43348,
         "comments": 75,
-        "views": 502725,
-        "engagement": 42566
+        "views": 513706,
+        "engagement": 43498
       },
       "search_query": "i’ve only just realised bc this video came up on my for",
       "search_source": "caption",
@@ -247161,9 +247746,9 @@
       "first_flag_age": 3.1,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 5.99,
+      "peak_score": 6.17,
       "peak_tier": "rising",
-      "peak_age": 9.5,
+      "peak_age": 9.9,
       "points": [
         [
           0.42,
@@ -247304,25 +247889,32 @@
           55822,
           109,
           null
+        ],
+        [
+          9.92,
+          6.17,
+          58972,
+          117,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 9.5,
-        "score": 5.99,
-        "vscore": 60,
-        "likes": 55604,
-        "comments": 109,
+        "age": 9.9,
+        "score": 6.17,
+        "vscore": 73,
+        "likes": 58738,
+        "comments": 117,
         "views": null,
-        "engagement": 55822
+        "engagement": 58972
       },
       "search_query": "alr bro",
       "search_source": "caption",
       "x_search_url": "https://x.com/search?q=alr+bro&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=alr+bro&src=typed_query&f=live",
-      "peak_vscore": 72,
+      "peak_vscore": 73,
       "thumb": "thumbs/18136715923680265.jpg"
     },
     "17915731362572191": {
@@ -247337,9 +247929,9 @@
       "first_flag_age": 3.2,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 14.83,
+      "peak_score": 14.98,
       "peak_tier": "viral",
-      "peak_age": 9.5,
+      "peak_age": 10.0,
       "points": [
         [
           0.52,
@@ -247480,25 +248072,32 @@
           5463,
           103,
           null
+        ],
+        [
+          10.02,
+          14.98,
+          5653,
+          103,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 9.5,
-        "score": 14.83,
-        "vscore": 73,
-        "likes": 5257,
+        "age": 10.0,
+        "score": 14.98,
+        "vscore": 82,
+        "likes": 5447,
         "comments": 103,
         "views": null,
-        "engagement": 5463
+        "engagement": 5653
       },
       "search_query": "he viz can clearly say this is not RDJ it's Cillian Murphy",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=he+viz+can+clearly+say+this+is+not+RDJ+it%27s+Cillian+Murphy&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=he+viz+can+clearly+say+this+is+not+RDJ+it%27s+Cillian+Murphy&src=typed_query&f=live",
-      "peak_vscore": 81,
+      "peak_vscore": 82,
       "thumb": "thumbs/17915731362572191.jpg"
     },
     "18011412269989739": {
@@ -247628,19 +248227,26 @@
           20819,
           191,
           311833
+        ],
+        [
+          7.73,
+          4.13,
+          21196,
+          193,
+          318125
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 7.3,
-        "score": 4.19,
-        "vscore": 46,
-        "likes": 20437,
-        "comments": 191,
-        "views": 311833,
-        "engagement": 20819
+        "age": 7.7,
+        "score": 4.13,
+        "vscore": 48,
+        "likes": 20810,
+        "comments": 193,
+        "views": 318125,
+        "engagement": 21196
       },
       "search_query": "Stake com Tanner Jeannot vs Tyrel Bauer FIGHT OF THE YEAR G",
       "search_source": "on-image text",
@@ -247797,19 +248403,26 @@
           23702,
           322,
           null
+        ],
+        [
+          8.58,
+          5.5,
+          25950,
+          328,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 8.1,
-        "score": 5.17,
-        "vscore": 76,
-        "likes": 23058,
-        "comments": 322,
+        "age": 8.6,
+        "score": 5.5,
+        "vscore": 87,
+        "likes": 25294,
+        "comments": 328,
         "views": null,
-        "engagement": 23702
+        "engagement": 25950
       },
       "search_query": "i237 it’s over",
       "search_source": "on-image text",
@@ -248162,19 +248775,26 @@
           234600,
           72,
           144548
+        ],
+        [
+          23.87,
+          2.12,
+          234598,
+          72,
+          145116
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 23.4,
-        "score": 2.14,
-        "vscore": 32,
+        "age": 23.9,
+        "score": 2.12,
+        "vscore": 29,
         "likes": null,
         "comments": 72,
-        "views": 144548,
-        "engagement": 234600
+        "views": 145116,
+        "engagement": 234598
       },
       "search_query": "When the kitchen is falling apart and he’s completely unbothered",
       "search_source": "on-image text",
@@ -248422,19 +249042,26 @@
           7820,
           37,
           null
+        ],
+        [
+          15.51,
+          0.49,
+          8004,
+          40,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 15.0,
-        "score": 0.68,
+        "age": 15.5,
+        "score": 0.49,
         "vscore": 22,
-        "likes": 7746,
-        "comments": 37,
+        "likes": 7924,
+        "comments": 40,
         "views": null,
-        "engagement": 7820
+        "engagement": 8004
       },
       "search_query": "Hubert Smielecki as Apollo in Percy Jackson and the Olympians ’",
       "search_source": "on-image text",
@@ -248717,19 +249344,26 @@
           27526,
           174,
           null
+        ],
+        [
+          18.18,
+          1.59,
+          28183,
+          176,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 17.7,
-        "score": 2.2,
-        "vscore": 51,
-        "likes": 27178,
-        "comments": 174,
+        "age": 18.2,
+        "score": 1.59,
+        "vscore": 45,
+        "likes": 27831,
+        "comments": 176,
         "views": null,
-        "engagement": 27526
+        "engagement": 28183
       },
       "search_query": "Nicole Richie’s daughter Kate Madden makes her modeling debut at 18 after",
       "search_source": "on-image text",
@@ -249110,6 +249744,13 @@
           44328,
           32,
           null
+        ],
+        [
+          25.35,
+          2.23,
+          45338,
+          34,
+          null
         ]
       ],
       "result_24": {
@@ -249127,13 +249768,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 24.9,
-        "score": 3.04,
-        "vscore": 61,
-        "likes": 44264,
-        "comments": 32,
+        "age": 25.3,
+        "score": 2.23,
+        "vscore": 59,
+        "likes": 45270,
+        "comments": 34,
         "views": null,
-        "engagement": 44328
+        "engagement": 45338
       },
       "search_query": "Taylor Zakhar Perez and Nicholas Galitzine on the set of Red White",
       "search_source": "on-image text",
@@ -249528,6 +250169,13 @@
           24498,
           28,
           null
+        ],
+        [
+          26.46,
+          1.22,
+          24819,
+          28,
+          null
         ]
       ],
       "result_24": {
@@ -249545,13 +250193,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 26.0,
-        "score": 1.68,
-        "vscore": 42,
-        "likes": 24442,
+        "age": 26.5,
+        "score": 1.22,
+        "vscore": 34,
+        "likes": 24763,
         "comments": 28,
         "views": null,
-        "engagement": 24498
+        "engagement": 24819
       },
       "search_query": "elise zakaria with glasses",
       "search_source": "on-image text",
@@ -249953,6 +250601,13 @@
           3008,
           11,
           null
+        ],
+        [
+          27.51,
+          5.8,
+          3049,
+          11,
+          null
         ]
       ],
       "result_24": {
@@ -249970,13 +250625,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 27.0,
-        "score": 5.72,
-        "vscore": 33,
-        "likes": 2986,
+        "age": 27.5,
+        "score": 5.8,
+        "vscore": 42,
+        "likes": 3027,
         "comments": 11,
         "views": null,
-        "engagement": 3008
+        "engagement": 3049
       },
       "search_query": "You're a real one Craig Alexandra Daddario is reportedly the leading contender",
       "search_source": "on-image text",
@@ -249997,9 +250652,9 @@
       "first_flag_age": 2.0,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 11.4,
+      "peak_score": 11.54,
       "peak_tier": "viral",
-      "peak_age": 6.7,
+      "peak_age": 7.3,
       "points": [
         [
           0.4,
@@ -250105,25 +250760,32 @@
           3537,
           12,
           null
+        ],
+        [
+          7.25,
+          11.54,
+          3704,
+          12,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 6.8,
-        "score": 11.39,
-        "vscore": 62,
-        "likes": 3513,
+        "age": 7.3,
+        "score": 11.54,
+        "vscore": 71,
+        "likes": 3680,
         "comments": 12,
         "views": null,
-        "engagement": 3537
+        "engagement": 3704
       },
       "search_query": "Amanda Seyfried reposting a childhood photo of Nathan Fielder and adding the",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=Amanda+Seyfried+reposting+a+childhood+photo+of+Nathan+Fielder+and+adding+the&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=Amanda+Seyfried+reposting+a+childhood+photo+of+Nathan+Fielder+and+adding+the&src=typed_query&f=live",
-      "peak_vscore": 70,
+      "peak_vscore": 71,
       "thumb": "thumbs/18030362957700018.jpg"
     },
     "18111723803216317": {
@@ -250246,19 +250908,26 @@
           4666,
           22,
           null
+        ],
+        [
+          7.2,
+          3.21,
+          4788,
+          22,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 6.7,
-        "score": 3.19,
-        "vscore": 49,
-        "likes": 4622,
+        "age": 7.2,
+        "score": 3.21,
+        "vscore": 50,
+        "likes": 4744,
         "comments": 22,
         "views": null,
-        "engagement": 4666
+        "engagement": 4788
       },
       "search_query": "our girlis a classy lady now og Tae",
       "search_source": "on-image text",
@@ -250576,19 +251245,26 @@
           21923,
           206,
           null
+        ],
+        [
+          20.65,
+          1.22,
+          23014,
+          216,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 20.2,
-        "score": 1.64,
-        "vscore": 41,
-        "likes": 21511,
-        "comments": 206,
+        "age": 20.6,
+        "score": 1.22,
+        "vscore": 42,
+        "likes": 22582,
+        "comments": 216,
         "views": null,
-        "engagement": 21923
+        "engagement": 23014
       },
       "search_query": "Zohran Mamdani has officially hired NYC's first executive director of music to",
       "search_source": "on-image text",
@@ -250948,19 +251624,26 @@
           14911,
           98,
           null
+        ],
+        [
+          23.9,
+          0.76,
+          15469,
+          100,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 23.4,
-        "score": 1.03,
-        "vscore": 26,
-        "likes": 14715,
-        "comments": 98,
+        "age": 23.9,
+        "score": 0.76,
+        "vscore": 32,
+        "likes": 15269,
+        "comments": 100,
         "views": null,
-        "engagement": 14911
+        "engagement": 15469
       },
       "search_query": "she's so crazy and free it’s honestly inspiring f Pop Tingz PopTingz",
       "search_source": "on-image text",
@@ -250981,9 +251664,9 @@
       "first_flag_age": 9.5,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 2.41,
+      "peak_score": 2.57,
       "peak_tier": "rising",
-      "peak_age": 13.3,
+      "peak_age": 13.8,
       "points": [
         [
           0.28,
@@ -251173,25 +251856,32 @@
           25085,
           670,
           null
+        ],
+        [
+          13.78,
+          2.57,
+          27250,
+          730,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 13.3,
-        "score": 2.41,
-        "vscore": 54,
-        "likes": 23745,
-        "comments": 670,
+        "age": 13.8,
+        "score": 2.57,
+        "vscore": 68,
+        "likes": 25790,
+        "comments": 730,
         "views": null,
-        "engagement": 25085
+        "engagement": 27250
       },
       "search_query": "Facts News Thieves are now targeting Al data center construction sites with",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=Facts+News+Thieves+are+now+targeting+Al+data+center+construction+sites+with&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=Facts+News+Thieves+are+now+targeting+Al+data+center+construction+sites+with&src=typed_query&f=live",
-      "peak_vscore": 66,
+      "peak_vscore": 68,
       "thumb": "thumbs/17914804347589433.jpg"
     },
     "18121862126471464": {
@@ -251398,19 +252088,26 @@
           47067,
           283,
           1401129
+        ],
+        [
+          13.75,
+          1.56,
+          47825,
+          287,
+          1418286
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 13.3,
+        "age": 13.7,
         "score": 1.56,
-        "vscore": 40,
-        "likes": 46501,
-        "comments": 283,
-        "views": 1401129,
-        "engagement": 47067
+        "vscore": 39,
+        "likes": 47251,
+        "comments": 287,
+        "views": 1418286,
+        "engagement": 47825
       },
       "search_query": "Rockstar absolutely cooked vnth thic rancitinn",
       "search_source": "on-image text",
@@ -251511,19 +252208,26 @@
           231341,
           71,
           149147
+        ],
+        [
+          5.13,
+          4.58,
+          234598,
+          72,
+          158234
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 4.7,
-        "score": 4.74,
-        "vscore": 51,
+        "age": 5.1,
+        "score": 4.58,
+        "vscore": 46,
         "likes": null,
-        "comments": 71,
-        "views": 149147,
-        "engagement": 231341
+        "comments": 72,
+        "views": 158234,
+        "engagement": 234598
       },
       "search_query": "This scene from Twilight’ will never NOT be funny ey aa",
       "search_source": "on-image text",
@@ -251680,19 +252384,26 @@
           7958,
           7,
           null
+        ],
+        [
+          9.07,
+          1.67,
+          8088,
+          7,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 8.6,
-        "score": 1.69,
-        "vscore": 39,
-        "likes": 7944,
+        "age": 9.1,
+        "score": 1.67,
+        "vscore": 36,
+        "likes": 8074,
         "comments": 7,
         "views": null,
-        "engagement": 7958
+        "engagement": 8088
       },
       "search_query": "why does the gta6 map kinda look like peter",
       "search_source": "on-image text",
@@ -251856,19 +252567,26 @@
           7808,
           14,
           null
+        ],
+        [
+          9.97,
+          1.56,
+          7931,
+          14,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 9.5,
-        "score": 1.57,
-        "vscore": 36,
-        "likes": 7780,
+        "age": 10.0,
+        "score": 1.56,
+        "vscore": 34,
+        "likes": 7903,
         "comments": 14,
         "views": null,
-        "engagement": 7808
+        "engagement": 7931
       },
       "search_query": "know kids at auditions were speaking about her like she’s voldemort The",
       "search_source": "on-image text",
@@ -252228,19 +252946,37 @@
           15784,
           790,
           null
+        ],
+        [
+          24.27,
+          2.01,
+          15860,
+          792,
+          null
         ]
       ],
-      "result_24": null,
+      "result_24": {
+        "age": 24.3,
+        "score": 2.01,
+        "vscore": 44,
+        "likes": 14276,
+        "comments": 792,
+        "views": null,
+        "engagement": 15860,
+        "verdict": "fizzled",
+        "label": "💤 Fizzled out",
+        "stale": false
+      },
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 23.8,
+        "age": 24.3,
         "score": 2.01,
-        "vscore": 48,
-        "likes": 14204,
-        "comments": 790,
+        "vscore": 44,
+        "likes": 14276,
+        "comments": 792,
         "views": null,
-        "engagement": 15784
+        "engagement": 15860
       },
       "search_query": "Can we all agree ina Ny Wee",
       "search_source": "on-image text",
@@ -252607,6 +253343,13 @@
           11651,
           82,
           null
+        ],
+        [
+          24.98,
+          1.48,
+          11719,
+          82,
+          null
         ]
       ],
       "result_24": {
@@ -252624,13 +253367,13 @@
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 24.5,
+        "age": 25.0,
         "score": 1.48,
-        "vscore": 38,
-        "likes": 11487,
+        "vscore": 36,
+        "likes": 11555,
         "comments": 82,
         "views": null,
-        "engagement": 11651
+        "engagement": 11719
       },
       "search_query": "are they deadass New poster for AVENGERS DOOMSDAY’",
       "search_source": "on-image text",
@@ -252724,25 +253467,32 @@
           417066,
           128,
           null
+        ],
+        [
+          4.66,
+          9.21,
+          449645,
+          138,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 4.2,
-        "score": 9.01,
-        "vscore": 39,
+        "age": 4.7,
+        "score": 9.21,
+        "vscore": 45,
         "likes": null,
-        "comments": 128,
+        "comments": 138,
         "views": null,
-        "engagement": 417066
+        "engagement": 449645
       },
       "search_query": "eee WA 6h an",
       "search_source": "on-image text",
       "x_search_url": "https://x.com/search?q=eee+WA+6h+an&src=typed_query",
       "x_search_latest_url": "https://x.com/search?q=eee+WA+6h+an&src=typed_query&f=live",
-      "peak_vscore": 43,
+      "peak_vscore": 45,
       "thumb": "thumbs/17916053757589091.jpg"
     },
     "17901344304611229": {
@@ -252872,19 +253622,26 @@
           1856,
           4,
           128411
+        ],
+        [
+          7.53,
+          4.44,
+          1896,
+          4,
+          131226
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 7.1,
-        "score": 4.49,
-        "vscore": 33,
-        "likes": 1848,
+        "age": 7.5,
+        "score": 4.44,
+        "vscore": 35,
+        "likes": 1888,
         "comments": 4,
-        "views": 128411,
-        "engagement": 1856
+        "views": 131226,
+        "engagement": 1896
       },
       "search_query": "They spent six months drilling through 3 000 tons of rock to",
       "search_source": "on-image text",
@@ -253216,19 +253973,26 @@
           812886,
           203,
           null
+        ],
+        [
+          22.32,
+          2.7,
+          105622,
+          203,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 21.8,
-        "score": 5.46,
-        "vscore": 43,
+        "age": 22.3,
+        "score": 2.7,
+        "vscore": 27,
         "likes": null,
         "comments": 203,
         "views": null,
-        "engagement": 812886
+        "engagement": 105622
       },
       "search_query": "Cece Zanes a SS KerDy",
       "search_source": "on-image text",
@@ -253249,9 +254013,9 @@
       "first_flag_age": 10.8,
       "first_tier": "rising",
       "flag_reason": "score",
-      "peak_score": 3.64,
+      "peak_score": 3.74,
       "peak_tier": "rising",
-      "peak_age": 12.3,
+      "peak_age": 12.8,
       "points": [
         [
           0.27,
@@ -253427,19 +254191,26 @@
           2027,
           67,
           null
+        ],
+        [
+          12.77,
+          3.74,
+          2126,
+          68,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 12.3,
-        "score": 3.64,
-        "vscore": 39,
-        "likes": 1893,
-        "comments": 67,
+        "age": 12.8,
+        "score": 3.74,
+        "vscore": 47,
+        "likes": 1990,
+        "comments": 68,
         "views": null,
-        "engagement": 2027
+        "engagement": 2126
       },
       "search_query": "Celebrity News Entertainment How did Yelena Belova go from a D list",
       "search_source": "on-image text",
@@ -253568,19 +254339,26 @@
           948,
           67,
           null
+        ],
+        [
+          6.88,
+          21.06,
+          970,
+          68,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 6.4,
-        "score": 21.33,
-        "vscore": 35,
-        "likes": 814,
-        "comments": 67,
+        "age": 6.9,
+        "score": 21.06,
+        "vscore": 41,
+        "likes": 834,
+        "comments": 68,
         "views": null,
-        "engagement": 948
+        "engagement": 970
       },
       "search_query": "A photo from her husband on a business Husband Time for bed",
       "search_source": "on-image text",
@@ -253601,9 +254379,9 @@
       "first_flag_age": 11.3,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 1.35,
+      "peak_score": 1.36,
       "peak_tier": "rising",
-      "peak_age": 12.4,
+      "peak_age": 12.8,
       "points": [
         [
           0.33,
@@ -253779,19 +254557,26 @@
           13482,
           134,
           null
+        ],
+        [
+          12.83,
+          1.36,
+          13898,
+          131,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 12.4,
-        "score": 1.35,
-        "vscore": 35,
-        "likes": 13214,
-        "comments": 134,
+        "age": 12.8,
+        "score": 1.36,
+        "vscore": 39,
+        "likes": 13636,
+        "comments": 131,
         "views": null,
-        "engagement": 13482
+        "engagement": 13898
       },
       "search_query": "Facts News A Wendy's manager created a fake employee and quietly pocketed",
       "search_source": "on-image text",
@@ -253812,9 +254597,9 @@
       "first_flag_age": 14.3,
       "first_tier": "rising",
       "flag_reason": "speed",
-      "peak_score": 1.09,
+      "peak_score": 1.21,
       "peak_tier": "rising",
-      "peak_age": 14.3,
+      "peak_age": 14.8,
       "points": [
         [
           0.27,
@@ -254018,26 +254803,33 @@
           12500,
           25,
           null
+        ],
+        [
+          14.76,
+          1.21,
+          14151,
+          25,
+          null
         ]
       ],
       "result_24": null,
       "result_48": null,
       "status": "live",
       "last": {
-        "age": 14.3,
-        "score": 1.09,
-        "vscore": 27,
-        "likes": 12450,
+        "age": 14.8,
+        "score": 1.21,
+        "vscore": 44,
+        "likes": 14101,
         "comments": 25,
         "views": null,
-        "engagement": 12500
+        "engagement": 14151
       },
       "search_source": "caption",
-      "peak_vscore": 41,
+      "peak_vscore": 44,
       "thumb": "thumbs/18164140567504326.jpg"
     }
   },
-  "updated": "2026-11-27T02:17:45+00:00",
+  "updated": "2026-11-27T02:46:03+00:00",
   "thresholds": {
     "rising": 2.5,
     "viral": 5
