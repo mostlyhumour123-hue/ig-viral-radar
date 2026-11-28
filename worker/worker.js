@@ -7,6 +7,7 @@
 //   GH_TOKEN   (secret)  GitHub fine-grained token with "Actions: Read and write" on the repo
 //   CHAT_ID    (text)    your Telegram chat id
 //   REPO       (text)    owner/repo, e.g. mostlyhumour123-hue/ig-viral-radar
+//   MH_SYNC    (KV)      optional: MH Studio's sync KV namespace, enables /cmd for MH Studio
 //
 // Open https://<your-worker>.workers.dev/setup once to connect the bot to this Worker.
 
@@ -70,6 +71,24 @@ export default {
         await tg(env, "sendChatAction", { chat_id: msg.chat.id, action: "typing" });
       }
       return new Response("ok");
+    }
+
+    // MH Studio (Finder → Instagram radar → Accounts): add/remove/assign accounts. Allowed only with the id of an
+    // existing MH Studio cloud-settings item (= someone who knows your MH Studio cloud password).
+    if (url.pathname === "/cmd") {
+      const cors = { "Access-Control-Allow-Origin": "*", "Access-Control-Allow-Methods": "POST, OPTIONS",
+                     "Access-Control-Allow-Headers": "Content-Type, X-Sync-Id" };
+      const J = (o, s = 200) => new Response(JSON.stringify(o), { status: s, headers: { ...cors, "Content-Type": "application/json" } });
+      if (request.method === "OPTIONS") return new Response(null, { headers: cors });
+      if (request.method !== "POST") return J({ ok: false, error: "POST only" }, 405);
+      const id = request.headers.get("X-Sync-Id") || "";
+      if (!env.MH_SYNC || !/^[a-f0-9]{64}$/.test(id) || !(await env.MH_SYNC.get(id + ":t"))) return J({ ok: false, error: "locked" }, 403);
+      const body = await request.json().catch(() => ({}));
+      const lines = (Array.isArray(body.commands) ? body.commands : [body.text]).map(x => String(x || "").trim()).filter(Boolean).slice(0, 30);
+      if (!lines.length || lines.some(t => t.length > 300 || !/^\/(add|remove|assign|unassign|list|scan)(\s|$)/i.test(t)))
+        return J({ ok: false, error: "only /add /remove /assign /unassign /list /scan" }, 400);
+      const status = await startWorkflow(env, JSON.stringify(lines.map(text => ({ chat: { id: env.CHAT_ID }, text }))), false);
+      return J({ ok: status === 204, status });
     }
 
     return new Response("IG Viral Radar worker is running.");
